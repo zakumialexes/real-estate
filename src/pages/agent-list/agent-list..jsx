@@ -2,7 +2,7 @@ import style from "./agent-list.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList, faTableCells} from "@fortawesome/free-solid-svg-icons";
 import FilterListIcon from '@mui/icons-material/FilterList';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import LeftSide from "./left-side/left-side";
 import usePaginate from "./pagination";
 import RightSide from "./right-side/right-side";
@@ -15,6 +15,9 @@ function AgentList(props) {
     const [showSearchOverlay, setShowSearchOverlay] = useState(false)
 
     const {totalPageCount, paginatedData: paginatedAgent} = usePaginate("agent-list", paginationPage, 6);
+    useEffect(() => {
+        showSearchOverlay ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
+    }, [showSearchOverlay])
     return (
         <div className={style.section}>
             <div className={style.container}>
@@ -55,7 +58,7 @@ function AgentList(props) {
                     <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={paginatedAgent}
                               paginationPage={paginationPage} setPaginationPage={setPaginationPage}
                               totalPageCount={totalPageCount}/>
-                    <RightSide showSearchOverlay={showSearchOverlay}/>
+                    <RightSide showSearchOverlay={showSearchOverlay} setShowSearchOverlay={setShowSearchOverlay}/>
                 </div>
             </div>
         </div>

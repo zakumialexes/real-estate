@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import style from "./right-side.module.scss";
 
 const CustomSelect = styled(Select)(({theme}) => ({
+    padding: "0 10px",
     width: "100%",
     textTransform: "capitalize",
     marginBottom: "1rem",
