@@ -1,31 +1,31 @@
 {
   "agent-list": [
     {
-      "name": "Christopher Pakulla",
+      "name": "Zuzu Parlar Pakulla",
       "phoneNumber": {
         "office": "134 456 789",
         "mobile": "982 123 423",
         "fax": "234 322 624"
       },
-      "email": "paluua@findhouse.com",
-      "type": "agent",
-      "listing": 2,
-      "photo": "/images/agents/agent-1.jpg"
-    },
-    {
-      "name": "Christopher Pakulla",
-      "phoneNumber": {
-        "office": "134 456 789",
-        "mobile": "982 123 423",
-        "fax": "234 322 624"
-      },
-      "email": "paluua@findhouse.com",
+      "email": "palasd2dhouse.com",
       "type": "agent",
       "listing": 2,
       "photo": "/images/agents/agent-2.jpg"
     },
     {
-      "name": "Christopher Pakulla",
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Acer Hacker",
       "phoneNumber": {
         "office": "134 456 789",
         "mobile": "982 123 423",
@@ -37,7 +37,7 @@
       "photo": "/images/agents/agent-3.jpg"
     },
     {
-      "name": "Christopher Pakulla",
+      "name": "Pheonix Fellington",
       "phoneNumber": {
         "office": "134 456 789",
         "mobile": "982 123 423",
@@ -46,10 +46,10 @@
       "email": "paluua@findhouse.com",
       "type": "agent",
       "listing": 2,
-      "photo": "/images/agents/agent-4.jpg"
+      "photo": "/images/agents/agent-1.jpg"
     },
     {
-      "name": "Christopher Pakulla",
+      "name": "Cult Leader",
       "phoneNumber": {
         "office": "134 456 789",
         "mobile": "982 123 423",
@@ -61,7 +61,7 @@
       "photo": "/images/agents/agent-5.jpg"
     },
     {
-      "name": "Christopher Pakulla",
+      "name": "Harley Dvision",
       "phoneNumber": {
         "office": "134 456 789",
         "mobile": "982 123 423",
@@ -71,6 +71,90 @@
       "type": "agent",
       "listing": 2,
       "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Pheonix Fellington",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Cult Leader",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
     }
   ]
 }

@@ -24,7 +24,11 @@ const CustomPagination = styled(Pagination)(({theme}) => ({
         backgroundColor: "orange"
     }
 }));
-export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage}) {
+export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage,totalPageCount}) {
+    function handlePaginationChange(event, value) {
+        setPaginationPage(value);
+    }
+
     return (
         <div className={style.leftSide}>
             <div className={style.searchHeader}>
@@ -41,9 +45,12 @@ export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationP
                 ))}
             </div>
             <div className={style.paginationContainer}>
-                <CustomPagination size="large" count={10} variant="outlined" renderItem={(item) => (
-                    <PaginationItem slots={{previous: ArrowBackOutlined, next: ArrowForwardOutlined}} {...item}/>
-                )}/>
+                <CustomPagination page={paginationPage} size="large" count={totalPageCount} variant="outlined"
+                                  renderItem={(item) => (
+                                      <PaginationItem
+                                          slots={{previous: ArrowBackOutlined, next: ArrowForwardOutlined}} {...item}
+                                      />
+                                  )} onChange={handlePaginationChange}/>
             </div>
         </div>
     )

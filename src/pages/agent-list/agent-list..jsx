@@ -1,24 +1,17 @@
 import style from "./agent-list.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList, faTableCells} from "@fortawesome/free-solid-svg-icons";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import LeftSide from "./left-side/left-side";
+import usePaginate from "./pagination";
 
 
 function AgentList(props) {
-    const [agents, setAgents] = useState([]);
     const [sortBy, setSortBy] = useState(0);
     const [paginationPage, setPaginationPage] = useState(1);
     const [isGrid, setIsGrid] = useState(true);
 
-    async function fetchingAgent() {
-        const response = await fetch("http://localhost:3500/agent-list").then(data => data.json())
-        setAgents(response)
-    }
-
-    useEffect(() => {
-        fetchingAgent()
-    }, [])
+    const {totalPageCount, paginatedData: paginatedAgent} = usePaginate("agent-list", paginationPage, 6);
     return (
         <div className={style.section}>
             <div className={style.container}>
@@ -47,8 +40,9 @@ function AgentList(props) {
                     </div>
                 </div>
                 <div className={style.content}>
-                    <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={agents}
-                              paginationPage={paginationPage} setPaginationPage={setPaginationPage}/>
+                    <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={paginatedAgent}
+                              paginationPage={paginationPage} setPaginationPage={setPaginationPage}
+                              totalPageCount={totalPageCount}/>
                 </div>
             </div>
         </div>
