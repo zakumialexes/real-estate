@@ -8,6 +8,7 @@ import LeftSide from "./left-side/left-side";
 function AgentList(props) {
     const [agents, setAgents] = useState([]);
     const [sortBy, setSortBy] = useState(0);
+    const [paginationPage, setPaginationPage] = useState(1);
     const [isGrid, setIsGrid] = useState(true);
 
     async function fetchingAgent() {
@@ -46,7 +47,8 @@ function AgentList(props) {
                     </div>
                 </div>
                 <div className={style.content}>
-                    <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={agents}/>
+                    <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={agents}
+                              paginationPage={paginationPage} setPaginationPage={setPaginationPage}/>
                 </div>
             </div>
         </div>

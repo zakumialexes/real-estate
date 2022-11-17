@@ -33,3 +33,8 @@ $textDark: #484848;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 30px;
 }
+.paginationContainer{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
