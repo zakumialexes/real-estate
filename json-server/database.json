@@ -1,0 +1,64 @@
+{
+  "agent-list": [
+    {
+      "name": "Christopher Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Christopher Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Christopher Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-3.jpg"
+    },
+    {
+      "name": "Christopher Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-4.jpg"
+    },
+    {
+      "name": "Christopher Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    }
+  ]
+}

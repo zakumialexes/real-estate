@@ -1,0 +1,129 @@
+$textOrange: #ff5a5f;
+$textDark: #484848;
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  display: flex;
+
+  .breadcrumbContainer {
+    width: 50%;
+    margin-bottom: 55px;
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      padding: .75rem 0;
+      list-style: none;
+      background-color: transparent;
+      border-radius: .25rem;
+      font-weight: 400;
+
+      li a {
+        color: #555555;
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      li:last-child {
+        padding-left: 0.5rem;
+        color: $textOrange;
+
+        &::before {
+          display: inline-block;
+          padding-right: .5rem;
+          color: #6c757d;
+          content: "/";
+        }
+      }
+
+    }
+
+    .breadcrumbTitle {
+      font-size: 30px;
+      font-weight: bold;
+      color: $textDark;
+    }
+  }
+
+  .listing {
+    width: 50%;
+    margin-top: 18px;
+    position: relative;
+    text-align: right;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+
+      li {
+        background-color: #ffffff;
+        border: 1px solid rgb(235, 235, 235);
+        border-radius: 8px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        width: 49px;
+        transition: all 0.3s ease;
+
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+
+        &:hover {
+          background-color: rgb(227, 227, 227);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+
+  .leftSide {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+
+.searchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 8px;
+  height: 62px;
+  margin: 0 0 30px;
+  padding: 0 30px;
+  position: relative;
+  width: 96%;
+  color: $textDark;
+}
+
+.agentContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  max-width: 100%;
+  gap: 30px;
+
+}

@@ -1,0 +1,133 @@
+$fontColor: #484848;
+$faintColor: #777777;
+$orange: #ff5a5f;
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px 0 rgba(19, 19, 28, 0.12);
+  }
+}
+
+.imgContainer {
+  margin: 10px;
+  position: relative;
+
+  img {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .listing {
+    background-color: $orange;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.detail {
+  & > div {
+    padding: 20px;
+
+    * {
+      margin: 0;
+    }
+  }
+}
+
+.content {
+  p {
+    color: $fontColor;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .type {
+    color: #ff5a5f;
+    text-transform: capitalize;
+  }
+
+  h4 {
+    font-size: 18px;
+    color: $fontColor;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .propDetail {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-right: 30px;
+      box-sizing: border-box;
+
+      a {
+        font-size: 14px;
+        color: #484848;
+        line-height: 1.2;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.footer {
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+
+  .socialLinks {
+    float: left;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+
+    li {
+      list-style-type: none;
+      margin-right: 15px;
+      vertical-align: middle;
+
+      a {
+        font-size: 14px;
+        color: $faintColor;
+        line-height: 1.2;
+        text-decoration: none;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .viewListing {
+    color: $orange;
+    font-size: 14px;
+  }
+
+}
