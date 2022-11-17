@@ -1,9 +1,8 @@
 import style from "./agent-list.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList, faTableCells} from "@fortawesome/free-solid-svg-icons";
-import SortBy from "./SortBy";
 import {useEffect, useState} from "react";
-import AgentCard from "./agent-card/agent-card";
+import LeftSide from "./left-side/left-side";
 
 
 function AgentList(props) {
@@ -47,21 +46,7 @@ function AgentList(props) {
                     </div>
                 </div>
                 <div className={style.content}>
-                    <div className={style.leftSide}>
-                        <div className={style.searchHeader}>
-                            <div>
-                                <p>6 Search Results</p>
-                            </div>
-                            <div className="">
-                                <SortBy sortBy={sortBy} setSortBy={setSortBy}/>
-                            </div>
-                        </div>
-                        <div className={isGrid ? style.agentContainer : style.agentContainerList}>
-                            {agents.map((agent, i) => (
-                                <AgentCard agent={agent} key={i} isGrid={isGrid}/>
-                            ))}
-                        </div>
-                    </div>
+                    <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={agents}/>
                 </div>
             </div>
         </div>
