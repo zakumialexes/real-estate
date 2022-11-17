@@ -1,0 +1,36 @@
+$orange: #ff5a5f;
+.rightSide {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 15px;
+}
+
+.agentSearch {
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  padding: 30px;
+
+  & > h4 {
+    font-size: 18px;
+    margin: 0 0 25px;
+  }
+}
+
+.searchBtn {
+  background-color: $orange;
+  border: 2px solid $orange;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  height: 50px;
+  width: 100%;
+  font-size: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: $orange;
+  }
+}

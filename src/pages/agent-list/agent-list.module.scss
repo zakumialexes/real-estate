@@ -1,7 +1,13 @@
 $textOrange: #ff5a5f;
+$orangeDarker: #f53c41;
 $textDark: #484848;
 .section {
   padding: 60px 0;
+}
+
+.flexFull {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .container {
@@ -11,10 +17,12 @@ $textDark: #484848;
 }
 
 .header {
+  padding: 15px;
   display: flex;
+  flex-wrap: wrap;
 
   .breadcrumbContainer {
-    width: 50%;
+    @extend .flexFull;
     margin-bottom: 55px;
 
     * {
@@ -37,9 +45,11 @@ $textDark: #484848;
         -webkit-font-smoothing: antialiased;
 
       }
-.currentViewName{
-  margin-left: 5px;
-}
+
+      .currentViewName {
+        margin-left: 5px;
+      }
+
       li:last-child {
         padding-left: 0.5rem;
         color: $textOrange;
@@ -62,17 +72,19 @@ $textDark: #484848;
   }
 
   .listing {
+    @extend .flexFull;
+    display: flex;
+    justify-content: space-between;
     width: 50%;
     margin-top: 18px;
     position: relative;
     text-align: right;
 
     ul {
+      padding: 0;
       list-style-type: none;
       display: flex;
       justify-content: flex-end;
-      width: 100%;
-
 
       li {
         background-color: #ffffff;
@@ -101,4 +113,60 @@ $textDark: #484848;
   display: flex;
 }
 
+.leftOverlayBtn {
+  @media (min-width: 900px) {
+    display: none;
+  }
+
+  .icon {
+    height: 50px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f53c41;
+    left: 0;
+    position: absolute;
+    width: 48px;
+    color: #ffffff;
+    text-align: center;
+
+    svg {
+      margin-top: 10px;
+    }
+  }
+
+  .filter {
+    position: relative;
+    padding-left: 45px;
+    background-color: #ff5a5f;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    text-align: center;
+    width: 170px;
+    z-index: 999;
+    box-shadow: 0 1px 4px 0 rgba(255, 90, 95, 0.3);
+  }
+}
+
+@media (min-width: 900px) {
+  .header {
+    .breadcrumbContainer {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    .listing {
+      flex: 0 0 50%;
+      max-width: 50%;
+      justify-content: end;
+    }
+
+  }
+}
 
