@@ -1,6 +1,6 @@
 import style from "./agent-list.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faList} from "@fortawesome/free-solid-svg-icons";
+import {faList, faTableCells} from "@fortawesome/free-solid-svg-icons";
 import SortBy from "./SortBy";
 import {useEffect, useState} from "react";
 import AgentCard from "./agent-card/agent-card";
@@ -9,6 +9,7 @@ import AgentCard from "./agent-card/agent-card";
 function AgentList(props) {
     const [agents, setAgents] = useState([]);
     const [sortBy, setSortBy] = useState(0);
+    const [isGrid, setIsGrid] = useState(true);
 
     async function fetchingAgent() {
         const response = await fetch("http://localhost:3500/agent-list").then(data => data.json())
@@ -29,19 +30,17 @@ function AgentList(props) {
                             </li>
                             <li className="" aria-current="page">
                                 Simple Listing –
-                                {/*Todo: to make according to view*/}
-                                <span>Grid View</span>
-                                <span>List View</span>
+                                <span className={style.currentViewName}>{isGrid ? "Grid View" : "List View"}</span>
                             </li>
                         </ol>
                         <h2 className={style.breadcrumbTitle}>All Agents</h2>
                     </div>
                     <div className={style.listing}>
                         <ul className="">
-                            <li className="">
-                                Grid
+                            <li onClick={() => setIsGrid(true)}>
+                                <FontAwesomeIcon icon={faTableCells}/>
                             </li>
-                            <li className="">
+                            <li onClick={() => setIsGrid(false)}>
                                 <FontAwesomeIcon icon={faList}/>
                             </li>
                         </ul>
@@ -57,9 +56,9 @@ function AgentList(props) {
                                 <SortBy sortBy={sortBy} setSortBy={setSortBy}/>
                             </div>
                         </div>
-                        <div className={style.agentContainer}>
+                        <div className={isGrid ? style.agentContainer : style.agentContainerList}>
                             {agents.map((agent, i) => (
-                                <AgentCard agent={agent} key={i}/>
+                                <AgentCard agent={agent} key={i} isGrid={isGrid}/>
                             ))}
                         </div>
                     </div>

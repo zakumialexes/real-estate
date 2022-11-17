@@ -5,7 +5,7 @@ $textDark: #484848;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -35,8 +35,11 @@ $textDark: #484848;
         color: #555555;
         text-decoration: none;
         -webkit-font-smoothing: antialiased;
-      }
 
+      }
+.currentViewName{
+  margin-left: 5px;
+}
       li:last-child {
         padding-left: 0.5rem;
         color: $textOrange;
@@ -125,5 +128,9 @@ $textDark: #484848;
   overflow: hidden;
   max-width: 100%;
   gap: 30px;
+}
 
+.agentContainerList {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 30px;
 }
