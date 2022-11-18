@@ -21,39 +21,10 @@ function AgentList(props) {
     return (
         <div className={style.section}>
             <div className={style.container}>
-                <div className={style.header}>
-                    <div className={style.breadcrumbContainer}>
-                        <ol className={style.breadcrumb}>
-                            <li className="">
-                                <a href="#">Home</a>
-                            </li>
-                            <li className="" aria-current="page">
-                                Simple Listing –
-                                <span className={style.currentViewName}>{isGrid ? "Grid View" : "List View"}</span>
-                            </li>
-                        </ol>
-                        <h2 className={style.breadcrumbTitle}>All Agents</h2>
-                    </div>
-                    <div className={style.listing}>
-                        <ul className="">
-                            <li onClick={() => setIsGrid(true)}>
-                                <FontAwesomeIcon icon={faTableCells}/>
-                            </li>
-                            <li onClick={() => setIsGrid(false)}>
-                                <FontAwesomeIcon icon={faList}/>
-                            </li>
-                        </ul>
-                        <div className={style.leftOverlayBtn}
-                             onClick={() => setShowSearchOverlay(prevState => !prevState)}>
-                            <div className={style.filter}>
-                                <div className={style.icon}>
-                                    <FilterListIcon/>
-                                </div>
-                                Show Filter
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ListHeader isGrid={isGrid} setIsGrid={setIsGrid}
+                            toggleSearchOverlay={() => setShowSearchOverlay(prevState => !prevState)}>
+                    All Agents
+                </ListHeader>
                 <div className={style.content}>
                     <LeftSide isGrid={isGrid} setSortBy={setSortBy} sortBy={sortBy} agents={paginatedAgent}
                               paginationPage={paginationPage} setPaginationPage={setPaginationPage}
