@@ -2,28 +2,12 @@
 import style from "./left-side.module.scss";
 import SortBy from "../sort-by";
 import AgentCard from "../agent-card/agent-card";
+import {CustomPagination} from "../custom-components";
 
 // Library
-import {Pagination, PaginationItem, styled} from "@mui/material";
+import {PaginationItem} from "@mui/material";
 import {ArrowBackOutlined, ArrowForwardOutlined} from "@mui/icons-material";
 
-const CustomPagination = styled(Pagination)(({theme}) => ({
-    button: {
-        border: "1px solid #ebebeb",
-        color: "#777777",
-        "&.Mui-selected": {
-            backgroundColor: "#ff5a5f",
-            color: "white",
-            border: "none",
-            "&:hover": {
-                backgroundColor: "#ff5a5f"
-            }
-        }
-    },
-    "&:Mui-selected": {
-        backgroundColor: "orange"
-    }
-}));
 export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage,totalPageCount,children}) {
     function handlePaginationChange(event, value) {
         setPaginationPage(value);
