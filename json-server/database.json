@@ -156,5 +156,58 @@
       "listing": 2,
       "photo": "/images/agents/agent-2.jpg"
     }
+  ],
+  "houses": [
+    {
+      "name": "Nice Room With View",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-1.jpg",
+        "/images/houses/grid-photo-2.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    }
   ]
 }

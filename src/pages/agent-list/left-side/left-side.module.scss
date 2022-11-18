@@ -1,8 +1,8 @@
 $textDark: #484848;
 
 .leftSide {
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%;
+  flex: 0 0 100%;
+  max-width: 100%;
   padding: 0 15px;
 }
 
@@ -38,4 +38,11 @@ $textDark: #484848;
   margin-top: 30px;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 900px) {
+  .leftSide{
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
 }
