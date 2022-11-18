@@ -1,14 +1,23 @@
 // Files
-import style from "./left-side.module.scss";
-import SortByFeatured from "../sort-by-featured";
-import AgentCard from "../agent-card/agent-card";
-import {CustomPagination} from "../custom-components";
+import style from "../../agent-list/left-side/left-side.module.scss";
+import SortByFeatured from "../../agent-list/sort-by-featured";
+import {CustomPagination} from "../../agent-list/custom-components";
 
 // Library
 import {PaginationItem} from "@mui/material";
 import {ArrowBackOutlined, ArrowForwardOutlined} from "@mui/icons-material";
+import HouseCard from "../house-card/house-card";
 
-export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage,totalPageCount,children}) {
+export default function LeftSide({
+                                     sortBy,
+                                     setSortBy,
+                                     isGrid,
+                                     houses,
+                                     paginationPage,
+                                     setPaginationPage,
+                                     totalPageCount,
+                                     children
+                                 }) {
     function handlePaginationChange(event, value) {
         setPaginationPage(value);
     }
@@ -21,12 +30,15 @@ export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationP
                     <p>6 Search Results</p>
                 </div>
                 <div>
+
+                </div>
+                <div>
                     <SortByFeatured sortBy={sortBy} setSortBy={setSortBy}/>
                 </div>
             </div>
             <div className={isGrid ? style.agentContainer : style.agentContainerList}>
-                {agents.map((agent, i) => (
-                    <AgentCard agent={agent} key={i} isGrid={isGrid}/>
+                {houses.map((house, i) => (
+                    <HouseCard house={house} isGrid={isGrid} key={i}/>
                 ))}
             </div>
             <div className={style.paginationContainer}>

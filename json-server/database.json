@@ -166,10 +166,15 @@
         "/images/houses/grid-photo-2.jpg"
       ],
       "rent": 13000,
-      "type": "house",
+      "type": "villa",
       "beds": 4,
       "baths": 3,
       "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
       "tags": [
         "for rent",
         "featured"
@@ -187,6 +192,11 @@
       "beds": 4,
       "baths": 3,
       "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
       "tags": [
         "for rent",
         "featured"
@@ -200,10 +210,169 @@
         "/images/houses/grid-photo-4.jpg"
       ],
       "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Nice Room With View",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-6.jpg",
+        "/images/houses/grid-photo-5.jpg"
+      ],
+      "rent": 13000,
+      "type": "villa",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-7.jpg",
+        "/images/houses/grid-photo-8.jpg"
+      ],
+      "rent": 13000,
       "type": "house",
       "beds": 4,
       "baths": 3,
       "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-9.jpg",
+        "/images/houses/grid-photo-10.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-6.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-8.jpg",
+        "/images/houses/grid-photo-6.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
       "tags": [
         "for rent",
         "featured"

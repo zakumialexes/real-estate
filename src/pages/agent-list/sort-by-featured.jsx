@@ -14,7 +14,7 @@ const features = [
 ]
 
 
-export default function SortBy({sortBy, setSortBy}) {
+export default function SortByFeatured({sortBy, setSortBy}) {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
