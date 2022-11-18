@@ -1,6 +1,6 @@
 // Files
 import style from "./left-side.module.scss";
-import SortBy from "../SortBy";
+import SortBy from "../sort-by";
 import AgentCard from "../agent-card/agent-card";
 
 // Library
@@ -24,13 +24,14 @@ const CustomPagination = styled(Pagination)(({theme}) => ({
         backgroundColor: "orange"
     }
 }));
-export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage,totalPageCount}) {
+export default function LeftSide({sortBy, setSortBy, isGrid, agents, paginationPage, setPaginationPage,totalPageCount,children}) {
     function handlePaginationChange(event, value) {
         setPaginationPage(value);
     }
 
     return (
         <div className={style.leftSide}>
+            {children}
             <div className={style.searchHeader}>
                 <div>
                     <p>6 Search Results</p>

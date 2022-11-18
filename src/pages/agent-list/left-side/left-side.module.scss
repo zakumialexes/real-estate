@@ -8,23 +8,23 @@ $textDark: #484848;
 
 .searchHeader {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   font-size: 14px;
   background-color: #ffffff;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px;
-  height: 62px;
   margin: 0 0 30px;
   padding: 0 30px;
   position: relative;
-  width: 96%;
+  width: 100%;
   color: $textDark;
 }
 
 .agentContainer {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   overflow: hidden;
   max-width: 100%;
   gap: 30px;
@@ -34,15 +34,23 @@ $textDark: #484848;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 30px;
 }
-.paginationContainer{
+
+.paginationContainer {
   margin-top: 30px;
   display: flex;
   justify-content: center;
 }
+
 @media (min-width: 900px) {
-  .leftSide{
+  .leftSide {
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
-
+  .agentContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .searchHeader {
+    flex-direction: row;
+    align-items: center;
+  }
 }

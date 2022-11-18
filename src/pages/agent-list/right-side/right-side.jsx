@@ -1,11 +1,15 @@
-import rightSideStyle from "./right-side.module.scss"
 import {useState} from "react";
+
+// Files
+import rightSideStyle from "./right-side.module.scss"
 import AgentSearch from "./agent-search";
 import SearchOverlay from "./search-overlay/search-overlay";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import FeaturedProperties from "./featured-properties/featured-properties";
 import RecentlyViewed from "./recently-viewed/recently-viewed";
+
+// Icons
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
 
 export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     const [category, setCategory] = useState("all");
@@ -37,9 +41,9 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
                     <AgentSearch category={category} city={city} handleCategoryChange={handleCategoryChange}
                                  handleCityChange={handleCityChange}/>
                 </SearchOverlay>
-            {/*  Agent Search Section End  */}
+                {/*  Agent Search Section End  */}
                 <FeaturedProperties/>
-<RecentlyViewed/>
+                <RecentlyViewed/>
             </div>
         </>
     )

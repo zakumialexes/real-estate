@@ -1,11 +1,11 @@
-import style from "./agent-list.module.scss"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faList, faTableCells} from "@fortawesome/free-solid-svg-icons";
-import FilterListIcon from '@mui/icons-material/FilterList';
 import {useEffect, useState} from "react";
+
+// Files
+import style from "./agent-list.module.scss"
 import LeftSide from "./left-side/left-side";
 import usePaginate from "./pagination";
 import RightSide from "./right-side/right-side";
+import ListHeader from "./list-header/list-header";
 
 
 function AgentList(props) {

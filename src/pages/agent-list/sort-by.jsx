@@ -1,7 +1,11 @@
+import {useState} from "react";
+
+// MUI
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import {useState} from "react";
+
+// Icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCaretDown, faCheck} from "@fortawesome/free-solid-svg-icons";
 

@@ -1,4 +1,6 @@
 import agentCardStyle from "./agent-card.module.scss"
+
+// Icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookF, faGoogle, faInstagram, faPinterest, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";

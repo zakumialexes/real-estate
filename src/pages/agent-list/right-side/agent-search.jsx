@@ -1,8 +1,13 @@
+// Files
+import style from "./right-side.module.scss";
+import MenuItem from "@mui/material/MenuItem";
+
+// MUI
+import {Select, styled} from "@mui/material";
+
+// Icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {Select, styled} from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import style from "./right-side.module.scss";
 
 const CustomSelect = styled(Select)(({theme}) => ({
     padding: "0 10px",
