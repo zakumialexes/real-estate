@@ -8,7 +8,7 @@ import { Sidebar } from "./layout/navbar/navbar";
 function App() {
   const [openSidebar, setOpenSidebar] = useState(false);
   const style = {
-    marginLeft: "45vw",
+    marginLeft: "65vw",
     width: "100vw",
     overflow: "hidden",
     position: "fixed",

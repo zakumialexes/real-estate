@@ -66,7 +66,7 @@ const DesktopNav = ({ large }) => {
           fontSize="28px"
           color="#484848"
         >
-          FindHouse
+          Shwe Real Estate
         </Typography>
       </Box>
       {/* <Box sx={{ flex: 2, display: "flex", justifyContent: "end" }}>
@@ -137,7 +137,7 @@ export const Sidebar = ({ openSidebar }) => {
     <Box
       sx={{
         position: "fixed",
-        width: "45vw",
+        width: "65vw",
         height: "100vh",
         top: 0,
         left: 0,
@@ -206,7 +206,7 @@ const MobileNav = ({ setOpenSidebar, openSidebar }) => {
           zIndex: "1100",
           position: "fixed",
           top: 0,
-          left: openSidebar ? "45vw" : 0,
+          left: openSidebar ? "65vw" : 0,
         }}
       >
         <Stack
@@ -232,7 +232,7 @@ const MobileNav = ({ setOpenSidebar, openSidebar }) => {
               alt=""
             />
             <Typography component="h2" fontWeight="bold" fontSize="28px">
-              FindHouse
+              Shwe Real Estate
             </Typography>
           </Stack>
           <Box>
