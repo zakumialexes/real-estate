@@ -2,11 +2,12 @@
 import style from "../../agent-list/left-side/left-side.module.scss";
 import SortByFeatured from "../../agent-list/sort-by-featured";
 import {CustomPagination} from "../../agent-list/custom-components";
+import GridHouseCard from "../grid-house-card/grid-house-card"
 
 // Library
 import {PaginationItem} from "@mui/material";
 import {ArrowBackOutlined, ArrowForwardOutlined} from "@mui/icons-material";
-import HouseCard from "../house-card/house-card";
+import ListHouseCard from "../list-house-card/list-house-card";
 
 export default function LeftSide({
                                      sortBy,
@@ -37,9 +38,13 @@ export default function LeftSide({
                 </div>
             </div>
             <div className={isGrid ? style.agentContainer : style.agentContainerList}>
-                {houses.map((house, i) => (
-                    <HouseCard house={house} isGrid={isGrid} key={i}/>
-                ))}
+                {isGrid ? houses.map((house, i) => (
+                        <GridHouseCard house={house} key={i}/>
+                    )) :
+                    houses.map((house, i) => (
+                        <ListHouseCard house={house} key={i}/>
+                    ))
+                }
             </div>
             <div className={style.paginationContainer}>
                 <CustomPagination page={paginationPage} size="large" count={totalPageCount} variant="outlined"

@@ -1,18 +1,21 @@
-import houseCardStyle from "./house-card.module.scss"
+import houseCardStyle from "./grid-house-card.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
-import agentCardStyle from "../../agent-list/agent-card/agent-card.module.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Carousel from "../img-carousel/carousel";
 
-export default function HouseCard({house, isGrid}) {
+export default function GridHouseCard({house}) {
     return (
-        <div className={`${houseCardStyle.card} ${!isGrid && houseCardStyle.list}`}>
+        <div className={`${houseCardStyle.card}`}>
             <div className={houseCardStyle.imgContainer}>
-                <img src={house.photos[0]} alt=""/>
-                <div className={houseCardStyle.listing}>
-
-                </div>
+                <Carousel tags={house.tags}>
+                    {house.photos.map((photo, i) => (
+                        <img src={photo} key={i}/>
+                    ))}
+                </Carousel>
             </div>
-            <div className={`${houseCardStyle.detail} ${!isGrid && houseCardStyle.w70}`}>
+            <div className={`${houseCardStyle.detail}`}>
                 <div className={houseCardStyle.content}>
                     <p className={houseCardStyle.type}>{house.type}</p>
                     <h4>{house.name}</h4>
@@ -29,7 +32,7 @@ export default function HouseCard({house, isGrid}) {
                         </li>
                     </ul>
                 </div>
-                <div className={`${houseCardStyle.footer} ${isGrid && agentCardStyle.borderTop}`}>
+                <div className={`${houseCardStyle.footer}`}>
                     <div className={houseCardStyle.profile}>
                         <img src={house.creator.photo} alt=""/>
                         <p>{house.creator.name}</p>

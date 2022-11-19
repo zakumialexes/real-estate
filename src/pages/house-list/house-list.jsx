@@ -3,6 +3,7 @@ import ListHeader from "../agent-list/list-header/list-header";
 import {useEffect, useState} from "react";
 import LeftSide from "./left-side/left-side";
 import usePaginate from "../agent-list/pagination";
+import RightSide from "./right-side/right-side";
 
 export default function HouseList() {
     const [sortBy, setSortBy] = useState(0);
@@ -26,6 +27,7 @@ export default function HouseList() {
                 </ListHeader>
                 <div className={houseStyle.content}>
                     <LeftSide {...leftSideProps}/>
+                    <RightSide showSearchOverlay={showSearchOverlay} setShowSearchOverlay={setShowSearchOverlay}/>
                 </div>
             </div>
         </div>
