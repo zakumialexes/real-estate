@@ -44,7 +44,7 @@ const Header = ({ title = "Login", img }) => {
               fontSize: "16px",
             }}
           >
-            <Link underline="hover" sx={{ color: "#fff" }} href="/">
+            <Link underline="hover" sx={{ color: "#fff !important" }} href="/">
               Home
             </Link>
 
