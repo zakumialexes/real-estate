@@ -1,11 +1,13 @@
-import {CustomMenuItem, CustomSelect} from "../../../agent-list/custom-components";
+import {CustomMenuItem, CustomSelect, MinimumDistanceSlider} from "../../../agent-list/custom-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 
-const types = ["property type", "apartment", "bungalow", "condo", "house", "land", "single family"];
+const typeSelect = ["property type", "apartment", "bungalow", "condo", "house", "land", "single family"];
 const statusSelect = ["status", "apartment", "bungalow", "condo", "house", "land", "single family"];
 const bathroomsSelect = ["bathrooms", 1, 2, 3, 4, 5, 6];
-const bedroomsSelect= ["bedrooms", 1, 2, 3, 4, 5, 6];
+const bedroomsSelect = ["bedrooms", 1, 2, 3, 4, 5, 6];
+const garagesSelect = ["garages", "yes", "no", "other"];
+const yearBuiltSelect = ["year built", 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
 
 
 export default function HouseSearch({
@@ -15,7 +17,14 @@ export default function HouseSearch({
                                         handleTypeChange,
                                         bathrooms,
                                         handleBathroomChange,
-    bedrooms,handleBedroomChange
+                                        bedrooms,
+                                        handleBedroomChange,
+                                        garages,
+                                        handleGarageChange,
+                                        yearBuilt,
+                                        handleYearBuiltChange,
+                                        price,
+                                        setPrice
                                     }) {
     return (
         <>
@@ -40,13 +49,14 @@ export default function HouseSearch({
                 label="type"
                 onChange={handleTypeChange}
             >
-                {types.map((category, i) => (
+                {typeSelect.map((category, i) => (
                     <CustomMenuItem value={category} key={i}>
                         {category === "all" ? "All Categories" : category}
                         <span><FontAwesomeIcon icon={faCheck}/></span>
                     </CustomMenuItem>
                 ))}
             </CustomSelect>
+               <MinimumDistanceSlider value={price} setValue={setPrice}/>
             <CustomSelect
                 labelId="status"
                 id="category-select"
@@ -54,7 +64,7 @@ export default function HouseSearch({
                 label="category"
                 onChange={handleBathroomChange}
             >
-                {bathroomsSelect.map((bathroom,i)=>(
+                {bathroomsSelect.map((bathroom, i) => (
                     <CustomMenuItem value={bathroom} key={i}>
                         {bathroom}
                         <span><FontAwesomeIcon icon={faCheck}/></span>
@@ -68,9 +78,37 @@ export default function HouseSearch({
                 label="category"
                 onChange={handleBedroomChange}
             >
-                {bedroomsSelect.map((bedroom,i)=>(
+                {bedroomsSelect.map((bedroom, i) => (
                     <CustomMenuItem value={bedroom} key={i}>
                         {bedroom}
+                        <span><FontAwesomeIcon icon={faCheck}/></span>
+                    </CustomMenuItem>
+                ))}
+            </CustomSelect>
+            <CustomSelect
+                labelId="garage"
+                id="garage-select"
+                value={garages}
+                label="garage"
+                onChange={handleGarageChange}
+            >
+                {garagesSelect.map((garage, i) => (
+                    <CustomMenuItem value={garage} key={i}>
+                        {garage}
+                        <span><FontAwesomeIcon icon={faCheck}/></span>
+                    </CustomMenuItem>
+                ))}
+            </CustomSelect>
+            <CustomSelect
+                labelId="year-built"
+                id="year-built-select"
+                value={yearBuilt}
+                label="garage"
+                onChange={handleYearBuiltChange}
+            >
+                {yearBuiltSelect.map((year, i) => (
+                    <CustomMenuItem value={year} key={i}>
+                        {year}
                         <span><FontAwesomeIcon icon={faCheck}/></span>
                     </CustomMenuItem>
                 ))}

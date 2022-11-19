@@ -15,8 +15,11 @@ import HouseSearch from "./house-search/house-search";
 export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     const [type, setType] = useState("property type");
     const [status, setStatus] = useState("status");
+    const [price, setPrice] = useState([52229, 98514])
     const [bathrooms, setBathrooms] = useState("bathrooms")
     const [bedrooms, setBedrooms] = useState("bedrooms")
+    const [garages, setGarage] = useState("garages")
+    const [yearBuilt, setYearBuilt] = useState("year built")
 
     const handleTypeChange = (event) => {
         setType(event.target.value);
@@ -30,6 +33,12 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     const handleBedroomChange = (event) => {
         setBedrooms(event.target.value);
     };
+    const handleGarageChange = (event) => {
+        setGarage(event.target.value)
+    }
+    const handleYearBuiltChange = (event) => {
+        setYearBuilt(event.target.value)
+    }
     const houseSearchProps = {
         type,
         handleTypeChange,
@@ -38,7 +47,13 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
         bathrooms,
         handleBathroomChange,
         bedrooms,
-        handleBedroomChange
+        handleBedroomChange,
+        garages,
+        handleGarageChange,
+        yearBuilt,
+        handleYearBuiltChange,
+        price,
+        setPrice
     }
     return (
         <>
