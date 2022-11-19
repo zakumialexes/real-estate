@@ -1,8 +1,11 @@
-import logo from "./logo.svg"
 import "./App.css"
+import Faq from "./pages/faq/faq"
 
 function App() {
-    return <div className="App">Shwe Real Estate</div>
+    
+    return <div className="App">
+       <Faq />
+    </div>
 }
 
 export default App
