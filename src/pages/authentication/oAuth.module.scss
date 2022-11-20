@@ -1,0 +1,31 @@
+.oAuth{
+    display:flex !important;
+    justify-content: center !important;
+    color:#fff !important;
+    text-transform: capitalize !important;
+}
+
+.facebook{
+    position: relative !important;
+    background-color: #3B5998 !important;
+    &:hover{
+        background-color: #3B5998 !important;
+    }
+    svg{
+        position: absolute !important;
+        left:1rem !important;
+    }
+}
+
+.google{
+    position: relative !important;
+    background-color: #EA4335 !important;
+    &:hover{
+        background-color: #EA4335 !important;
+    }
+    svg{
+        position: absolute !important;
+        left:1rem !important;
+    }
+}
+
