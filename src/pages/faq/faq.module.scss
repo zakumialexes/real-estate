@@ -16,7 +16,6 @@ $active-color: #ff5a5f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
   border-radius: 10px;
   border: 2px solid $border-color;
   padding: 10px 15px;
@@ -46,15 +45,13 @@ $active-color: #ff5a5f;
 .answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .7s ease;
+  transition: max-height 0.7s ease;
   font-size: 14px;
 }
 
 .show {
-  // height: auto;
-  max-height: 500px;
-  // transition: all 0.5s cubic-bezier(1, 0, 1, 0);
-  animation: fade .7s ease-in-out;
+  max-height: 5000px;
+  animation: fade 0.7s ease;
 }
 
 @keyframes fade {
@@ -72,10 +69,20 @@ $active-color: #ff5a5f;
   .container {
     width: 80%;
   }
+  .question {
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 100%;
+    border: none;
+  }
+  .question {
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
   }
 }

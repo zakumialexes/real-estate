@@ -38,10 +38,5 @@ export const data = [
     id: "8",
     Q: " What makes your financial projections special?",
     A: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a semper ante, eu finibus diam. Sed mauris velit, sagittis eget tincidunt tincidunt, accumsan ac tellus. Sed vulputate, purus eget venenatis tincidunt, lorem lorem maximus risus, facilisis scelerisque est metus eget justo. Etiam vestibulum felis sit amet porta egestas.  ",
-  },
-  {
-    id: "9",
-    Q: " How does the process work?",
-    A: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a semper ante, eu finibus diam. Sed mauris velit, sagittis eget tincidunt tincidunt, accumsan ac tellus. Sed vulputate, purus eget venenatis tincidunt, lorem lorem maximus risus, facilisis scelerisque est metus eget justo. Etiam vestibulum felis sit amet porta egestas.  ",
-  },
+  }
 ];
