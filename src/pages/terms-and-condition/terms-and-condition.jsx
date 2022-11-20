@@ -88,7 +88,7 @@ const TermsAndCondition = () => {
                       <li key={nL.id}>
                         <a href={nL.to} className={TermsAndConditionStyle.link}>
                           <PlayArrowIcon
-                            sx={{ fontSize: ".7rem", marginRight: ".2rem" }}
+                            sx={{ fontSize: "1rem", marginRight: ".2rem" }}
                           />
                           {nL.link}
                         </a>
