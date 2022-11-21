@@ -9,7 +9,7 @@ export default function GridHouseCard({house}) {
     return (
         <div className={`${houseCardStyle.card}`}>
             <div className={houseCardStyle.imgContainer}>
-                <Carousel tags={house.tags}>
+                <Carousel tags={house.tags} dots={false}>
                     {house.photos.map((photo, i) => (
                         <img src={photo} key={i}/>
                     ))}

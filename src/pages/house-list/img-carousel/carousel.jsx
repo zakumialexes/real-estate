@@ -1,12 +1,12 @@
 import Slider from "react-slick";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useRef} from "react";
 import carouselStyle from "./img-carousel.module.scss"
 
-export default function Carousel({tags, children}) {
+export default function Carousel({dots, children, tags = []}) {
     const settings = {
-        dots: false,
+        dots,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -21,8 +21,8 @@ export default function Carousel({tags, children}) {
             <Slider {...settings} ref={sliderRef}>
                 {children}
             </Slider>
-            <div className={carouselStyle.nextArrow} onClick={() => sliderRef.current.slickNext()}>
-                <FontAwesomeIcon icon={faArrowRight}/>
+            <div className={carouselStyle.prevArrow} onClick={() => sliderRef.current.slickPrev()}>
+                <FontAwesomeIcon icon={faArrowLeft}/>
             </div>
             <div className={carouselStyle.tagContainer}>
                 <ul className={carouselStyle.tags}>

@@ -1,9 +1,11 @@
+$orange: #ff5a5f;
+
 .container {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 8px;
   margin-bottom: 30px;
-  padding: 30px 30px 20px;
+  padding: 30px 30px 40px;
   position: relative;
 
   h4 {
@@ -11,4 +13,89 @@
     font-size: 18px;
     color: #484848;
   }
+}
+
+.carouselContainer {
+  position: relative;
+
+  .carouselCard {
+    height: 250px;
+    position: relative;
+  }
+
+  .carouselImage {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.tagContainer {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 100%;
+}
+
+.tags {
+  display: inline-flex;
+  width: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .tag {
+    background-color: $orange;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 75px;
+    margin-right: 8px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.carouselContent {
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  width: 100%;
+
+  a {
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+
+    small {
+      font-size: 14px;
+    }
+  }
+
+  h4 {
+    color: white;
+  }
+}
+
+.nextArrow, .prevArrow {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+}
+
+.nextArrow {
+  right: 25px;
+}
+
+.prevArrow {
+  left: 25px;
 }

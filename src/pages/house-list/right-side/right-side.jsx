@@ -11,6 +11,7 @@ import rightSideStyle from "./right-side.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import HouseSearch from "./house-search/house-search";
+import CategoriesProperties from "../categories-properties/categories-properties";
 
 export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     const [keyword, setKeyword] = useState("");
@@ -84,6 +85,7 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
                     <HouseSearch {...houseSearchProps}/>
                 </SearchOverlay>
                 <FeaturedProperties/>
+                <CategoriesProperties/>
                 <RecentlyViewed/>
             </div>
         </>
