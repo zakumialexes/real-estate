@@ -1,6 +1,11 @@
-import {CustomMenuItem, CustomSelect, MinimumDistanceSlider} from "../../../agent-list/custom-components";
+import {
+    CustomMenuItem,
+    CustomSelect,
+    IconTextField,
+    MinimumDistanceSlider
+} from "../../../agent-list/custom-components/custom-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCheck} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faLocationDot, faSearch} from "@fortawesome/free-solid-svg-icons";
 
 const typeSelect = ["property type", "apartment", "bungalow", "condo", "house", "land", "single family"];
 const statusSelect = ["status", "apartment", "bungalow", "condo", "house", "land", "single family"];
@@ -11,6 +16,10 @@ const yearBuiltSelect = ["year built", 2013, 2014, 2015, 2016, 2017, 2018, 2019,
 
 
 export default function HouseSearch({
+                                        keyword,
+                                        handleKeywordChange,
+                                        location,
+                                        handleLocationChange,
                                         status,
                                         handleStatusChange,
                                         type,
@@ -28,6 +37,10 @@ export default function HouseSearch({
                                     }) {
     return (
         <>
+            <IconTextField value={keyword} handleChange={handleKeywordChange} forName="keyword"
+                           icon={<FontAwesomeIcon icon={faSearch}/>}/>
+            <IconTextField value={location} handleChange={handleLocationChange} forName="location"
+                           icon={<FontAwesomeIcon icon={faLocationDot}/>}/>
             <CustomSelect
                 labelId="status"
                 id="category-select"
@@ -56,7 +69,7 @@ export default function HouseSearch({
                     </CustomMenuItem>
                 ))}
             </CustomSelect>
-               <MinimumDistanceSlider value={price} setValue={setPrice}/>
+            <MinimumDistanceSlider value={price} setValue={setPrice}/>
             <CustomSelect
                 labelId="status"
                 id="category-select"

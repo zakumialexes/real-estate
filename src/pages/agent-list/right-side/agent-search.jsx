@@ -1,6 +1,6 @@
 // Files
 import style from "./right-side.module.scss";
-import {CustomMenuItem, CustomSelect} from "../custom-components";
+import {CustomMenuItem, CustomSelect} from "../custom-components/custom-components";
 
 // Icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

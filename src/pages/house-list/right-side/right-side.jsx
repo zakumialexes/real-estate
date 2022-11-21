@@ -13,6 +13,8 @@ import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import HouseSearch from "./house-search/house-search";
 
 export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
+    const [keyword, setKeyword] = useState("");
+    const [location, setLocation] = useState("");
     const [type, setType] = useState("property type");
     const [status, setStatus] = useState("status");
     const [price, setPrice] = useState([52229, 98514])
@@ -21,6 +23,12 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     const [garages, setGarage] = useState("garages")
     const [yearBuilt, setYearBuilt] = useState("year built")
 
+    const handleKeywordChange = (event) => {
+        setKeyword(event.target.value);
+    };
+    const handleLocationChange = (event) => {
+        setLocation(event.target.value);
+    };
     const handleTypeChange = (event) => {
         setType(event.target.value);
     };
@@ -40,6 +48,10 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
         setYearBuilt(event.target.value)
     }
     const houseSearchProps = {
+        keyword,
+        handleKeywordChange,
+        location,
+        handleLocationChange,
         type,
         handleTypeChange,
         status,
@@ -58,9 +70,7 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
     return (
         <>
             <div className={rightSideStyle.rightSide}>
-                {/* Agent Search Section Start */}
-                <div className={rightSideStyle.agentSearch}>
-                    <h4 className={rightSideStyle.h4}>Agent Search</h4>
+                <div className={rightSideStyle.houseSearch}>
                     <HouseSearch {...houseSearchProps}/>
                 </div>
                 <SearchOverlay doesShow={showSearchOverlay}>
@@ -71,8 +81,8 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
                         <FontAwesomeIcon icon={faXmark}/>
                     </span>
                     </h4>
+                    <HouseSearch {...houseSearchProps}/>
                 </SearchOverlay>
-                {/*  Agent Search Section End  */}
                 <FeaturedProperties/>
                 <RecentlyViewed/>
             </div>

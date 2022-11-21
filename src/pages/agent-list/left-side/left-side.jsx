@@ -2,7 +2,7 @@
 import style from "./left-side.module.scss";
 import SortByFeatured from "../sort-by-featured";
 import AgentCard from "../agent-card/agent-card";
-import {CustomPagination} from "../custom-components";
+import {CustomPagination} from "../custom-components/custom-components";
 
 // Library
 import {PaginationItem} from "@mui/material";

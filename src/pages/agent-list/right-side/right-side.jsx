@@ -25,7 +25,7 @@ export default function RightSide({showSearchOverlay, setShowSearchOverlay}) {
         <>
             <div className={rightSideStyle.rightSide}>
                 {/* Agent Search Section Start */}
-                <div className={rightSideStyle.agentSearch}>
+                <div className={rightSideStyle.houseSearch}>
                     <h4 className={rightSideStyle.h4}>Agent Search</h4>
                     <AgentSearch category={category} city={city} handleCategoryChange={handleCategoryChange}
                                  handleCityChange={handleCityChange}/>

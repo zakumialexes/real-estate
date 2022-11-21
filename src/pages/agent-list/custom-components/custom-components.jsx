@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
+import customCStyles from "./custom-components.module.scss"
 
 export const CustomPagination = styled(Pagination)(() => ({
     button: {
@@ -120,11 +121,11 @@ export function MinimumDistanceSlider({value, setValue}) {
                     marginBottom: "16px",
                     height: "56px",
                     fontWeight: "400",
-                    justifyContent:"space-between"
+                    justifyContent: "space-between"
                 }}
             >
                 Price
-                <div style={{display: "block",marginRight:"5px"}}>
+                <div style={{display: "block", marginRight: "5px"}}>
                     <FontAwesomeIcon icon={faCaretDown}/>
                 </div>
             </Button>
@@ -184,3 +185,17 @@ export function MinimumDistanceSlider({value, setValue}) {
         </div>
     );
 }
+
+export const IconTextField = ({value, handleChange, forName, icon}) => {
+    return (
+        <div style={{
+            position: "relative"
+        }} className={customCStyles.iconTextField}>
+            <input name={forName} className={customCStyles.input} placeholder={forName} value={value}
+                   onChange={handleChange}/>
+            <label form={forName} className={customCStyles.iconTextFieldLabel}>
+                {icon}
+            </label>
+        </div>
+    );
+};

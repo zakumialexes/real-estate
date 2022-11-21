@@ -1,7 +1,7 @@
 // Files
 import style from "../../agent-list/left-side/left-side.module.scss";
 import SortByFeatured from "../../agent-list/sort-by-featured";
-import {CustomPagination} from "../../agent-list/custom-components";
+import {CustomPagination} from "../../agent-list/custom-components/custom-components";
 import GridHouseCard from "../grid-house-card/grid-house-card"
 
 // Library
