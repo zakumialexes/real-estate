@@ -4,7 +4,7 @@ import rVStyle from "./recently-viewed.module.scss"
 function RecentlyViewed(props) {
     const [houses, setHouses] = useState([])
     useEffect(() => {
-        fetch("http://localhost:3500/houses?=_limit=3").then(response => response.json()).then(data => {
+        fetch("http://localhost:3500/houses?_limit=3").then(response => response.json()).then(data => {
             setHouses(data);
         })
     }, [])

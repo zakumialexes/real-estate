@@ -16,57 +16,60 @@
 .featuredHouse {
   display: flex;
   margin-bottom: 30px;
+}
 
-  .carouselContainer {
-    flex: 0 0 35%;
-    max-width: 35%;
-    margin-right: 1rem;
+.content {
+  flex: 0 0 60%;
+  max-width: 60%;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 7px;
+  h4 {
+    font-size: 16px;
+    color: #484848;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    font-size: 16px;
+    color: rgb(255, 90, 95);
+    font-weight: bold;
+    line-height: 1.2;
+    text-decoration: none;
+
+    small {
+      font-size: 80%;
     }
   }
 
-  .content {
-    flex: 0 0 65%;
-    max-width: 65%;
+  .infos {
+    margin: 0;
+    padding: 0;
 
-    h4 {
-      font-size: 16px;
+    li {
+      display: inline-block;
+      font-size: 14px;
       color: #484848;
-      font-weight: bold;
       line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
 
-    a {
-      font-size: 16px;
-      color: rgb(255, 90, 95);
-      font-weight: bold;
-      line-height: 1.2;
-      text-decoration: none;
-
-      small {
-        font-size: 80%;
+      &:not(:last-child) {
+        margin-right: 0.3rem;
       }
     }
+  }
+}
 
-    .infos {
-      margin: 0;
-      padding: 0;
+.housesContainer {
+  width: 100%;
+}
 
-      li {
-        display: inline-block;
-        font-size: 14px;
-        color: #484848;
-        line-height: 1.2;
-        &:not(:last-child){
-          margin-right: 0.3rem;
-        }
-      }
-    }
+.imgContainer {
+  max-width: 40%;
+  flex: 0 0 40%;
+  margin-right: 10px;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
   }
 }
