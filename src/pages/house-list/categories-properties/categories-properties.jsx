@@ -21,7 +21,7 @@ export default function CategoriesProperties() {
             <div>
                 <ul className={cPStyle.list}>
                     {categoryList.map((category,i)=>(
-                        <li key={i}>
+                        <li key={`category${i}`}>
                             <a href="#"><FontAwesomeIcon icon={faCaretRight}/>{category.name}
                                 <span className="float-right">{category.properties} properties</span></a>
                         </li>

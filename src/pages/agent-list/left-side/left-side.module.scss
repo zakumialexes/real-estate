@@ -46,11 +46,14 @@ $textDark: #484848;
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
-  .agentContainer {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .searchHeader {
     flex-direction: row;
     align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .agentContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
