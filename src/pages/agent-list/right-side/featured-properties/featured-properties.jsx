@@ -1,8 +1,12 @@
+import {useEffect, useRef, useState} from "react";
 import fPStyle from "./featured-properties.module.scss"
-import React, {useEffect, useRef, useState} from "react";
-import Slider from "react-slick"
+
+// Icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+
+// React slick
+import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
