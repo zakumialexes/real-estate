@@ -22,7 +22,8 @@
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.3",
         "react-scripts": "5.0.1",
-        "web-vitals": "^3.0.4"
+        "web-vitals": "^3.0.4",
+        "sass": "^1.56.1"
     },
     "scripts": {
         "build": "react-scripts build",
@@ -51,10 +52,6 @@
         ]
     },
     "devDependencies": {
-<<<<<<< HEAD
         "npm-run-all": "^4.1.5"
-=======
-        "sass": "^1.56.1"
->>>>>>> 884a6c9512f89d558248c58ba7ebf9c2bd4ef64e
     }
 }
