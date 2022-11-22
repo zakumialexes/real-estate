@@ -1,8 +1,14 @@
-import "./App.css";
-import TermsAndCondition from "./pages/terms-and-condition/terms-and-condition";
+import "./App.css"
+import { RouterProvider } from "react-router-dom"
+import router from "./router/route"
+import { Layout } from "./layout/layout"
 
 function App() {
-    return <div className="App"> <TermsAndCondition /> </div>
+    return (
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
+    )
 }
 
 export default App
