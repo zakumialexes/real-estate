@@ -1,0 +1,30 @@
+.title{
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+    color: #484848;
+    font-family: inherit;
+    font-weight: bold !important;
+}
+
+.changeRoute{
+    font-size: 14px;
+    a{
+        color:#ff5a5f !important;
+        cursor: pointer;
+    }
+}
+
+.confirmBtn{
+    color:#fff !important;
+    background-color: #ff5a5f !important;
+    border: 1px solid #ff5a5f !important;
+    text-transform: capitalize !important;
+    margin-bottom: 4px !important;
+    &:hover{
+        color:#ff5a5f !important;
+        background-color: transparent !important;
+        border: 1px solid #ff5a5f !important;
+    }
+}
+
+

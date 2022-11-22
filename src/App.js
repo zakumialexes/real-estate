@@ -1,12 +1,13 @@
 import "./App.css"
-import AgentList from "./pages/agent-list/agent-list.";
+import { RouterProvider } from "react-router-dom"
+import router from "./router/route"
+import { Layout } from "./layout/layout"
 
 function App() {
     return (
-        <>
-            <div className="App">Shwe Real Estate</div>
-            <AgentList/>
-        </>
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
     )
 }
 
