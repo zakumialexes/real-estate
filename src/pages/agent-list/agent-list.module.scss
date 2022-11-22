@@ -1,0 +1,40 @@
+$textOrange: #ff5a5f;
+$orangeDarker: #f53c41;
+$textDark: #484848;
+
+.section {
+  padding: 60px 0;
+}
+
+.flexFull {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 15px;
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
