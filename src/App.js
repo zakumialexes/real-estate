@@ -1,11 +1,14 @@
 import "./App.css"
-import Faq from "./pages/faq/faq"
+import { RouterProvider } from "react-router-dom"
+import router from "./router/route"
+import { Layout } from "./layout/layout"
 
 function App() {
-    
-    return <div className="App">
-       <Faq />
-    </div>
+    return (
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
+    )
 }
 
 export default App
