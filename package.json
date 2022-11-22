@@ -17,10 +17,11 @@
         "@testing-library/user-event": "^14.4.3",
         "axios": "^1.1.3",
         "json-server": "^0.17.1",
+        "npm-run-all": "^4.1.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.3",
         "react-scripts": "5.0.1",
-        "sass": "^1.56.1",
         "web-vitals": "^3.0.4"
     },
     "scripts": {
@@ -50,6 +51,10 @@
         ]
     },
     "devDependencies": {
+<<<<<<< HEAD
         "npm-run-all": "^4.1.5"
+=======
+        "sass": "^1.56.1"
+>>>>>>> 884a6c9512f89d558248c58ba7ebf9c2bd4ef64e
     }
 }

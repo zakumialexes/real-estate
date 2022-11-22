@@ -1,13 +1,13 @@
 import "./App.css"
-import Login from "./pages/authentication/Login"
-import Register from "./pages/authentication/Register"
+import { RouterProvider } from "react-router-dom"
+import router from "./router/route"
+import { Layout } from "./layout/layout"
 
 function App() {
     return (
-    <div className="App">
-        <Register/>
-        <Login/>
-    </div>
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
     )
 }
 
