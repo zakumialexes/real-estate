@@ -4,6 +4,7 @@ import Login from "../pages/authentication/Login"
 import Register from "../pages/authentication/Register"
 import Faq from "../pages/faq/faq"
 import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
+import Service from "../pages/service/Service"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
             <Route path="register" element={<Register />} />
             <Route path="faq" element={<Faq />} />
             <Route path="terms-and-conditions" element={<TermsAndCondition />} />
+            <Route path="service" element={<Service />} />
         </Route>
     )
 )
