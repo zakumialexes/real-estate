@@ -1,4 +1,5 @@
 import { Avatar, Box, Button, Container, Link, Typography, Stack, List, ListItem } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import Style from "../navbar/navbar.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -89,7 +90,7 @@ const DesktopNav = ({ large }) => {
                     </Link>
                     <span className={Style.divider}></span>
 
-                    <Link href="" className={Style.center}>
+                    <Link href="login" className={Style.center}>
                         <FontAwesomeIcon icon={faUser} />
                         <Typography marginLeft={1}>Login/Register</Typography>
                     </Link>

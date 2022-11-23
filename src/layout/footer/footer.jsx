@@ -80,7 +80,7 @@ const Footer = () => {
                                                 fontSize: "18px !important",
                                             }}
                                         >
-                                            <FontAwesomeIcon icon={faBehance} />
+                                            <FontAwesomeIcon icon={item} />
                                         </Link>
                                     </ListItem>
                                 )
