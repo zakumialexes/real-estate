@@ -4,11 +4,13 @@ import Login from "../pages/authentication/Login"
 import Register from "../pages/authentication/Register"
 import Faq from "../pages/faq/faq"
 import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
+import HouseList from "../pages/house-list/house-list"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/">
             <Route path="agents" element={<AgentList />} />
+            <Route path="houses" element={<HouseList />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="faq" element={<Faq />} />
