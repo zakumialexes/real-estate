@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Box, Stack } from "@mui/system";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Style from "./contact.module.scss";
 import {
   faFacebookF,
@@ -79,12 +79,21 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInput({ ...input, [name]: value });
-  };
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+  const subjectRef = useRef();
+  const messageRef = useRef();
 
-  const handleClick = async () => {};
+  const handleClick = async () => {
+    setInput({
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      subject: subjectRef.current.value,
+      message: messageRef.current.value,
+    });
+  };
 
   return (
     <>
@@ -118,50 +127,50 @@ const Contact = () => {
                   }}
                 >
                   <OutlinedInput
-                    onChange={handleChange}
-                    value={input.name}
+                    inputRef={nameRef}
                     sx={inputStyle}
+                    name="name"
                     placeholder="Name"
                     type="text"
                     id="name"
                   />
 
                   <OutlinedInput
-                    onChange={handleChange}
-                    value={input.email}
+                    inputRef={emailRef}
                     sx={inputStyle}
+                    name="email"
                     placeholder="Email"
                     type="email"
                     id="email"
                   />
 
                   <OutlinedInput
-                    onChange={handleChange}
-                    value={input.phone}
+                    inputRef={phoneRef}
                     sx={inputStyle}
+                    name="phone"
                     placeholder="Phone"
                     type="text"
                     id="phone"
                   />
 
                   <OutlinedInput
-                    onChange={handleChange}
-                    value={input.subject}
+                    inputRef={subjectRef}
                     sx={inputStyle}
+                    name="subject"
                     placeholder="Subject"
                     type="text"
                     id="subject"
                   />
 
                   <OutlinedInput
-                    onChange={handleChange}
-                    value={input.message}
+                    inputRef={messageRef}
                     multiline
                     fullWidth
                     minRows={3}
                     sx={{ marginBottom: "20px" }}
                     placeholder="Your Message"
                     id="message"
+                    name="message"
                   />
                 </Stack>
                 <Button
