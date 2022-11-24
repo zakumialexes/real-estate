@@ -11,7 +11,6 @@ import { Box, Stack } from "@mui/system";
 import React, { useState } from "react";
 import Style from "./contact.module.scss";
 import {
-  faBehance,
   faFacebookF,
   faGoogle,
   faInstagram,

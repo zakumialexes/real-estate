@@ -67,46 +67,21 @@ const DesktopNav = ({ large }) => {
           Shwe Real Estate
         </Typography>
       </Box>
-      {/* <Box sx={{ flex: 2, display: "flex", justifyContent: "end" }}>
-        <List
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "end",
-            fontSize: "16px",
-            cursor: "pointer",
-            gap: 3,
-            marginX: "16px",
-          }}
-        >
-          {links.map((link, i) => (
-            <ListItem
-              disableGutters
-              key={i}
-              sx={{
-                display: "flex",
-                gap: 1,
-                alignItems: "center",
-                "& svg": { height: ".6em" },
-              }}
-            >
-              <Link>{link}</Link>
-              <FontAwesomeIcon icon={faChevronDown} />
-            </ListItem>
-          ))}
-        </List>
-      </Box> */}
 
       <Stack direction={"row"} gap={2} alignItems="center">
         <Stack direction={"row"} alignItems="center" gap={2} sx={{}}>
           <Link href="">
-            <Typography>Contact</Typography>
+            <Typography fontSize="16px" color="#484848">
+              Contact
+            </Typography>
           </Link>
           <span className={Style.divider}></span>
 
           <Link href="login" className={Style.center}>
-            <FontAwesomeIcon icon={faUser} />
-            <Typography marginLeft={1}>Login/Register</Typography>
+            <FontAwesomeIcon className={Style.text} icon={faUser} />
+            <Typography fontSize="16px" color="#484848" marginLeft={1}>
+              Login/Register
+            </Typography>
           </Link>
         </Stack>
         <Button
@@ -166,8 +141,12 @@ export const Sidebar = ({ openSidebar }) => {
               padding: "11px 10px 11px 20px",
             }}
           >
-            <FontAwesomeIcon style={{ marginRight: "8px" }} icon={item.icon} />
-            <Link>{item.link}</Link>
+            <FontAwesomeIcon
+              className={Style.text}
+              style={{ marginRight: "8px" }}
+              icon={item.icon}
+            />
+            <Link sx={{ color: "#484848", fontSize: "16px" }}>{item.link}</Link>
           </ListItem>
         ))}
       </List>
