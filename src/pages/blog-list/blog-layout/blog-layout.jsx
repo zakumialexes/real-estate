@@ -24,7 +24,7 @@ function BlogLayout({children}) {
                     {children}
                 </Grid>
                 {/*Right Side*/}
-                <Grid item direction="column" md={4} maxWidth={"100%"}>
+                <Grid item md={4} maxWidth={"100%"}>
                     <CategoriesProperties/>
                     <FeaturedProperties/>
                     <TagsList/>
