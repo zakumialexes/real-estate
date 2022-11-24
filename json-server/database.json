@@ -1,0 +1,60 @@
+{
+  "testimonial": [
+    {
+      "id": "1",
+      "name": "Augusta Silva",
+      "role": "Sales Manager",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    },
+    {
+      "id": "2",
+      "name": "Jennifer Barton",
+      "role": "Product Manager",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    },
+    {
+      "id": "3",
+      "name": "Kathleen Myers",
+      "role": "Casher",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    }
+  ],
+  "OurTeam": [
+    {
+      "id": "1",
+      "name": "Mariusz Ciesla",
+      "role": "Broker",
+      "img": "/assets/about/agent2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Kathleen Myers",
+      "role": "agent",
+      "img": "/assets/about/broker1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Helene Powers",
+      "role": "Broker",
+      "img": "/assets/about/broker3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker3.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker1.jpg"
+    }
+  ]
+}
