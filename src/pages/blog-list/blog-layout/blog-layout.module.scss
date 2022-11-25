@@ -1,0 +1,44 @@
+$textOrange: #ff5a5f;
+$textDark: #484848;
+
+.breadcrumbContainer {
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .75rem 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: .25rem;
+    font-weight: 400;
+
+    li a {
+      color: #555555;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+    .currentViewName {
+      margin-left: 5px;
+    }
+
+    li:last-child {
+      padding-left: 0.5rem;
+      color: $textOrange;
+
+      &::before {
+        display: inline-block;
+        padding-right: .5rem;
+        color: #6c757d;
+        content: "/";
+      }
+    }
+
+  }
+}
+
+.breadcrumbTitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: $textDark;
+}

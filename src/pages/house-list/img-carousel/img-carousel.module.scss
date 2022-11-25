@@ -78,12 +78,14 @@ $orange: #ff5a5f;
     height: 25px;
     line-height: 25px;
     text-align: center;
-    width: 75px;
+    min-width: 75px;
     margin-right: 8px;
+    padding: 0 10px;
 
     a {
       color: white;
       text-decoration: none;
+      text-transform: capitalize;
     }
   }
 }
