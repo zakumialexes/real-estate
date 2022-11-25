@@ -6,7 +6,11 @@ import TagsList from "../tags/tags-list";
 
 function BlogLayout({children}) {
     return (
-        <Container maxWidth="lg" sx={{padding: "60px 0"}}>
+        <Container maxWidth="lg" sx={{
+            padding: {
+                sm: "60px 0"
+            }
+        }}>
             <div className={style.breadcrumbContainer}>
                 <ol className={style.breadcrumb}>
                     <li className="">
