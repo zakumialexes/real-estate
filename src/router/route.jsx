@@ -12,6 +12,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/">
             <Route path="agents" element={<AgentList />} />
+            <Route path="houses" element={<HouseList />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="faq" element={<Faq />} />
