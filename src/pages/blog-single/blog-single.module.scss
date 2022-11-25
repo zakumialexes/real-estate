@@ -1,0 +1,177 @@
+$orange: #ff5a5f;
+
+.blogSingleContent {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.tagContainer {
+  margin-bottom: 30px;
+
+  .tag {
+    background-color: $orange;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    min-width: 75px;
+    margin-right: 8px;
+    padding: 0 10px;
+    text-transform: capitalize;
+  }
+}
+
+.blogTitle {
+  font-size: 22px;
+  color: #484848;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.blogInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  & > * {
+    margin-right: 20px;
+  }
+
+  img {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  p {
+    height: 100%;
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.2;
+  }
+
+}
+
+.imgContainer {
+  img {
+    border-radius: 5px;
+    max-width: 100%;
+  }
+}
+
+.description {
+  font-size: 14px;
+  color: #484848;
+  line-height: 1.714;
+  margin: 30px 0 25px;
+  font-weight: 400;
+
+  p {
+    margin: 0;
+  }
+}
+
+.quoteContainer {
+  background-color: rgb(247, 247, 247);
+  border-left: 8px solid #ff5a5f;
+  border-radius: 8px;
+  height: 147px;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  padding: 25px 30px 30px 40px;
+
+  .blockQuote {
+    .quoteIcon {
+      font-size: 16px;
+      color: rgb(187, 187, 187);
+      font-style: italic;
+      line-height: 0.333;
+    }
+
+    .quoteText {
+      font-size: 14px;
+      color: #484848;
+      font-style: italic;
+      line-height: 1.714;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 18px;
+    color: rgb(59, 59, 59);
+    line-height: 1.333;
+    margin-right: 10px;
+  }
+
+  .socialIcon {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 45px;
+    transition: all 0.3s ease 0s;
+    margin-right: 10px;
+  }
+}
+
+.blogPaginate {
+  margin: 35px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .prevPage, .nextPage {
+    display: flex;
+    align-items: center;
+
+    a {
+      border-radius: 50%;
+      height: 45px;
+      line-height: 45px;
+      padding-left: 0;
+      text-align: center;
+      width: 45px;
+
+      svg {
+        font-size: 45px !important;
+        color: rgb(208, 208, 208);
+        transition: color 0.3s;
+      }
+
+      &:hover svg {
+        color: $orange;
+      }
+    }
+
+    .blogPaginateContent {
+      &:last-child {
+        margin-left: 15px;
+      }
+
+      &:first-child {
+        margin-right: 15px;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        color: #484848;
+        line-height: 1.714;
+        margin: 0;
+      }
+    }
+  }
+}
