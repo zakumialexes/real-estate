@@ -19,7 +19,7 @@ body {
 .title {
   color: $titleColor;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 .bodyText {
   color: $titleColor;

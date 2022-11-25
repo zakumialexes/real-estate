@@ -39,7 +39,7 @@ export const Testimonial = () => {
                         fontSize: '1.7rem',
                         letterSpacing: '1px',
                         fontWeight: '600',
-                        marginBottom: '0px'
+                        marginBottom: '20px'
                     }}
                 >Testimonials</Typography>
                 <Typography variant='subtitle1'>Here could be a nice sub title</Typography>
@@ -62,7 +62,7 @@ export const Testimonial = () => {
                                 sx={{
                                     fontSize: '1.1rem',
                                     fontWeight: '500',
-                                    marginBottom: '0px',
+                                    marginBottom: '10px',
                                 }}>{data.name}</Typography>
                             <Typography
                                 variant='subtitle1'

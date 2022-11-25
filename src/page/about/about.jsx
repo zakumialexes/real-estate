@@ -134,7 +134,7 @@ export const About = () => {
           padding: '10px 70px'
         }}
       >
-        <Grid xs={12} md={12}>
+        <Box xs={12} md={12}>
           <Typography variant='h1'
             sx={{
               fontSize: '32px',
@@ -142,7 +142,7 @@ export const About = () => {
             }}
             className={aboutStyle.title}
           >Our Mission Is To FindHouse</Typography>
-        </Grid>
+        </Box>
       </Box>
       <Stack spacing={2} direction="row"
         className={aboutStyle.container}
