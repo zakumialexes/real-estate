@@ -10,18 +10,24 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {faComment, faEye} from "@fortawesome/free-regular-svg-icons";
 import {faFacebookF, faGoogle, faLinkedin, faPinterest, faTwitter} from "@fortawesome/free-brands-svg-icons";
+import RelatedBlogCard from "./related-post-card/related-blog-card";
+import {Grid, Typography} from "@mui/material";
 
 function BlogSingle() {
     const [blog, setBlog] = useState();
+    const [relatedBlogs, setRelatedBlogs] = useState([])
 
-    async function fetchBlog() {
-        await fetch("http://localhost:3500/blog-list/1").then(response => response.json()).then(data => {
-            setBlog(data)
-        })
+    async function fetchBlogs() {
+        const [fetchedBlog, fetchedRelatedBlog] = await Promise.all([
+            fetch("http://localhost:3500/blog-list/1").then(response => response.json()),
+            fetch("http://localhost:3500/blog-list?_limit=2").then(response => response.json())
+        ])
+        setBlog(fetchedBlog)
+        setRelatedBlogs(fetchedRelatedBlog)
     }
 
     useEffect(() => {
-        fetchBlog()
+        fetchBlogs();
     }, [])
 
     return (
@@ -92,6 +98,16 @@ function BlogSingle() {
                         </a>
                     </div>
                 </div>
+                <Grid container spacing={4}>
+                    <Grid item xs={12}>
+                        <Typography variant="h6">Related Posts</Typography>
+                    </Grid>
+                    {relatedBlogs.map((relatedBlog, i) => (
+                        <Grid item key={i} sm={6}>
+                            <RelatedBlogCard blog={relatedBlog}/>
+                        </Grid>
+                    ))}
+                </Grid>
             </div>
         </BlogLayout>
     );

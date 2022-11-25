@@ -1,0 +1,28 @@
+@import "src/pages/blog-list/blog-card/blog-card.module";
+
+.blogCardContainer {
+  .date {
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .description {
+    text-overflow: ellipsis;
+    max-height: 5rem;
+    overflow: hidden;
+  }
+}
+
+.blogCardFooter {
+  .info {
+    img {
+      margin-right: 10px;
+    }
+
+    .readMore {
+      color: $orange;
+    }
+  }
+}
