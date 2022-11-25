@@ -43,26 +43,19 @@ $active-color: #ff5a5f;
 }
 
 .answer {
+  opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.7s ease;
+  transition: opacity 500ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
   font-size: 14px;
 }
 
 .show {
-  max-height: 5000px;
-  animation: fade 0.7s ease;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+  opacity: 1;
+  max-height: 9em;
+  transition: all 500ms linear;
+  will-change: opacity, max-height;
 }
 
 @media screen and (max-width: 1024px) {
