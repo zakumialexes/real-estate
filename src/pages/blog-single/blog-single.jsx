@@ -2,17 +2,21 @@ import React, {useEffect, useState} from 'react';
 import BlogLayout from "../blog-list/blog-layout/blog-layout";
 import style from "./blog-single.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCalendarDays, faQuoteLeft} from "@fortawesome/free-solid-svg-icons";
+import {
+    faCalendarDays,
+    faChevronCircleLeft,
+    faChevronCircleRight,
+    faQuoteLeft
+} from "@fortawesome/free-solid-svg-icons";
 import {faComment, faEye} from "@fortawesome/free-regular-svg-icons";
 import {faFacebookF, faGoogle, faLinkedin, faPinterest, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
-function BlogSingle(props) {
+function BlogSingle() {
     const [blog, setBlog] = useState();
 
     async function fetchBlog() {
         await fetch("http://localhost:3500/blog-list/1").then(response => response.json()).then(data => {
             setBlog(data)
-            console.log(data);
         })
     }
 
@@ -69,8 +73,23 @@ function BlogSingle(props) {
                     </div>
                 </div>
                 <div className={style.blogPaginate}>
-                    <div className={style.prePage}>
-
+                    <div className={style.prevPage}>
+                        <a href="#">
+                            <FontAwesomeIcon icon={faChevronCircleLeft}/>
+                        </a>
+                        <div className={style.blogPaginateContent}>
+                            <h5>Previous Post</h5>
+                            <p>Housing Marketing That</p>
+                        </div>
+                    </div>
+                    <div className={style.nextPage}>
+                        <div className={style.blogPaginateContent}>
+                            <h5>Next Post</h5>
+                            <p>Housing Marketing That</p>
+                        </div>
+                        <a href="#">
+                            <FontAwesomeIcon icon={faChevronCircleRight}/>
+                        </a>
                     </div>
                 </div>
             </div>

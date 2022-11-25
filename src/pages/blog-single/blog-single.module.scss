@@ -123,15 +123,55 @@ $orange: #ff5a5f;
 }
 
 .blogPaginate {
-  .prePage {
+  margin: 35px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .prevPage, .nextPage {
+    display: flex;
+    align-items: center;
+
     a {
-      background-color: rgb(208, 208, 208);
       border-radius: 50%;
       height: 45px;
       line-height: 45px;
       padding-left: 0;
       text-align: center;
       width: 45px;
+
+      svg {
+        font-size: 45px !important;
+        color: rgb(208, 208, 208);
+        transition: color 0.3s;
+      }
+
+      &:hover svg {
+        color: $orange;
+      }
+    }
+
+    .blogPaginateContent {
+      &:last-child {
+        margin-left: 15px;
+      }
+
+      &:first-child {
+        margin-right: 15px;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        color: #484848;
+        line-height: 1.714;
+        margin: 0;
+      }
     }
   }
 }
