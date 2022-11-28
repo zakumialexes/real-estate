@@ -2,7 +2,7 @@ import logo from "./logo.svg"
 import "./App.css"
 import Home from "./pages/home"
 import { createTheme, ThemeProvider } from "@mui/material"
-import { typography } from "@mui/system"
+
 const customTheme = createTheme({
     palette: {
         primary: {

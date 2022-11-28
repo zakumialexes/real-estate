@@ -6,8 +6,10 @@ import WhyChoUs from './sections/why-choose-us'
 import Partner from './sections/our-partners'
 import ArticleTips from './sections/articles&tips'
 import { Box } from '@mui/material'
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import {heart, transfer} from './sections/svg'
+
 
 const Home = () => {
   return (
@@ -18,6 +20,7 @@ const Home = () => {
         <WhyChoUs />
         <ArticleTips/>
         <Partner />
+      
       </>
   )
 }

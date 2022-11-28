@@ -9,7 +9,8 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import icon from "../../../assets/additional/header-logo.png"
-
+import styled from '@mui/material';
+import zIndex from '@mui/material/styles/zIndex';
 
 
 
@@ -33,10 +34,21 @@ export function PopperSelect ({ type, data, propertyType, isNumber}){
     popstyle : {
       bgcolor: "white",
       minWidth: propertyType ? "170px" : "150px",
+      height: propertyType? "fit-content" : "305px",
+      overflowY: propertyType? "visible" : "auto",
+      overflowX: "hidden",
       borderRadius: "5px",
       boxShadow: "0 0 10px gray",
       position: propertyType && "relative",
-      top: propertyType && "3em"
+      top: propertyType && "3em",
+      "::-webkit-scrollbar": {
+        width: "10px"
+      },
+      "::-webkit-scrollbar-thumb": {
+        backgroundColor: "#ff5a5f",
+        borderRadius: "10px",
+        border:"3.5px solid white"
+      }
     },
      wrapper : {
       zIndex: 0,
@@ -57,6 +69,17 @@ export function PopperSelect ({ type, data, propertyType, isNumber}){
       "&:hover": {
         border: !open  && "1px solid black"
       }
+    },
+    arrow: {
+      width: 0,
+	   height: 0,
+	   borderLeft:" 15px solid transparent",
+	   borderRight: "15px solid transparent",
+      borderBottom: "15px solid white",
+      position: "relative",
+      top: "3em",
+     left:"4.5em",
+      zIndex:1
     }
   }
   
@@ -79,13 +102,16 @@ export function PopperSelect ({ type, data, propertyType, isNumber}){
         anchorEl={anchorEl.current}
         sx={{ position: "relative" }}
           >
-         <ClickAwayListener onClickAway={handleClickAway}>
+        <ClickAwayListener onClickAway={handleClickAway}>
+        <Box>
+        <Box sx={style.arrow}></Box>
         <Box sx={style.popstyle}>
-       
+        
         <MenuList sx={{width:"100%"}}>
-              {data?.map((data) => (<MenuItem  onClick={onSelect} data-value={data}><Stack sx={{width: "100%"}} direction="row" justifyContent="space-between" ><Typography>{data}</Typography>{select?.value==data && <CheckIcon fontSize='small' color='primary' />}</Stack></MenuItem>))}
+              {data?.map((data,index) => (<MenuItem key={index} onClick={onSelect} data-value={data}><Stack sx={{width: "100%"}} direction="row" justifyContent="space-between" ><Typography>{data}</Typography>{select?.value==data && <CheckIcon fontSize='small' color='primary' />}</Stack></MenuItem>))}
         </MenuList>
-        </Box>
+            </Box>
+            </Box>  
         </ClickAwayListener>
       </Popper>
 
@@ -97,12 +123,13 @@ export function PopperSelect ({ type, data, propertyType, isNumber}){
 //Price Selector
 const RangeSlider = ({ value, change }) => {
   const container = {
-    maxWidth: "20em",
-    minWidth: "10em",
+    maxWidth: "30em",
+    minWidth: "14em",
     bgcolor: "white",
     borderRadius: "10px",
     margin: "10px",
-    padding: "30px",
+    marginTop: "0",
+    padding: "10px 20px",
     boxShadow: "0 0 10px gray",
     zIndex: 10,
     cursor:"pointer"
@@ -117,12 +144,12 @@ const RangeSlider = ({ value, change }) => {
           sx={{ width: "100%", marginBottom: "15px" }}>
          
           <Typography
-            variant="h6"
+            variant="body1"
             color="#006c70"
             sx={{ fontWeight: "bold" }}>${value[0]}</Typography>
         
           <Typography
-            variant="h6"
+            variant="body1"
             color="#006c70"
             sx={{ fontWeight: "bold" }}>${value[1]}</Typography>
           
@@ -154,12 +181,14 @@ const RangeSlider = ({ value, change }) => {
 }
 const PriceSelector = () => {
   const price = useRef()
+  
   const [arrowRef, setArrowRef] = useState(null)
   const [value, setValue] = useState([52000, 98000])
   const [display, setDisplay] = useState()
   const [open, setOpen] = useState(false)
   const handleClick = () => { 
-    setOpen(pre=>!pre)
+    setOpen(pre => !pre)
+  
   }
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -181,9 +210,17 @@ const PriceSelector = () => {
     }
   }
   const arrow = {
-    bgcolor: "red",
-    width: "100px"
+    bgcolor: "white",
+    width: "20px",
+    height: "20px",
+    transform: "rotate(45deg)",
+    position: "relative",
+    top: "10px", left: "6em",
+    boxShadow: "-13px -13px 30px  silver"
   }
+  
+
+
   return (
     <Box ref={price} sx={{position:"relative",cursor: "pointer",flexGrow: 1,}} >
       
@@ -196,7 +233,7 @@ const PriceSelector = () => {
         <Typography sx={{color: display? "black": "silver"}}>{display ? `$${display[0]}-$${display[1]}` : "Price"}</Typography>
         {open? <ArrowDropUpIcon fontSize='small' color='black'/>: <ArrowDropDownIcon fontSize='small' color='black'/>}
       </Stack>
-      <Popper open={open} anchorEl={price.current}
+      <Popper open={open} anchorEl={price.current} sx={{maxWidth: "15em"}}
         modifiers={[
           {
             name: 'flip',
@@ -224,11 +261,15 @@ const PriceSelector = () => {
               element: arrowRef,
             }
           }]}>
-        <Box component="span" sx={arrow} ref={setArrowRef}></Box>
+        
         <ClickAwayListener onClickAway={clickAway}>
-          <Box sx={{  position:"relative", top:"40px", margin:"0 10px", width:"100%"}}>
+      
+          
+          <Box sx={{ position: "relative", top: "40px", width: "100%" }}>
+            <Box sx={arrow}></Box>
             <RangeSlider value={value} change={handleChange} />
           </Box>
+           
         </ClickAwayListener>
       </Popper>
     </Box>
@@ -252,7 +293,7 @@ const Amenities = ({ hide, screen }) => {
     zIndex: 100,
     position: "relative",
     top: screen ? "0" : "2em",
-    maxWidth: "60em",
+    maxWidth: "65em",
     minWidth: "9em",
     maxHeight:screen && "100vh",
     overflow: "scroll",
@@ -280,7 +321,7 @@ const Amenities = ({ hide, screen }) => {
             variant="h6"
             color="#006c70"
             sx={{ fontWeight: "bold" }}>Amenities</Typography>
-          <Button variant='contained' sx={{ width: "fit-content", }} onClick={hide}>Hide</Button>
+          <Button variant='contained' sx={{ width: "fit-content", }} onClick={hide}>HIDE</Button>
         </Stack>
       <Grid container sx={{width: "100%", margin: "20px 0"}} justifyContent="center" alignItems="center"  gap={2}>
           <CheckBox label={"Air Conditioning"} />
@@ -449,7 +490,7 @@ const HomeDesign = () => {
   }
   return (
     <Box className={style.wrap} >
-      <img src={background} alt="" style={{width: "100&",height:"100%"}} />
+     
       
           <Stack
             direction="row"

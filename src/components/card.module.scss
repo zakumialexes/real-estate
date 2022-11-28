@@ -1,7 +1,7 @@
 .wrapper{
    box-sizing: border-box;
    max-width: 100%;
-   min-width: 10em;
+   min-width: 8em;
   
    border-radius: 10px;
    &:hover{
@@ -14,7 +14,7 @@
    }
 }
 .estateImageWrapper{
-   max-height: 13em;
+   max-height: 12em;
    position: relative;
    min-width: 1em;
    display: grid;
