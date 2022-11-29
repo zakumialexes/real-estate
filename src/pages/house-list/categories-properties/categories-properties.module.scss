@@ -1,0 +1,50 @@
+.categoriesPropertiesContainer {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 30px 30px 20px;
+  position: relative;
+
+  .list {
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: list-item;
+      list-style-type: none;
+
+      a {
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 14px;
+        color: #484848;
+        line-height: 2.857;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #ff5a5f;
+        }
+
+        svg {
+          margin-right: 10px;
+        }
+
+        span {
+          float: right;
+
+          &:hover {
+            color: #484848;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #484848;
+}

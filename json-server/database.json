@@ -1,60 +1,610 @@
 {
-  "testimonial": [
-    {
-      "id": "1",
-      "name": "Augusta Silva",
-      "role": "Sales Manager",
-      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-    },
-    {
-      "id": "2",
-      "name": "Jennifer Barton",
-      "role": "Product Manager",
-      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-    },
-    {
-      "id": "3",
-      "name": "Kathleen Myers",
-      "role": "Casher",
-      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-    }
-  ],
-  "OurTeam": [
-    {
-      "id": "1",
-      "name": "Mariusz Ciesla",
-      "role": "Broker",
-      "img": "/assets/about/agent2.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Kathleen Myers",
-      "role": "agent",
-      "img": "/assets/about/broker1.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Helene Powers",
-      "role": "Broker",
-      "img": "/assets/about/broker3.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Jennifer Barton",
-      "role": "Broker",
-      "img": "/assets/about/broker4.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Jennifer Barton",
-      "role": "Broker",
-      "img": "/assets/about/broker3.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Jennifer Barton",
-      "role": "Broker",
-      "img": "/assets/about/broker1.jpg"
-    }
-  ]
+    "testimonial": [
+        {
+            "id": "1",
+            "name": "Augusta Silva",
+            "role": "Sales Manager",
+            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+        },
+        {
+            "id": "2",
+            "name": "Jennifer Barton",
+            "role": "Product Manager",
+            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+        },
+        {
+            "id": "3",
+            "name": "Kathleen Myers",
+            "role": "Casher",
+            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+        }
+    ],
+    "OurTeam": [
+        {
+            "id": "1",
+            "name": "Mariusz Ciesla",
+            "role": "Broker",
+            "img": "/assets/about/agent2.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Kathleen Myers",
+            "role": "agent",
+            "img": "/assets/about/broker1.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Helene Powers",
+            "role": "Broker",
+            "img": "/assets/about/broker3.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Jennifer Barton",
+            "role": "Broker",
+            "img": "/assets/about/broker4.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Jennifer Barton",
+            "role": "Broker",
+            "img": "/assets/about/broker3.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Jennifer Barton",
+            "role": "Broker",
+            "img": "/assets/about/broker1.jpg"
+        }
+    ],
+    "agent-list": [
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        },
+        {
+            "name": "Anna Herison",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Acer Hacker",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-3.jpg"
+        },
+        {
+            "name": "Pheonix Fellington",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-1.jpg"
+        },
+        {
+            "name": "Cult Leader",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-5.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Pheonix Fellington",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-1.jpg"
+        },
+        {
+            "name": "Cult Leader",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-5.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        },
+        {
+            "name": "Anna Herison",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        },
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        },
+        {
+            "name": "Anna Herison",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Acer Hacker",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-3.jpg"
+        },
+        {
+            "name": "Pheonix Fellington",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-1.jpg"
+        },
+        {
+            "name": "Cult Leader",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-5.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Pheonix Fellington",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-1.jpg"
+        },
+        {
+            "name": "Cult Leader",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-5.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        },
+        {
+            "name": "Anna Herison",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Harley Dvision",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "paluua@findhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-6.jpg"
+        },
+        {
+            "name": "Zuzu Parlar Pakulla",
+            "phoneNumber": {
+                "office": "134 456 789",
+                "mobile": "982 123 423",
+                "fax": "234 322 624"
+            },
+            "email": "palasd2dhouse.com",
+            "type": "agent",
+            "listing": 2,
+            "photo": "/images/agents/agent-2.jpg"
+        }
+    ],
+    "houses": [
+        {
+            "name": "Nice Room With View",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-1.jpg", "/images/houses/grid-photo-2.jpg"],
+            "rent": 13000,
+            "type": "villa",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
+            "rent": 13000,
+            "type": "house",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Luxury Family House",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
+            "rent": 13000,
+            "type": "apartment",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Nice Room With View",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-6.jpg", "/images/houses/grid-photo-5.jpg"],
+            "rent": 13000,
+            "type": "villa",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-7.jpg", "/images/houses/grid-photo-8.jpg"],
+            "rent": 13000,
+            "type": "house",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Luxury Family House",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-9.jpg", "/images/houses/grid-photo-10.jpg"],
+            "rent": 13000,
+            "type": "apartment",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
+            "rent": 13000,
+            "type": "house",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Luxury Family House",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
+            "rent": 13000,
+            "type": "apartment",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-6.jpg", "/images/houses/grid-photo-4.jpg"],
+            "rent": 13000,
+            "type": "house",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        },
+        {
+            "name": "Luxury Family House",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "photos": ["/images/houses/grid-photo-8.jpg", "/images/houses/grid-photo-6.jpg"],
+            "rent": 13000,
+            "type": "apartment",
+            "beds": 4,
+            "baths": 3,
+            "sqFt": 5280,
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "4 years ago",
+            "tags": ["for rent", "featured"]
+        }
+    ],
+    "blog-list": [
+        {
+            "id": 1,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog1.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        },
+        {
+            "id": 2,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog2.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        },
+        {
+            "id": 3,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog3.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        },
+        {
+            "id": 4,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog3.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        },
+        {
+            "id": 5,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog2.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        },
+        {
+            "id": 6,
+            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+            "tags": ["construction"],
+            "photo": "/images/blogs/blog1.jpg",
+            "creator": {
+                "name": "Ali Tufun",
+                "photo": "/images/houses/user.png"
+            },
+            "createdDate": "January 16, 2020"
+        }
+    ]
 }

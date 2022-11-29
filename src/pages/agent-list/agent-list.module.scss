@@ -1,0 +1,102 @@
+$textOrange: #ff5a5f;
+$orangeDarker: #f53c41;
+$textDark: #484848;
+
+.section {
+  padding: 60px 0;
+}
+
+.flexFull {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 15px;
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+// Left side
+
+$textDark: #484848;
+
+.leftSide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.searchHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 8px;
+  margin: 0 0 30px;
+  padding: 0 30px;
+  position: relative;
+  width: 100%;
+  color: $textDark;
+}
+
+.agentContainer {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  overflow: hidden;
+  max-width: 100%;
+  gap: 30px;
+}
+
+.agentContainerList {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.paginationContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .leftSide {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .searchHeader {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .agentContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
