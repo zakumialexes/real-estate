@@ -104,7 +104,7 @@ export function PopperSelect ({ type, data, propertyType, isNumber}){
           >
         <ClickAwayListener onClickAway={handleClickAway}>
         <Box>
-        <Box sx={style.arrow}></Box>
+            {propertyType && <Box sx={style.arrow}></Box>}
         <Box sx={style.popstyle}>
         
         <MenuList sx={{width:"100%"}}>
@@ -300,7 +300,8 @@ const Amenities = ({ hide, screen }) => {
     "::-webkit-scrollbar": {
         display: "none"
     },
-    boxShadow: "0 0 10px gray"
+    boxShadow: "0 0 10px gray",
+    cursor:"pointer"
   }
   const CheckBox = ({label}) => {
     return (
