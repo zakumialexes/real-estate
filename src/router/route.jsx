@@ -8,6 +8,7 @@ import BlogList from "../pages/blog-list/blog-list"
 import HouseList from "../pages/house-list/house-list"
 import BlogSingle from "../pages/blog-single/blog-single"
 import Contact from "../pages/contact/contact"
+import About from "../pages/about/about"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="faq" element={<Faq />} />
+            <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="terms-and-conditions" element={<TermsAndCondition />} />
             <Route path="blogs" element={<BlogList />} />
