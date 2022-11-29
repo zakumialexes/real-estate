@@ -9,25 +9,3 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.slick-list{
-   margin: 0 40px ;
-}
-/* @media (max-width: 1100px) {
-    .sli
-} */
-.slick-slide > div{
-    
-    padding: 20px;
-    display: grid;
-    place-items: center;
-}
-.slick-active{
-    width:fit-content;
-    padding: 0;
-    display: grid;
-    place-items: center;
-}
-.slick-current{
-    width: fit-content;
-    padding: 0;
-}
