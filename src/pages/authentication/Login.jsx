@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Container, TextField, Grid, Typography, Link, Button } from "@mui/material"
 import styles from "./login.module.scss"
-import OAuth from "./oAuth"
+import OAuth from "./OAuth"
 
 const Login = () => {
     const [login, setLogin] = useState({

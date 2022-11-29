@@ -1,4 +1,3 @@
-import "./App.css"
 import { RouterProvider } from "react-router-dom"
 import router from "./router/route"
 import { Layout } from "./layout/layout"
@@ -12,8 +11,12 @@ const theme = createTheme({
     },
     typography: {
         allVariants: { lineHeight: "1rem" },
+        fontFamily: "Nunito",
     },
     palette: {
+        primary: {
+            main: "#ff5a5f",
+        },
         text: {
             main: "#484848",
         },

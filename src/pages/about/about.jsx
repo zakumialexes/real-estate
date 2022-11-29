@@ -421,9 +421,7 @@ const About = () => {
                     </Slider>
                 </Box>
             </Stack>
-            <Stack className={aboutStyle.testimonialCon}>
-                <Testimonial />
-            </Stack>
+            <Testimonial />
             <Stack className={aboutStyle.container} spacing={2} sx={{ margin: "50px 0px" }}>
                 <Stack
                     sx={{
