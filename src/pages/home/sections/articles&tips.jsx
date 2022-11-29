@@ -15,10 +15,13 @@ const ArticleCard = ({ image, avatar, author, date, title, type }) => {
                 />
             </Box>
             <CardContent>
-                <Typography variant="subtitle2" sx={{ color: "#ff5a5f", marginBottom: "5px" }}>
+                <Typography variant="subtitle2" sx={{ color: "#ff5a5f", marginBottom: "5px", lineHeight: "1.5rem" }}>
                     {type}
                 </Typography>
-                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#484848", marginBottom: "5px" }}>
+                <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "bold", color: "#484848", marginBottom: "5px", lineHeight: "1.5rem" }}
+                >
                     {title}
                 </Typography>
             </CardContent>

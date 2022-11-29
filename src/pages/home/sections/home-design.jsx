@@ -123,7 +123,7 @@ export function PopperSelect({ type, data, propertyType, isNumber }) {
                                 {data?.map((data, index) => (
                                     <MenuItem key={index} onClick={onSelect} data-value={data}>
                                         <Stack sx={{ width: "100%" }} direction="row" justifyContent="space-between">
-                                            <Typography>{data}</Typography>
+                                            <Typography lineHeight={"1.5rem"}>{data}</Typography>
                                             {select?.value == data && <CheckIcon fontSize="small" color="primary" />}
                                         </Stack>
                                     </MenuItem>
@@ -518,7 +518,7 @@ const HomeDesign = () => {
                     <Typography variant={smallScreen ? "h4" : "h3"} sx={{ fontWeight: "bold" }}>
                         Find Your Dream Home
                     </Typography>
-                    <Typography variant="subtitle1">
+                    <Typography variant="subtitle1" marginTop="30px">
                         From as low as $10 per day with limited time offer discounts
                     </Typography>
                 </Box>

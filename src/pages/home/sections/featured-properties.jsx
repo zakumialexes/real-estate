@@ -59,10 +59,12 @@ const FeaturedPro = () => {
         <>
             <Box sx={{ width: "100%", backgroundColor: "#f7f7f7" }}>
                 <Heading sx={{ paddingTop: "20px" }}>
-                    <Typography variant="h4" color="#484848">
+                    <Typography variant="h4" color="#484848" lineHeight="1.5rem">
                         {title}
                     </Typography>
-                    <Typography variant="body1">{content}</Typography>
+                    <Typography variant="body1" lineHeight="1.5rem">
+                        {content}
+                    </Typography>
                 </Heading>
                 <Box
                     sx={{

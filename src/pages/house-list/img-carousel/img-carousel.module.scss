@@ -1,0 +1,91 @@
+$orange: #ff5a5f;
+
+.carouselImg {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carouselContainer {
+  margin: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+
+  .listing {
+    background-color: $orange;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    .nextArrow {
+      right: 25px;
+      z-index: 1;
+    }
+
+    .prevArrow {
+      left: 25px;
+    }
+  }
+}
+
+.nextArrow, .prevArrow {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+}
+
+.nextArrow {
+  right: -25px;
+  z-index: -1;
+}
+
+.prevArrow {
+  left: -25px;
+}
+
+.tagContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+}
+
+.tags {
+  display: inline-flex;
+  width: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .tag {
+    background-color: $orange;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    min-width: 75px;
+    margin-right: 8px;
+    padding: 0 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+  }
+}
