@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material"
 import styles from "./register.module.scss"
-import OAuth from "./OAuth"
+import OAuth from "./oAuth"
 
 const Register = () => {
     const [register, setRegister] = useState({

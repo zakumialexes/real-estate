@@ -1,0 +1,38 @@
+$font-color:#484848;
+$phone-screen:600px;
+
+.error404box{
+    background-color: #f7f7f7;
+    padding: 2rem 0px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    h1{
+        color: $font-color;
+        font-weight: bolder;
+        font-size: 45px;
+        @media (max-width:$phone-screen) {
+            font-size: 30px;
+        }
+    }
+    p{
+        font-size: 14px !important;
+        color: $font-color;
+        line-height: 1.714 !important;
+    }
+    .errorBtn{
+        background-color: #ff5a5f;
+        border-radius: 8px;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 20px 30px;
+        &:hover{
+            background-color: #ff5a5f;
+        }
+        @media (max-width:$phone-screen) {
+            padding: 15px 25px;
+        }
+    }
+}
