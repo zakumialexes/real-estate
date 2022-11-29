@@ -1,0 +1,108 @@
+$primary-color: #ff5a5f;
+$primary-text-color: #1b2032;
+.popperWrapper{
+  
+    display: grid;
+    place-items: center;
+    width: fit-content;
+}
+.popper{
+   
+    width: fit-content;
+}
+.navba{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: "white";
+    padding: 20px;
+}
+
+.wrap{
+    background-image: url("../../../assets/home/findproperties/background.jpg");
+    
+    height: 960px;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    position: relative;
+    &::before{
+        content: "";
+       
+        background-color: rgb(29, 41, 62);
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+.Container{
+    width: fit-content;
+    
+    position: relative;
+    margin-top: 50px;
+}
+
+.heading{
+    color: "white";
+    text-align: center;
+    opacity: 1;
+}
+
+.body{
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+
+@mixin btn {
+    height: 50px;
+    width: 110px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+.toggleBtn{
+    @include btn();
+    color: $primary-text-color;
+    background-color: white;
+}
+
+.toggleBtnSelected{
+   @include btn();
+   color: white;
+   background-color: $primary-color;
+   &::before{
+      content: "";
+      background-color: inherit;
+      margin-left: 5px;
+      position: absolute;
+      top: 42px;
+      height: 15px;
+      width: 15px;
+      transform: rotate(45deg);
+   }
+}
+.SearchBar{
+    padding: 30px 20px;
+    border-radius: 8px;
+    position: relative;
+    &::before{
+         content: "";
+         background-color: rgba(255, 255, 255, 0.15);
+         position: absolute;
+         bottom: -10px;
+         top: -10px;
+         right: -10px;
+         left: -10px;
+         z-index: 0;
+         border-radius: 8px;
+    }
+}

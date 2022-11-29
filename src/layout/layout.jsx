@@ -39,7 +39,7 @@ export const Layout = ({ children }) => {
             >
                 <Navbar large={large} medium={medium} openSidebar={openSideBar} setOpenSidebar={setOpenSideBar} />
 
-                <Header />
+                {window.location.href.includes("home") ? "" : <Header />}
                 {children}
                 {authenicated ? <Banner /> : ""}
                 <Footer />
