@@ -1,0 +1,49 @@
+.galleryBody
+    padding: 3rem 0
+
+.imgBox
+    position: relative
+    cursor: pointer
+
+.gHoverBox
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 250px
+    background-color: rgba(255, 90, 95, .8)
+    position: absolute
+    top: 0
+    -webkit-transform: scale(0)
+    -moz-transform: scale(0)
+    -o-transform: scale(0)
+    -ms-transform: scale(0)
+    transform: scale(0)
+    -webkit-transition: all 0.3s ease 0s
+    -moz-transition: all 0.3s ease 0s
+    -o-transition: all 0.3s ease 0s
+    transition: all 0.3s ease 0s
+
+.imgBox:hover .gHoverBox
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+
+.gImg
+    width: 100%
+    height: 250px
+
+.carouselGImg
+    width: 90%
+    height: 50vh
+
+.gMImg
+    width: 100%
+    height: 100%
+
+.imgCount
+    margin: 0
+    color: #ccc
+    float: right

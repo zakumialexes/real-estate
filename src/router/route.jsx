@@ -5,6 +5,7 @@ import Register from "../pages/authentication/Register"
 import Faq from "../pages/faq/faq"
 import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
 import HouseList from "../pages/house-list/house-list"
+import Gallery from "../pages/gallery/gallery"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
             <Route path="register" element={<Register />} />
             <Route path="faq" element={<Faq />} />
             <Route path="terms-and-conditions" element={<TermsAndCondition />} />
+            <Route path="gallery" element={<Gallery />} />
         </Route>
     )
 )
