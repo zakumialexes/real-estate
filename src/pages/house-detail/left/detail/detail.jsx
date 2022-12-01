@@ -30,8 +30,8 @@ const Detail = () => {
           Description
         </Typography>
         <div className={`${detailStyle.desc} ${show ? detailStyle.show : ""}`}>
-          {Description?.map((data) => (
-            <p>{data.para}</p>
+          {Description?.map((data, index) => (
+            <p key={index}>{data.para}</p>
           ))}
         </div>
         <Stack
@@ -57,7 +57,7 @@ const Detail = () => {
         </Typography>
         <div className={detailStyle.propertyDetails}>
           {PropertyDetails?.map((data, index) => (
-            <div className={detailStyle.propertyDetailsItem}>
+            <div key={index} className={detailStyle.propertyDetailsItem}>
               <span>{data.item} :</span>{" "}
               <span style={{ fontWeight: "bold" }}>{data.value}</span>
             </div>
@@ -70,7 +70,7 @@ const Detail = () => {
         </Typography>
         <div className={detailStyle.addtionalDetails}>
           {AddtionalDetails?.map((data, index) => (
-            <div className={detailStyle.addtionalDetailsItem}>
+            <div key={index} className={detailStyle.addtionalDetailsItem}>
               <span>{data.item} :</span>{" "}
               <span style={{ fontWeight: "bold" }}>{data.value}</span>
             </div>
@@ -135,6 +135,7 @@ const Detail = () => {
         <div className={detailStyle.propertyDetails}>
           {Features?.map((data, index) => (
             <Stack
+              key={index}
               direction="row"
               alignItems="center"
               spacing={2}

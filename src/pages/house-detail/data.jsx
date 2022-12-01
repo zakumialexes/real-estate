@@ -8,32 +8,32 @@ import {
   faBus,
 } from "@fortawesome/free-solid-svg-icons";
 
-
-export const navItems = [{
-   name : "Details",
-   link : "details"
-},
-{
-   name : "Features",
-   link : "features"
-},
-{
-   name : "Location",
-   link : "location"
-},
-{
-   name : "Plans",
-   link : "plans"
-},
-{
-   name : "Video",
-   link : "video"
-},
-{
-   name : "Review",
-   link : "review"
-},
-]
+export const navItems = [
+  {
+    name: "Details",
+    link: "details",
+  },
+  {
+    name: "Features",
+    link: "features",
+  },
+  {
+    name: "Location",
+    link: "location",
+  },
+  {
+    name: "Plans",
+    link: "plans",
+  },
+  {
+    name: "Video",
+    link: "video",
+  },
+  {
+    name: "Review",
+    link: "review",
+  },
+];
 
 export const iconData = [
   {

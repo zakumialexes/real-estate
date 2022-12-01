@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #ebebeb;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #484848;
+}
+
+.textareaContact {
+  height: 52px;
+  width: 100%;
+  border: 1px solid rgb(235, 235, 235);
+  font-size: 14px;
+  color: #484848;
+  line-height: 1.2;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.textareaContact {
+  height: auto;
+  padding-top: 10px;
+}
+
+.textareaContact:focus {
+  outline: none;
+}
+
+.sendBtn {
+  height: 50px;
+  width: 100%;
+  background-color: #ff5a5f;
+  border: 2px solid #ff5a5f;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.sendBtn:hover {
+  background-color: #ffffff;
+  border-color: #ff5a5f;
+  color: #ff5a5f;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}

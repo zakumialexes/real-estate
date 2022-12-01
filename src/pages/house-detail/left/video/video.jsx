@@ -1,10 +1,23 @@
-import { Typography, Stack, Rating, Box, Tab, Tabs } from "@mui/material";
+import {
+  Typography,
+  Stack,
+  Rating,
+  Box,
+  Tab,
+  Tabs,
+  Modal,
+} from "@mui/material";
 import React, { useState } from "react";
 import videoStyle from "./video.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Nearby } from "../../data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Video = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabChange = (event, newTabIndex) => {
@@ -23,7 +36,7 @@ const Video = () => {
                 "& .MuiTabs-indicator": { backgroundColor: "#ff5a5f" },
                 "& .MuiTab-root": {
                   color: "484848",
-                  textTransform: " none",
+                  textTransform: "none",
                   fontSize: "16px",
                   fontWeight: "bold",
                 },
@@ -36,37 +49,103 @@ const Video = () => {
           </Box>
           <Box sx={{ padding: 2 }}>
             {tabIndex === 0 && (
-              <Box>
-                <video controls width="100%">
-                  <source
-                    src="https://pixabay.com/videos/house-stone-street-motorbike-old-14476/"
-                    type="video/mp4"
+              <Box pt={1}>
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="https://img.freepik.com/free-photo/living-room-interior-wall-mockup-warm-tones-with-leather-sofa-which-is-kitchen-3d-rendering_41470-3753.jpg?size=626&ext=jpg&ga=GA1.2.755197081.1668255134&semt=sph"
+                    alt=""
+                    width="100%"
+                    style={{ borderRadius: "10px" }}
                   />
-                </video>
+                  <div className={videoStyle.playIcon} onClick={handleOpen}>
+                    <FontAwesomeIcon icon={faPlay} />
+                  </div>
+                </div>
+
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                  sx={{ zIndex: 9999 }}
+                >
+                  <Box className={videoStyle.videoContainer}>
+                    <Box
+                      width="100%"
+                      sx={{ textAlign: "right", fontSize: "22px" }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faClose}
+                        onClick={handleClose}
+                        color="white"
+                      />
+                    </Box>
+                    <video controls width="100%" autoPlay>
+                      <source src="" type="video/mp4" />
+                    </video>
+                  </Box>
+                </Modal>
               </Box>
             )}
             {tabIndex === 1 && (
-              <Box>
-                <Typography>The second tab</Typography>
+              <Box pt={1}>
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg?size=626&ext=jpg&ga=GA1.2.755197081.1668255134&semt=sph"
+                    alt=""
+                    width="100%"
+                    style={{ borderRadius: "10px" }}
+                  />
+                  <div className={videoStyle.playIcon} onClick={handleOpen}>
+                    <FontAwesomeIcon icon={faPlay} />
+                  </div>
+                </div>
+
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                  sx={{ zIndex: 9999 }}
+                >
+                  <Box className={videoStyle.videoContainer}>
+                    <Box
+                      width="100%"
+                      sx={{ textAlign: "right", fontSize: "22px" }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faClose}
+                        onClick={handleClose}
+                        color="white"
+                      />
+                    </Box>
+                    <video controls width="100%" autoPlay>
+                      <source src="" type="video/mp4" />
+                    </video>
+                  </Box>
+                </Modal>
               </Box>
             )}
           </Box>
         </Box>
       </div>
       <div className={videoStyle.container}>
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-        >
+        <Stack direction="row" justifyContent="space-between" mb={2}>
           <Typography fontSize="18px" fontWeight="bold">
             Walkscore
           </Typography>
-          <p>image</p>
+          <Box>
+            <img
+              src={process.env.PUBLIC_URL + "/images/resource/wscore.png"}
+              alt=""
+            />
+            ;
+          </Box>
         </Stack>
+
         <Stack direction={{ xs: "column", sm: "row" }}>
           <Stack direction="row" alignItems="center" spacing={2} mr={3}>
-            <p className={videoStyle.walkScoreCpntainer}>70</p>
+            <p className={videoStyle.walkScoreContainer}>70</p>
             <Stack
               direction="column"
               alignItems="center"
@@ -77,7 +156,7 @@ const Video = () => {
             </Stack>
           </Stack>
           <Stack direction="row" alignItems="center" spacing={2} mr={3}>
-            <p className={videoStyle.walkScoreCpntainer}>40</p>
+            <p className={videoStyle.walkScoreContainer}>40</p>
             <Stack
               direction="column"
               alignItems="center"
@@ -95,7 +174,7 @@ const Video = () => {
           What's Nearby
         </Typography>
         {Nearby?.map((data, index) => (
-          <Box pb={2}>
+          <Box key={index} pb={2}>
             <Stack direction="row" spacing={1} alignItems="center" py={1}>
               <FontAwesomeIcon
                 icon={data.icon}
@@ -109,9 +188,10 @@ const Video = () => {
             <Stack direction="column">
               {data.location?.map((location) => (
                 <Stack
+                  key={index}
                   direction={{ xs: "column", sm: "row" }}
                   justifyContent="space-between"
-                  style={{ lineHeight: 0.3 }}
+                  style={{ lineHeight: 0.5 }}
                 >
                   <p>
                     {location.name}

@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { iconData, navItems } from "./data";
 import Left from "./left/left";
 import { Link } from "react-scroll";
+import Right from "./right/right";
 
 const HouseDetail = () => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(0);
 
   const toggle = (i) => {
     if (selected === i) {
@@ -20,6 +21,7 @@ const HouseDetail = () => {
       <div className={houseDetailStyle.nav}>
         {navItems?.map((data, index) => (
           <Link
+            key={index}
             to={data.link}
             spy={true}
             smooth={true}
@@ -47,6 +49,7 @@ const HouseDetail = () => {
       >
         {iconData?.map((data, index) => (
           <Stack
+            key={index}
             direction="column"
             justifyContent="center"
             alignItems="center"
@@ -63,10 +66,10 @@ const HouseDetail = () => {
       <Stack
         direction={{ xs: "column", md: "row" }}
         spacing={5}
-        padding={{ xs: "10px", sm: "10px 50px", md: "10px 200px" }}
+        padding={{ xs: "10px", sm: "10px 50px", md: "10px 250px" }}
       >
         <Left />
-        <div style={{ width: "30%" }}>Right Side</div>
+        <Right />
       </Stack>
     </Box>
   );

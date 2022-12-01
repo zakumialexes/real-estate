@@ -8,7 +8,7 @@
   margin-top: 30px;
 }
 
-.walkScoreCpntainer {
+.walkScoreContainer {
   border-radius: 8px;
   background-color: rgb(247, 247, 247);
   height: 80px;
@@ -22,4 +22,63 @@
 .link {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.videoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff5a5f;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 0 0 0 rgb(255, 90, 95, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(255, 90, 95, 0.7);
+    transform: translate(-50%, -50%);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(255, 90, 95, 0);
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(255, 90, 95, 0);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  .videoContainer {
+    width: 95%;
+  }
+  .playIcon {
+    width: 50px;
+    height: 50px;
+  }
 }

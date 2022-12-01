@@ -2,15 +2,18 @@ import { Box } from "@mui/material";
 import React from "react";
 import Plan from "./plan/plan";
 import Detail from "./detail/detail";
-import leftStyle from "./left.module.scss";
 import Video from "./video/video";
+import Location from "./location/location";
+import PropertyChart from "./property-chart/property-chart";
 
 const Left = () => {
   return (
-    <Box className={leftStyle.leftContainer}>
+    <Box sx={{ width: { xs: "100%", md: "70%" } }}>
       <Detail />
+      <Location />
       <Plan />
       <Video />
+      <PropertyChart />
     </Box>
   );
 };

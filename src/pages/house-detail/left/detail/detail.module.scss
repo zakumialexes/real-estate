@@ -80,6 +80,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
   .items {
     display: flex;
     justify-content: center;

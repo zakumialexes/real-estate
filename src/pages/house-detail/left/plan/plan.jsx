@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 import planStyle from "./plan.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +21,7 @@ const Plan = () => {
           Floor plans
         </Typography>
         {data?.map((data, index) => (
-          <Box mb={2}>
+          <Box key={index} mb={2}>
             <div
               className={planStyle.planContainer}
               onClick={() => toggle(index)}
@@ -46,7 +46,11 @@ const Plan = () => {
                 selected === index ? planStyle.show : ""
               }`}
             >
-              <img src="" alt="" />
+              <img
+                src="https://img.freepik.com/free-photo/3d-rendering-loft-luxury-living-room-with-bookshelf_105762-2182.jpg?size=626&ext=jpg&ga=GA1.2.755197081.1668255134&semt=sph"
+                alt=""
+                width="100%"
+              />
               <span>
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
