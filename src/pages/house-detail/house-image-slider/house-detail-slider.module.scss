@@ -1,0 +1,69 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+}
+.rightArrow {
+    position: absolute;
+    border: #fff 1px solid;
+    padding: 35px 15px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    border-radius: 5px;
+    font-weight: lighter;
+    color: #fff;
+    transition: all 0.2s linear;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+.leftArrow {
+    @extend .rightArrow;
+    left: 20px;
+}
+.currentImage {
+    z-index: 10;
+    filter: brightness(50%);
+    object-fit: cover;
+}
+.imageContainer {
+    width: 100%;
+    transform: translateY(-101%);
+    height: 100%;
+}
+.previousImage {
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+}
+
+.previousImageTransitionUp {
+    animation: transitionUp 1.2s 0.5s ease-in-out;
+}
+.previousImageTransitionDown {
+    animation: transitionDown 1.2s 0.5s ease-in-out;
+}
+.turnWhite {
+    animation: turnWhiteColor 1.2s 0.5s ease-in-out;
+}
+@keyframes transitionUp {
+    100% {
+        transform: translateY(-100%);
+    }
+}
+@keyframes transitionDown {
+    100% {
+        transform: translateY(100%);
+    }
+}
+@keyframes turnWhiteColor {
+    0% {
+        background-color: #fff;
+    }
+    100% {
+        background-color: #ffffff00;
+    }
+}

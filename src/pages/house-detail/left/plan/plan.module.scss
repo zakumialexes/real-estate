@@ -1,0 +1,62 @@
+.container {
+  padding: 30px;
+  border: 1px solid #ebebeb;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #484848;
+  margin-top: 30px;
+}
+
+.planContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms linear;
+  will-change: max-height;
+  text-align: center;
+}
+
+.imageContainer img {
+  margin-top: 30px;
+}
+
+.show {
+  max-height: 100em;
+  transition: all 500ms linear;
+  will-change: max-height;
+}
+
+.icon {
+  transform: rotate(0);
+  transition: all 0.3s ease;
+}
+
+.iconActive {
+  color: #ff5a5f;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}

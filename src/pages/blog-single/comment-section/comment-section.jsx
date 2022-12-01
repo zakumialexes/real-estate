@@ -18,6 +18,7 @@ export default function CommentSection() {
     const [totalState, setTotalState] = useState({
         rating: 4.5,
         reviews: 256,
+        id: "0",
     })
     const [reviews, setReviews] = useState([
         {
@@ -92,7 +93,7 @@ export default function CommentSection() {
                 <Grid>
                     <List>
                         {reviews.map((review) => (
-                            <ListItem>
+                            <ListItem key={review.id}>
                                 <ListItemAvatar
                                     key={review.id}
                                     sx={{ width: "90px", height: "90px", display: "flex", alignItems: "center" }}
