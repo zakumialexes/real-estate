@@ -26,6 +26,7 @@ export const Layout = ({ children }) => {
             setOpenSideBar(false)
         }
     }, [medium])
+    const NavImageNotIncludedPages = ["home", "house-detail"]
     return (
         <>
             {medium ? <Sidebar openSidebar={openSideBar} /> : null}
@@ -39,7 +40,7 @@ export const Layout = ({ children }) => {
             >
                 <Navbar large={large} medium={medium} openSidebar={openSideBar} setOpenSidebar={setOpenSideBar} />
 
-                <Header />
+                {NavImageNotIncludedPages.some((page) => window.location.href.includes(page)) ? "" : <Header />}
                 {children}
                 {authenicated ? <Banner /> : ""}
                 <Footer />
