@@ -1,12 +1,14 @@
 import style from "./blog-card.module.scss"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleRight, faCalendarDays} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleRight, faCalendarDays } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from "react-router-dom"
 
-export default function BlogCard({blog}) {
+export default function BlogCard({ blog }) {
+    const navigate = useNavigate()
     return (
-        <div className={style.blogCardContainer}>
+        <div className={style.blogCardContainer} onClick={() => navigate(`${blog.id}`)}>
             <div className={style.photoContainer}>
-                <img src={blog.photo} alt="" className={style.photo}/>
+                <img src={blog.photo} alt="" className={style.photo} />
                 <div className={style.tagContainer}>
                     <ul className={style.tags}>
                         {blog.tags.map((tag, i) => (
@@ -23,12 +25,14 @@ export default function BlogCard({blog}) {
             </div>
             <div className={style.blogCardFooter}>
                 <div className={style.info}>
-                    <img src={blog.creator.photo} alt=""/>
+                    <img src={blog.creator.photo} alt="" />
                     <p className={style.name}>{blog.creator.name}</p>
-                    <p className={style.date}><FontAwesomeIcon icon={faCalendarDays}/> {blog.createdDate}</p>
+                    <p className={style.date}>
+                        <FontAwesomeIcon icon={faCalendarDays} /> {blog.createdDate}
+                    </p>
                 </div>
                 <div className={style.readMore}>
-                    Read More <FontAwesomeIcon icon={faAngleRight}/>
+                    Read More <FontAwesomeIcon icon={faAngleRight} />
                 </div>
             </div>
         </div>

@@ -1,13 +1,14 @@
 import { useMediaQuery, useTheme } from "@mui/material"
 import { Box } from "@mui/system"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { default as Navbar, Sidebar } from "./navbar/navbar"
 import { default as Footer } from "./footer/footer"
 import { default as Header } from "./header/header"
 import { default as Banner } from "./banner/banner"
+import { Context } from "../utils/utils"
 
 export const Layout = ({ children }) => {
-    const [authenicated, setAuthenticated] = useState(false)
+    const context = useContext(Context)
     const [openSideBar, setOpenSideBar] = useState(false)
     const style = {
         marginLeft: "65vw",
@@ -26,7 +27,7 @@ export const Layout = ({ children }) => {
             setOpenSideBar(false)
         }
     }, [medium])
-    const NavImageNotIncludedPages = ["home", "house-detail"]
+    const NavImageNotIncludedPages = ["home", "houses/"]
     return (
         <>
             {medium ? <Sidebar openSidebar={openSideBar} /> : null}
@@ -40,9 +41,9 @@ export const Layout = ({ children }) => {
             >
                 <Navbar large={large} medium={medium} openSidebar={openSideBar} setOpenSidebar={setOpenSideBar} />
 
-                {NavImageNotIncludedPages.some((page) => window.location.href.includes(page)) ? "" : <Header />}
+                {NavImageNotIncludedPages.some((page) => window.location.pathname.includes(page)) ? "" : <Header />}
                 {children}
-                {authenicated ? <Banner /> : ""}
+                <Banner />
                 <Footer />
             </Box>
         </>

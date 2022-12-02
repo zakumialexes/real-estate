@@ -3,14 +3,12 @@ import { faArrowLeftLong, faArrowRightLong } from "@fortawesome/free-solid-svg-i
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Typography } from "@mui/material"
+import { useLoaderData } from "react-router-dom"
 
-const ImageSlider = ({
-    photos = [
-        "./assets/house-details/detail-photo-1.jpg",
-        "./assets/house-details/detail-photo-2.jpg",
-        "./assets/house-details/detail-photo-4.jpg",
-    ],
-}) => {
+const ImageSlider = () => {
+    const {
+        data: { photos, name, location, rent },
+    } = useLoaderData()
     const [currentIndex, setCurrentIndex] = useState(0)
     const [previousIndex, setPreviousIndex] = useState("")
     const handleLeftArrow = () => {
@@ -80,10 +78,10 @@ const ImageSlider = ({
                     fontSize={{ xs: "1rem", sm: "1.3rem" }}
                 >
                     <b>
-                        <strong style={{ fontSize: "1.8rem" }}>Luxury Family Home</strong>
+                        <strong style={{ fontSize: "1.8rem" }}>{name}</strong>
                     </b>
                     <br />
-                    <br /> 1421 San Pedro St, Los Angeles, CA 90015
+                    <br /> {location}
                 </Typography>
                 <Typography
                     position="absolute"
@@ -93,7 +91,7 @@ const ImageSlider = ({
                     fontSize={{ xs: "1rem", sm: "1.3rem" }}
                 >
                     <b>
-                        <strong>$13,000</strong>
+                        <strong>${rent}</strong>
                     </b>
                     /mo
                 </Typography>
