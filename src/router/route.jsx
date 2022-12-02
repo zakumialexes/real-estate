@@ -8,6 +8,7 @@ import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
 import Service from "../pages/service/Service"
 import BlogList from "../pages/blog-list/blog-list"
 import HouseList from "../pages/house-list/house-list"
+import Gallery from "../pages/gallery/gallery"
 import BlogSingle from "../pages/blog-single/blog-single"
 import Contact from "../pages/contact/contact"
 import About from "../pages/about/about"
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="terms-and-conditions" element={<TermsAndCondition />} />
+            <Route path="gallery" element={<Gallery />} />
             <Route path="house-detail" element={<HouseDetail />} />
             <Route path="service" element={<Service />} />
             <Route path="blogs" element={<BlogList />} />

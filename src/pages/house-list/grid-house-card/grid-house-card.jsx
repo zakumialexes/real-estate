@@ -4,6 +4,7 @@ import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Carousel from "../img-carousel/carousel";
+import { useEffect } from "react";
 
 export default function GridHouseCard({house}) {
     return (
