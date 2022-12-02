@@ -895,5 +895,43 @@
             "image": "/images/service/9.jpg",
             "title": "12 Walkable Cities Where You Can Live Affordably"
         }
-    ]
+    ],
+  "gallery": [
+    {
+      "id": 1,
+      "gallery_img": "/images/gallery/img1.jpg" 
+    },
+    {
+      "id": 2,
+      "gallery_img": "/images/gallery/img2.jpg" 
+    },
+    {
+      "id": 3,
+      "gallery_img": "/images/gallery/img3.jpg" 
+    },
+    {
+      "id": 4,
+      "gallery_img": "/images/gallery/img4.jpg" 
+    },
+    {
+      "id": 5,
+      "gallery_img": "/images/gallery/img5.jpg" 
+    },
+    {
+      "id": 6,
+      "gallery_img": "/images/gallery/img6.jpg" 
+    },
+    {
+      "id": 7,
+      "gallery_img": "/images/gallery/img7.jpg" 
+    },
+    {
+      "id": 8,
+      "gallery_img": "/images/gallery/img8.jpg" 
+    },
+    {
+      "id": 9,
+      "gallery_img": "/images/gallery/img9.jpg" 
+    }
+  ]
 }
