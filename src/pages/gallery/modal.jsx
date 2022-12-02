@@ -31,7 +31,14 @@ const GModal = ({
         >
           <Box onClick={prevImg}>
             <ArrowLeftIcon
-              sx={{ fontSize: "70px", color: "#ccc", cursor: "pointer" }}
+              sx={{
+                fontSize: "90px",
+                color: "#ccc",
+                cursor: "pointer",
+                "&:hover": {
+                  color: "#fff",
+                },
+              }}
             />
           </Box>
 
@@ -39,11 +46,15 @@ const GModal = ({
             <CloseIcon
               onClick={handleClose}
               sx={{
-                fontSize: "20px",
+                fontSize: "60px",
                 color: "#ccc",
-                float: "right",
-                marginBottom: ".3rem",
+                position: "fixed",
+                right: "0",
+                top: "0",
                 cursor: "pointer",
+                "&:hover": {
+                  color: "#fff",
+                },
               }}
             />
             <img
@@ -51,15 +62,22 @@ const GModal = ({
               alt="gallery_img"
               className={GalleryStyle.gMImg}
             />
-            <h6 className={GalleryStyle.imgCount}>
+            <h4 className={GalleryStyle.imgCount}>
               {" "}
               {clickImgIndex + 1} of {allPhotosLength}{" "}
-            </h6>
+            </h4>
           </Box>
 
           <Box onClick={nextImg}>
             <ArrowRightIcon
-              sx={{ fontSize: "70px", color: "#ccc", cursor: "pointer" }}
+              sx={{
+                fontSize: "90px",
+                color: "#ccc",
+                cursor: "pointer",
+                "&:hover": {
+                  color: "#fff",
+                },
+              }}
             />
           </Box>
         </Stack>

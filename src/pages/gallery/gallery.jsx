@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 import GalleryStyle from "./gallery.module.sass";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import GModal from "./modal";
+import api from "../../api/api"
 
 const Gallery = () => {
   const [galleryDatas, setGalleryDatas] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3500/gallery").then((res) => {
+    api.get("/gallery").then((res) => {
       setGalleryDatas(res.data);
     });
   }, []);
@@ -23,7 +24,6 @@ const Gallery = () => {
     setOpen(true);
     setClickImgIndex(index);
     setClickImg(galleryDatas[index].gallery_img);
-    console.log(index, clickImgIndex);
   };
 
   const handleClose = () => setOpen(false);
