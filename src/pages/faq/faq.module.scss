@@ -58,15 +58,7 @@ $active-color: #ff5a5f;
   will-change: opacity, max-height;
 }
 
-@media screen and (max-width: 1024px) {
-  .container {
-    width: 80%;
-  }
-  .question {
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
+
 
 @media screen and (max-width: 768px) {
   .container {
