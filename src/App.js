@@ -1,8 +1,9 @@
-import "./App.css"
 import { RouterProvider } from "react-router-dom"
 import router from "./router/route"
+import { Context, reducer } from "./utils/utils"
+import { useReducer, useContext } from "react"
 import { Layout } from "./layout/layout"
-import { createTheme, ThemeProvider, useTheme } from "@mui/material"
+import { createTheme, ThemeProvider } from "@mui/material"
 
 const theme = createTheme({
     components: {
@@ -12,8 +13,12 @@ const theme = createTheme({
     },
     typography: {
         allVariants: { lineHeight: "1rem" },
+        fontFamily: "Nunito",
     },
     palette: {
+        primary: {
+            main: "#ff5a5f",
+        },
         text: {
             main: "#484848",
         },
@@ -24,11 +29,14 @@ const theme = createTheme({
     },
 })
 function App() {
+    const [state, dispatch] = useReducer(reducer, useContext(Context))
     return (
         <ThemeProvider theme={theme}>
-            <Layout>
-                <RouterProvider router={router} />
-            </Layout>
+            <Context.Provider value={[state, dispatch]}>
+                <Layout>
+                    <RouterProvider router={router} />
+                </Layout>
+            </Context.Provider>
         </ThemeProvider>
     )
 }

@@ -1,14 +1,14 @@
 a {
-  text-decoration: none !important;
+  // text-decoration: none !important;
   cursor: pointer;
 }
 .text {
   color: #8a99b3 !important;
   font-size: 14px !important;
+  transition: all 0.3s ease-in-out;
 }
 .text:hover {
   color: #fff !important;
-  transition: all 0.5s ease-in-out;
 }
 .textHover:hover {
   padding-left: 8px;

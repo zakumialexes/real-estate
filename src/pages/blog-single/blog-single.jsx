@@ -13,17 +13,15 @@ import { faFacebookF, faGoogle, faLinkedin, faPinterest, faTwitter } from "@fort
 import RelatedBlogCard from "./related-post-card/related-blog-card"
 import { Grid, Typography } from "@mui/material"
 import CommentSection from "./comment-section/comment-section"
+import { useLoaderData } from "react-router-dom"
 
 function BlogSingle() {
-    const [blog, setBlog] = useState()
+    const blog = useLoaderData().data
     const [relatedBlogs, setRelatedBlogs] = useState([])
-
     async function fetchBlogs() {
-        const [fetchedBlog, fetchedRelatedBlog] = await Promise.all([
-            fetch("http://localhost:3500/blog-list/1").then((response) => response.json()),
-            fetch("http://localhost:3500/blog-list?_limit=2").then((response) => response.json()),
-        ])
-        setBlog(fetchedBlog)
+        const fetchedRelatedBlog = await fetch("http://localhost:3500/blog-list?_limit=2").then((response) =>
+            response.json()
+        )
         setRelatedBlogs(fetchedRelatedBlog)
     }
 

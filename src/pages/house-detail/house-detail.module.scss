@@ -1,0 +1,46 @@
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1500;
+    background-color: white;
+    padding: 15px 0;
+}
+
+.navItem {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.navItem:hover,
+.navActive {
+    border-bottom: 2px solid #ff5a5f !important;
+    color: #ff5a5f !important;
+}
+
+.iconContainer {
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        gap: 10px;
+    }
+    .navItem {
+        font-size: 13px;
+        padding: 15px 0;
+    }
+}

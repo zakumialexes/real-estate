@@ -1,54 +1,51 @@
-import { useMediaQuery, useTheme } from "@mui/material";
-import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
-import { default as Navbar, Sidebar } from "./navbar/navbar";
-import { default as Footer } from "./footer/footer";
-import { default as Header } from "./header/header";
-import { default as Banner } from "./banner/banner";
+import { useMediaQuery, useTheme } from "@mui/material"
+import { Box } from "@mui/system"
+import { useEffect, useState, useContext } from "react"
+import { default as Navbar, Sidebar } from "./navbar/navbar"
+import { default as Footer } from "./footer/footer"
+import { default as Header } from "./header/header"
+import { default as Banner } from "./banner/banner"
+import { Context } from "../utils/utils"
 
 export const Layout = ({ children }) => {
-  const [authenicated, setAuthenticated] = useState(false);
-  const [openSideBar, setOpenSideBar] = useState(false);
-  const style = {
-    marginLeft: "65vw",
-    width: "100vw",
-    overflow: "hidden",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    transition: "all .5s ease",
-  };
-  const theme = useTheme();
-  const large = useMediaQuery(theme.breakpoints.up("lg"));
-  const medium = useMediaQuery(theme.breakpoints.down(991));
-  useEffect(() => {
-    if (!medium) {
-      setOpenSideBar(false);
+    const context = useContext(Context)
+    const [openSideBar, setOpenSideBar] = useState(false)
+    const style = {
+        marginLeft: "65vw",
+        width: "100vw",
+        overflow: "hidden",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        transition: "all .5s ease",
     }
-  }, [medium]);
-  return (
-    <>
-      {medium ? <Sidebar openSidebar={openSideBar} /> : null}
-      <Box
-        sx={openSideBar ? { ...style } : null}
-        onClick={() => {
-          if (openSideBar === true) {
-            setOpenSideBar(false);
-          }
-        }}
-      >
-        <Navbar
-          large={large}
-          medium={medium}
-          openSidebar={openSideBar}
-          setOpenSidebar={setOpenSideBar}
-        />
+    const theme = useTheme()
+    const large = useMediaQuery(theme.breakpoints.up("lg"))
+    const medium = useMediaQuery(theme.breakpoints.down(991))
+    useEffect(() => {
+        if (!medium) {
+            setOpenSideBar(false)
+        }
+    }, [medium])
+    const NavImageNotIncludedPages = ["home", "houses/"]
+    return (
+        <>
+            {medium ? <Sidebar openSidebar={openSideBar} /> : null}
+            <Box
+                sx={openSideBar ? { ...style } : null}
+                onClick={() => {
+                    if (openSideBar === true) {
+                        setOpenSideBar(false)
+                    }
+                }}
+            >
+                <Navbar large={large} medium={medium} openSidebar={openSideBar} setOpenSidebar={setOpenSideBar} />
 
-        <Header />
-        {children}
-        {authenicated ? <Banner /> : ""}
-        <Footer />
-      </Box>
-    </>
-  );
-};
+                {NavImageNotIncludedPages.some((page) => window.location.pathname.includes(page)) ? "" : <Header />}
+                {children}
+                <Banner />
+                <Footer />
+            </Box>
+        </>
+    )
+}
