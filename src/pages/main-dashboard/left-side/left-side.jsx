@@ -11,7 +11,10 @@ export const options = {
     },
     tooltip: {
       backgroundColor: "#65fe08",
-      color: "#ff5a5f",
+      bodyColor: "#ff5a5f",
+      titleColor: "#ff5a5f",
+      borderColor: "black",
+      borderWidth: 2,
       mode: "index",
       intersect: false,
     },

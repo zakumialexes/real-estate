@@ -20,9 +20,9 @@ const RightSide = () => {
         <>
           <Stack
             my={3}
-            direction={{ xs: "column", lg: "row" }}
+            direction={{ xs: "row", lg: "column", xl: "row" }}
             spacing={2}
-            alignItems={{ xs: "flex-start", lg: "center" }}
+            alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
             <Stack
               backgroundColor="rgba(255, 90, 95,0.149)"
@@ -48,9 +48,9 @@ const RightSide = () => {
           </Stack>
           <Stack
             my={3}
-            direction={{ xs: "column", lg: "row" }}
+            direction={{ xs: "row", lg: "column", xl: "row" }}
             spacing={2}
-            alignItems={{ xs: "flex-start", lg: "center" }}
+            alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
             <Stack
               backgroundColor="rgba(255, 90, 95,0.149)"
@@ -75,9 +75,9 @@ const RightSide = () => {
           </Stack>
           <Stack
             my={3}
-            direction={{ xs: "column", lg: "row" }}
+            direction={{ xs: "row", lg: "column", xl: "row" }}
             spacing={2}
-            alignItems={{ xs: "flex-start", lg: "center" }}
+            alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
             <Stack
               backgroundColor="rgba(255, 90, 95,0.149)"

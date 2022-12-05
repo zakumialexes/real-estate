@@ -71,6 +71,7 @@ const MainDashboard = () => {
             justifyContent="space-between"
             alignItems="center"
             spacing={1}
+            key={index}
             sx={{
               backgroundColor: "#fff",
               border: "1px solid rgb(235, 235, 235)",
