@@ -57,6 +57,16 @@ const inputStyle = {
 };
 
 export const options = {
+  plugins: {
+    tooltip: {
+      mode: "index",
+      intersect: false,
+    },
+  },
+  hover: {
+    mode: "nearest",
+    intersect: false,
+  },
   scales: {
     y: {
       beginAtZero: true,

@@ -1,0 +1,33 @@
+.container {
+  padding: 30px;
+  border: 1px solid #ebebeb;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #484848;
+  }
+
+.viewContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+        padding: 15px;
+    }
+  .viewContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  .viewContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

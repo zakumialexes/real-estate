@@ -15,6 +15,7 @@ import About from "../pages/about/about"
 import ErrorPage from "../pages/404-error/errorPage"
 import Home from "../pages/home/home"
 import { dataAdapter } from "../utils/utils"
+import MainDashboard from "../pages/main-dashboard/main-dashboard"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
             />
             <Route path="*" element={<ErrorPage />} />
             <Route path="home" element={<Home />} />
+            <Route path="main-dashboard" element={<MainDashboard />} />
         </Route>
     )
 )
