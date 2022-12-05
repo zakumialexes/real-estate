@@ -64,8 +64,8 @@ const MainDashboard = () => {
       <div className={mainStyle.viewContainer}>
         {countData?.map((data, index) => (
           <Stack
-            mr={{ xs: 2, md: 3, lg: 4 }}
-            mb={{ xs: 2, md: 3, lg: 4 }}
+            mr={{ xs: 0, sm: 2, lg: 4 }}
+            mb={{ xs: 2, md: 2, lg: 4 }}
             p={{ xs: 2, xl: 4 }}
             direction="row"
             justifyContent="space-between"
@@ -76,8 +76,11 @@ const MainDashboard = () => {
               backgroundColor: "#fff",
               border: "1px solid rgb(235, 235, 235)",
               borderRadius: "10px",
+              "&:nth-child(2)": {
+                marginRight: { xs: 0, lg: 4 },
+              },
               "&:last-child": {
-                marginRight: { lg: 0 },
+                marginRight: { xs: 0 },
               },
             }}
           >

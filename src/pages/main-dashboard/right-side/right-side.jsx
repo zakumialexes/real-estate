@@ -24,22 +24,24 @@ const RightSide = () => {
             spacing={2}
             alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
-            <Stack
-              backgroundColor="rgba(255, 90, 95,0.149)"
-              justifyContent="center"
-              alignItems="center"
-              width="50px"
-              height="50px"
-              sx={{
-                borderRadius: "50%",
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faHouse}
-                color="rgb(255, 90, 95)"
-                fontSize="20px"
-              />
-            </Stack>
+            <Box width="auto">
+              <Stack
+                backgroundColor="rgba(255, 90, 95,0.149)"
+                justifyContent="center"
+                alignItems="center"
+                width="50px"
+                height="50px"
+                sx={{
+                  borderRadius: "50%",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faHouse}
+                  color="rgb(255, 90, 95)"
+                  fontSize="20px"
+                />
+              </Stack>
+            </Box>
             <Typography variant="p" fontSize="16px">
               Your listing{" "}
               <span style={{ fontWeight: "bold" }}>Luxury Family Home</span> has
@@ -52,22 +54,24 @@ const RightSide = () => {
             spacing={2}
             alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
-            <Stack
-              backgroundColor="rgba(255, 90, 95,0.149)"
-              justifyContent="center"
-              alignItems="center"
-              width="50px"
-              height="50px"
-              sx={{
-                borderRadius: "50%",
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faCommentDots}
-                color="rgb(255, 90, 95)"
-                fontSize="20px"
-              />
-            </Stack>
+            <Box width="auto">
+              <Stack
+                backgroundColor="rgba(255, 90, 95,0.149)"
+                justifyContent="center"
+                alignItems="center"
+                width="50px"
+                height="50px"
+                sx={{
+                  borderRadius: "50%",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faCommentDots}
+                  color="rgb(255, 90, 95)"
+                  fontSize="20px"
+                />
+              </Stack>
+            </Box>
             <Typography variant="p" fontSize="16px">
               Kathy Brown left a review on{" "}
               <span style={{ fontWeight: "bold" }}>Renovated Apartment</span>
@@ -79,22 +83,24 @@ const RightSide = () => {
             spacing={2}
             alignItems={{ xs: "center", lg: "flex-start", xl: "center" }}
           >
-            <Stack
-              backgroundColor="rgba(255, 90, 95,0.149)"
-              justifyContent="center"
-              alignItems="center"
-              width="50px"
-              height="50px"
-              sx={{
-                borderRadius: "50%",
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faHeart}
-                color="rgb(255, 90, 95)"
-                fontSize="20px"
-              />
-            </Stack>
+            <Box width="auto">
+              <Stack
+                backgroundColor="rgba(255, 90, 95,0.149)"
+                justifyContent="center"
+                alignItems="center"
+                width="50px"
+                height="50px"
+                sx={{
+                  borderRadius: "50%",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  color="rgb(255, 90, 95)"
+                  fontSize="20px"
+                />
+              </Stack>
+            </Box>
             <Typography variant="p" fontSize="16px">
               Someone favorites your{" "}
               <span style={{ fontWeight: "bold" }}>
