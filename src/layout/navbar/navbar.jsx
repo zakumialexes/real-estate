@@ -42,9 +42,11 @@ const DesktopNav = ({ large }) => {
         display: "flex",
         flexDirection: "row",
         height: "83px",
-        top: 0,
         left: 0,
+        top: sticky ? 0 : "-500px",
         position: sticky ? "fixed" : null,
+        transition: "all .8s ease-in-out",
+        boxShadow: sticky ? "0 5px 25px #00000018" : null,
       }}
     >
       <Box sx={{ gap: 1 }} className={Style.center}>

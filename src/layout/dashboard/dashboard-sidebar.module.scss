@@ -1,0 +1,109 @@
+$primary: #ff5a5f;
+$text: #8a99b3;
+
+.sidebar {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  z-index: 11111;
+  background: #1d293e;
+  color: #fff;
+  top: 0;
+  left: 0;
+}
+.header {
+  background-color: #24324a;
+  height: 85px;
+  transition: all 0.5s;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 40px;
+    height: 45px;
+  }
+  p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+.menuTitle {
+  margin-top: 25px;
+  color: rgb(96, 112, 140);
+  font-size: 16px;
+}
+
+.ul {
+  overflow-y: auto;
+  padding-bottom: 10px;
+  height: calc(100vh - 85px);
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 60, 60);
+    border-radius: 100px;
+  }
+}
+.listItem {
+  border-left: 2px solid transparent;
+  transition: all 0.5s;
+}
+.listItem:hover,
+.active {
+  border-left: 2px solid $primary;
+  background-color: #172133;
+  svg,
+  p {
+    color: #fff;
+  }
+}
+
+.menuItem {
+  display: flex;
+  gap: 20px;
+  text-decoration: none !important;
+  color: $text !important;
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
+  align-items: center;
+  padding: 0 16px;
+  transition: all 0.5s;
+
+  p,
+  svg {
+    font-size: 14px;
+  }
+  .arrowDown {
+    font-size: 10px;
+    margin-left: auto;
+  }
+}
+.nestedList {
+  text-decoration: none !important;
+  display: block;
+  h6 {
+    padding: 0 60px;
+  }
+}
+.nestedItem {
+  position: relative;
+  color: $text;
+
+  &::before {
+    content: ".";
+    position: absolute;
+    top: -17px;
+    left: 30px;
+    font-size: 3rem;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
