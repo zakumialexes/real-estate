@@ -20,7 +20,7 @@ import MainDashboard from "../pages/main-dashboard/main-dashboard"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/">
+        <>
             <Route path="agents" element={<AgentList />} />
             <Route path="agents/:id" element={<AgentSingle />} />
             <Route path="houses" element={<HouseList />} />
@@ -44,9 +44,9 @@ const router = createBrowserRouter(
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
             <Route path="*" element={<ErrorPage />} />
-            <Route path="home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="main-dashboard" element={<MainDashboard />} />
-        </Route>
+        </>
     )
 )
 
