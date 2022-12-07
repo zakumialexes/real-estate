@@ -57,8 +57,8 @@ $orange: #ff5a5f;
 }
 
 .detail {
-  & > div {
-    padding: 20px;
+  &>div {
+    padding: 0 20px;
 
     * {
       margin: 0;
@@ -67,6 +67,7 @@ $orange: #ff5a5f;
 }
 
 .content {
+  min-height: 13.5rem;
   p {
     color: $fontColor;
     font-size: 14px;
@@ -143,6 +144,7 @@ $orange: #ff5a5f;
   .viewListing {
     color: $orange;
     font-size: 14px;
+    display: inline-flex;
   }
 
 }
