@@ -14,12 +14,14 @@ import Contact from "../pages/contact/contact"
 import About from "../pages/about/about"
 import ErrorPage from "../pages/404-error/errorPage"
 import Home from "../pages/home/home"
+import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/">
             <Route path="agents" element={<AgentList />} />
+            <Route path="agents/:id" element={<AgentSingle />} />
             <Route path="houses" element={<HouseList />} />
             <Route
                 path="houses/:id"
