@@ -1,8 +1,10 @@
 import { useState } from "react"
 
-import { Container, TextField, Grid, Typography, Link, Button } from "@mui/material"
+import { Container, TextField, Grid, Typography, Link, Button, FormGroup, FormControlLabel, Checkbox} from "@mui/material"
 import styles from "./login.module.scss"
 import OAuth from "./OAuth"
+import { display } from "@mui/system"
+
 
 const Login = () => {
     const [login, setLogin] = useState({
@@ -26,7 +28,7 @@ const Login = () => {
         <Container maxWidth="md">
             <Grid container direction="row" justifyContent="center">
                 <Grid item xs={12} md={10} lg={6} sx={{ padding: "60px 0px" }}>
-                    <Typography mb={1} variant="h3" className={styles.title} align="center">
+                    <Typography mb={2} variant="h3" className={styles.title} align="center">
                         Login to start learning
                     </Typography>
                     <Typography className={styles.changeRoute} mb={1} align="center">
@@ -37,7 +39,7 @@ const Login = () => {
                     </Typography>
                     <form onSubmit={submitHandler}>
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Email Address"
@@ -47,7 +49,7 @@ const Login = () => {
                             value={login.email}
                         />
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Password"
@@ -56,8 +58,22 @@ const Login = () => {
                             onChange={changeHandler}
                             value={login.password}
                         />
+                        <Grid container spacing={3}>
+                            <Grid item xs>
+                                    <FormGroup sx={{marginTop:'0.2rem'}}>
+                                        <FormControlLabel
+                                        control={<Checkbox id="instructor" onClick={changeHandler} />}
+                                        label="Remember Me"/>
+                                    </FormGroup>
+                            </Grid>
+                            <Grid item xs className={styles.forgotPassword}>
+                                <Link href="forgotPassword" >Forgot Password?</Link>
+                            </Grid>
+                        </Grid>
+
+                        
                         <Button
-                            sx={{ marginTop: "6px" }}
+                            sx={{ marginTop: "0.6rem",padding:'12px 24px' }}
                             type="submit"
                             className={styles.confirmBtn}
                             size="large"
