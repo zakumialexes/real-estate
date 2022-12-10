@@ -4,7 +4,7 @@
   border: 1px solid #ebebeb;
   background-color: white;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px;
   color: #484848;
 }
 
@@ -13,11 +13,14 @@
   width: 100%;
   border: 1px solid rgb(235, 235, 235);
   font-size: 14px;
-  color: #484848;
   line-height: 1.2;
   padding: 0 10px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.textareaContact::placeholder{
+  color: #999;
 }
 
 .textareaContact {
@@ -48,5 +51,8 @@
 @media screen and (max-width: 768px) {
   .container {
     padding: 15px;
+  }
+  .textareaContact {
+    width: 100%;
   }
 }

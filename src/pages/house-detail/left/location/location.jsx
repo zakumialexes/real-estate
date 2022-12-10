@@ -9,7 +9,7 @@ const Location = () => {
     } = useLoaderData()
     return (
         <div id="location" className={locationStyle.container}>
-            <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" mb={2}>
+            <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" mb={2} spacing={2}>
                 <Typography fontSize="18px" fontWeight="bold">
                     Location
                 </Typography>

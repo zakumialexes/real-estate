@@ -32,7 +32,7 @@ const Right = () => {
                         height="90px"
                         style={{ borderRadius: "50%" }}
                     />
-                    <Box>
+                    <Stack direction="column" spacing={1} justifyContent="center">
                         <Typography fontSize="16px" fontWeight="bold">
                             Samul Williams
                         </Typography>
@@ -41,7 +41,7 @@ const Right = () => {
                         <Typography color="#ff5a5f" fontSize="14px" fontWeight="bold">
                             View My Listing
                         </Typography>
-                    </Box>
+                    </Stack>
                 </Stack>
                 <form>
                     <OutlinedInput placeholder="Your Name" type="text" sx={inputStyle} />
