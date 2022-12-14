@@ -41,7 +41,8 @@ export const Layout = ({ children }) => {
             >
                 <Navbar large={large} medium={medium} openSidebar={openSideBar} setOpenSidebar={setOpenSideBar} />
 
-                {NavImageNotIncludedPages.some((page) => window.location.pathname.includes(page)) ? "" : <Header />}
+                {!NavImageNotIncludedPages.some((page) => window.location.pathname.includes(page)) &&
+                    window.location.pathname !== "/" && <Header />}
                 {children}
                 <Banner />
                 <Footer />

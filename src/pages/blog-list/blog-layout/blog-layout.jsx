@@ -8,7 +8,7 @@ function BlogLayout({children}) {
     return (
         <Container maxWidth="lg" sx={{
             padding: {
-                sm: "60px 0"
+                sm: "auto"
             }
         }}>
             <div className={style.breadcrumbContainer}>

@@ -14,13 +14,17 @@ import Contact from "../pages/contact/contact"
 import About from "../pages/about/about"
 import ErrorPage from "../pages/404-error/errorPage"
 import Home from "../pages/home/home"
+import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
 import MyProperties from "../pages/my-properties/my-properties"
 import MyFavourites from "../pages/my-properties/my-favourite"
+import MainDashboard from "../pages/main-dashboard/main-dashboard"
+
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/">
+        <>
             <Route path="agents" element={<AgentList />} />
+            <Route path="agents/:id" element={<AgentSingle />} />
             <Route path="houses" element={<HouseList />} />
             <Route
                 path="houses/:id"
@@ -42,10 +46,11 @@ const router = createBrowserRouter(
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
             <Route path="*" element={<ErrorPage />} />
-            <Route path="home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="my-properties" element={<MyProperties />} />
             <Route path="my-favourites" element={<MyFavourites />} />
-        </Route>
+            <Route path="main-dashboard" element={<MainDashboard />} />
+        </>
     )
 )
 
