@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const DesktopNav = ({ large }) => {
+export const DesktopNav = ({ large }) => {
   const [sticky, setSticky] = useState(false);
   const onNavScroll = () => {
     if (window.scrollY > 30) {

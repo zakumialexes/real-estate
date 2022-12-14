@@ -63,15 +63,18 @@ const NestedListItem = ({ title, to }) => {
 const ListComponent = ({ id, title, icon, to = "#" }) => {
   const [select, setSelect] = useState("dashboard");
   const handleActive = (e) => {
-    setSelect(e.target.id);
+    if (select !== id) {
+      setSelect(id);
+    }
+    console.log(e.target.id);
   };
+  console.log(select, id);
   return (
     <ListItem
       disablePadding
-      className={`${style.listItem} ${select === id ? style.active : ""}`}
-      onClick={handleActive}
+      className={`${style.listItem} ${select === id ? style.active : null}`}
     >
-      <Link className={style.menuItem} id={id}>
+      <Link className={style.menuItem} id={id} onClick={handleActive}>
         <FontAwesomeIcon icon={icon} />
         <Typography>{title}</Typography>
       </Link>
@@ -120,8 +123,8 @@ const DashboardSidebar = () => {
         >
           <NestedListItem title="dashboard" />
         </NestedList>
-        <ListComponent title="My Favourite" icon={faHeart} />
-        <ListComponent title="Saved Search" icon={faSearch} />
+        <ListComponent id="favourite" title="My Favourite" icon={faHeart} />
+        <ListComponent id="search" title="Saved Search" icon={faSearch} />
         <NestedList
           icon={faMessage}
           id="review"
@@ -133,8 +136,8 @@ const DashboardSidebar = () => {
         </NestedList>
         {/* 4 main */}
         <ListTitle title="Manage Account" />
-        <ListComponent title="My Package" icon={faBox} />
-        <ListComponent title="My Profile" icon={faUser} />
+        <ListComponent id="package" title="My Package" icon={faBox} />
+        <ListComponent id="profile" title="My Profile" icon={faUser} />
         <ListComponent title="Logout" icon={faRightFromBracket} />
         {/* 5main */}
       </Box>
