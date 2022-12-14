@@ -7,7 +7,7 @@ const Heading = styled(Box)({
     textAlign: "center",
     color: "#777777",
     lineHeight: 1.2,
-    marginBottom: "50px",
+    margin: "40px 0 50px 0",
 })
 
 const Wrapper = ({ color, children, title, content }) => {

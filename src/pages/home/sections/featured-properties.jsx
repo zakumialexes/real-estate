@@ -58,7 +58,7 @@ const FeaturedPro = () => {
     return (
         <>
             <Box sx={{ width: "100%", backgroundColor: "#f7f7f7" }}>
-                <Heading sx={{ paddingTop: "20px" }}>
+                <Heading sx={{ marginTop: 0, paddingTop: "50px" }}>
                     <Typography variant="h4" color="#484848" lineHeight="1.5rem">
                         {title}
                     </Typography>
