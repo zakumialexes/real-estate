@@ -21,7 +21,7 @@ const Detail = () => {
                     <span>Baths:{baths}</span>
                     <span>SQ ft:{sqFt}</span>
                 </div>
-                <Typography fontSize="18px" fontWeight="bold" mt={3}>
+                <Typography fontSize="18px" fontWeight="bold" marginY={3}>
                     Description
                 </Typography>
                 <div className={`${detailStyle.desc} ${show ? detailStyle.show : ""}`}>

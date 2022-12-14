@@ -153,7 +153,7 @@ const Video = () => {
                                     key={index}
                                     direction={{ xs: "column", sm: "row" }}
                                     justifyContent="space-between"
-                                    style={{ lineHeight: 0.5 }}
+                                    sx={{ lineHeight : "1.7rem"}}
                                 >
                                     <p>
                                         {location.name}

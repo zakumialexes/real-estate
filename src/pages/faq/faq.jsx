@@ -16,7 +16,7 @@ const Faq = () => {
   };
   return (
     <>
-      <Typography color="#484848" align="center" marginY={5} variant="h4">
+      <Typography color="#484848" align="center" marginY={5} variant="h4" style={{lineHeight : "2.5rem"}}>
         Frequently Asked Questions
       </Typography>
       <div className={faqStyles.container}>
