@@ -1,0 +1,49 @@
+$font-color:#484848;
+$active-color:rgb(255, 90, 95);
+
+.bottomProp{
+    background-color: #ffffff;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 8px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 30px;
+
+    p{
+        color:&$font-color;
+    }
+}
+
+.prevImgBox{
+    position: relative;
+    svg{
+        position: absolute;
+        right:0.7rem;
+        top:0.7rem;
+        padding: 10px;
+        background-color: $active-color;
+        color:white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    img{
+        border-radius: 8px;
+    }
+}
+
+.dropzone{
+    width:100%;
+    height: 223px;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(235, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    p{
+        font-size: 22px;
+        color: rgb(72, 72, 72);
+        font-weight: bold;
+        line-height: 1.2;
+    }
+}

@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
 import AgentList from "../pages/agent-list/agent-list"
-import Login from "../pages/authentication/Login"
-import Register from "../pages/authentication/Register"
+import Login from "../pages/authentication/login"
+import Register from "../pages/authentication/register"
 import Faq from "../pages/faq/faq"
 import HouseDetail from "../pages/house-detail/house-detail"
 import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
@@ -17,6 +17,7 @@ import Home from "../pages/home/home"
 import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import Properties from "../pages/my-properties/properties"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -38,14 +39,17 @@ const router = createBrowserRouter(
             <Route path="gallery" element={<Gallery />} />
             <Route path="service" element={<Service />} />
             <Route path="blogs" element={<BlogList />} />
+            <Route path="property" element={<Properties/>} />
             <Route
                 path="blogs/:id"
                 element={<BlogSingle />}
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
-            <Route path="*" element={<ErrorPage />} />
             <Route path="/" element={<Home />} />
             <Route path="main-dashboard" element={<MainDashboard />} />
+
+            {/* Error route should be always at the end */}
+            <Route path="*" element={<ErrorPage />} />
         </>
     )
 )
