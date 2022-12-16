@@ -1,75 +1,38 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
-import { v4 } from 'uuid';
-
+import { useEffect, useState } from 'react'
 import styles from './properties.module.scss'
-import { ImageList, 
+import { 
          Typography, 
-         ImageListItem,
-         Box
+         Box,
+         Button
          } from '@mui/material'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DragDrop from './dragAndDrop'
+import TextAttachment from './textAttachment'
+
+
+
 
 const Properties = () => {
-  const [images,setImage] = useState([])
-  const [previews,setPreviews] = useState([])
+  const [image,setImage] = useState([])
+  const [text,setText] = useState([])
 
-  const onDrop = useCallback((acceptedFiles) => {
-    if(acceptedFiles[0]){
-        const reader = new FileReader()
-        acceptedFiles.map( data => {
-          reader.onload = () => {
-            const id = v4()
-            setImage( prevData => [...prevData,{id,data}])
-            setPreviews( prevData => [...prevData,{data, preview:reader.result,id}])
-          }
-          reader.readAsDataURL(data)
-        })
-    }
-  }, [])
+  useEffect(()=> console.log(image, text), [image,text])
 
-  //React drop-zone
-  const { 
-         getRootProps, 
-         getInputProps,
-         isDragAccept,
-         isDragReject,
-         isDragActive} = useDropzone({
-    accept: {'image/*': []}, onDrop
-  });
+  const handleUpload = () => {
 
-  const handlePreTrash = (id) => {
-    setImage(preData => preData.filter(filterData => filterData.id !== id))
-    setPreviews(preData => preData.filter(filterData => filterData.id !== id))
   }
 
   return (
     <>
         <div className={styles.bottomProp}>
             <Typography variant='h4'>Property Media</Typography>
-            <ImageList sx={{ width: '100%',marginTop:'20px' }} cols={4} rowHeight={200}>
-              {previews.map( (item,idx) => {
-                return (
-                  <ImageListItem className={styles.prevImgBox} key={idx}>
-                    <img
-                      src={item.preview}
-                      srcSet={item.preview}
-                      alt={item.path}
-                    />
-                    <FontAwesomeIcon onClick={() => handlePreTrash(item.id)} icon={faTrashCan}/>
-                  </ImageListItem>
-                )
-              })}
-            </ImageList>
-            <Box my={2} mx='auto' className={styles.dropzone}>
-              <div {...getRootProps({className: 'dropzone'})}>
-                <input {...getInputProps()} />
-                  {isDragAccept && (<p>All files with image type will be accepted.</p>)}
-                  {isDragReject && (<p>Some files will be rejected</p>)}
-                  {!isDragActive && (<p>Drag and drop images here</p>)}
-              </div>
+            {/* Drap&Drop Image */}
+            <DragDrop onImageUploadSuccess={(file) => setImage(file)}/>
+
+            <Box mb={2} mt={4} className={styles.attachments}>
+              <Typography variant='h5'>Attachments</Typography>
+              <TextAttachment onTextUploadSuccess={file => setText(file)}/>
             </Box>
+            <Button onClick={()=>{handleUpload()}}>Upload</Button>
         </div>
     </>
   )

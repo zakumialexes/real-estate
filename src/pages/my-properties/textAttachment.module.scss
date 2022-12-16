@@ -1,0 +1,14 @@
+@import 'color';
+
+.attachBtn{
+    border: 1px solid rgb(29, 41, 62) !important;
+    background-color: rgb(29, 41, 62) !important;
+    color: #ffffff !important;
+    margin-top: 0;
+    outline: 0;
+    text-align: center;
+    padding: 10px 20px !important;
+    &:hover{
+        background-color: rgb(29, 41, 62) !important;
+    }
+}
