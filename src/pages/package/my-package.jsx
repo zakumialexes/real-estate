@@ -1,9 +1,10 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Grid, Typography, TableContainer, Paper, TableRow, TableCell, Table, TableHead, TableBody } from "@mui/material";
+import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
+import { Grid, Typography, TableContainer, Paper, TableRow, TableCell, Table, TableHead, TableBody, PaginationItem } from "@mui/material";
 import { Container } from "@mui/system";
 import { useState } from "react";
-import { ColorButton, IconTextField } from "../agent-list/custom-components/custom-components";
+import { ColorButton, CustomPagination, IconTextField } from "../agent-list/custom-components/custom-components";
 import usePaginate from "../agent-list/pagination";
 
 export default function MyPackage() {
@@ -13,7 +14,10 @@ export default function MyPackage() {
   function handlePacakgeSearch(e) {
     setPacakgeSearch(e.target.value)
   }
-  const { totalPageCount, paginatedData: paginatedPackages } = usePaginate("packages", paginationPage, 6, pacakgeSearch)
+  function handlePaginationChange(event, value) {
+    setPaginationPage(value);
+  }
+  const { totalPageCount, paginatedData: paginatedPackages } = usePaginate("packages", paginationPage, 7, pacakgeSearch)
   return (
     <Container maxWidth="lg">
       <Grid container justifyContent="space-between">
@@ -67,7 +71,7 @@ export default function MyPackage() {
               <TableRow
                 key={`packageKey${i}`}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" sx={{ textTransform: "capitalize" }}>
                   {paginatedPackage.currentPackage}
                 </TableCell>
                 <TableCell>{paginatedPackage.propertiesRemaining}</TableCell>
@@ -81,6 +85,11 @@ export default function MyPackage() {
         </Table>
       </TableContainer>
       <Grid container justifyContent="end" margin="20px 0">
+        <Grid container item xs={12} justifyContent="center">
+          <CustomPagination page={paginationPage} size="large" count={totalPageCount} variant="outlined" renderItem={(item) => (
+            <PaginationItem slots={{ previour: ArrowBackOutlined, next: ArrowForwardOutlined }} {...item} />
+          )} onChange={handlePaginationChange} />
+        </Grid>
         <Grid item>
           <ColorButton sx={{ padding: "0 30px" }}>Change Package</ColorButton>
         </Grid>
