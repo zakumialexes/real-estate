@@ -1,23 +1,28 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
-import { Grid, Typography, TableContainer, Paper, TableRow, TableCell, Table, TableHead, TableBody, PaginationItem } from "@mui/material";
+import { Grid, Typography, TableContainer, TableRow, TableCell, Table, TableHead, TableBody, PaginationItem } from "@mui/material";
 import { Container } from "@mui/system";
 import { useState } from "react";
 import { ColorButton, CustomPagination, IconTextField } from "../agent-list/custom-components/custom-components";
 import usePaginate from "../agent-list/pagination";
 
 export default function MyPackage() {
+  // For initial search keyword
+  const [otherSearch, setOtherSearch] = useState("")
+  // For setting the search keyword for usePaginate
   const [pacakgeSearch, setPacakgeSearch] = useState("");
   const [paginationPage, setPaginationPage] = useState(1);
 
-  function handlePacakgeSearch(e) {
-    setPacakgeSearch(e.target.value)
-  }
   function handlePaginationChange(event, value) {
     setPaginationPage(value);
   }
-  const { totalPageCount, paginatedData: paginatedPackages } = usePaginate("packages", paginationPage, 7, pacakgeSearch)
+  function handleSearchOnEnter(event) {
+    if (event.keyCode === 13) {
+      setPacakgeSearch(otherSearch)
+    }
+  }
+  const { totalPageCount, paginatedData: paginatedPackages } = usePaginate("packages", paginationPage, 7, pacakgeSearch, !!pacakgeSearch)
   return (
     <Container maxWidth="lg">
       <Grid container justifyContent="space-between">
@@ -36,11 +41,10 @@ export default function MyPackage() {
           }}>We are glad to see you again!</Typography>
         </Grid>
         <Grid item xs={4}>
-          <IconTextField value={pacakgeSearch} handleChange={handlePacakgeSearch} forName="package search" icon={<FontAwesomeIcon icon={faSearch} />} />
+          <IconTextField value={otherSearch} handleKeyDown={handleSearchOnEnter} handleChange={e => setOtherSearch(e.target.value)} forName="package search" icon={<FontAwesomeIcon icon={faSearch} onClick={(e) => setPacakgeSearch(otherSearch)} />} />
         </Grid>
       </Grid>
       <TableContainer>
-
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead sx={{
             "& .MuiTableCell-root": {
