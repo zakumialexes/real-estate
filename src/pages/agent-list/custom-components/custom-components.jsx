@@ -199,3 +199,21 @@ export const IconTextField = ({value, handleChange, forName, icon}) => {
         </div>
     );
 };
+
+export const ColorButton = styled(Button)(({ theme }) => ({
+    backgroundColor: '#ff5a5f',
+    border: '2px solid #ff5a5f',
+    borderRadius: '5px',
+    color: '#ffffff',
+    transition: 'all 0.3s ease',
+    height: '50px',
+    width: '100%',
+    fontSize: '1rem',
+    textTransform: "capitalize",
+
+    "&:hover": {
+        cursor: "pointer",
+        backgroundColor: "transparent",
+        color: "#ff5a5f"
+    }
+}));
