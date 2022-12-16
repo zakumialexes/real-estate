@@ -186,13 +186,13 @@ export function MinimumDistanceSlider({value, setValue}) {
     );
 }
 
-export const IconTextField = ({value, handleChange, forName, icon}) => {
+export const IconTextField = ({value, handleChange, forName, icon, handleKeyDown}) => {
     return (
         <div style={{
             position: "relative"
         }} className={customCStyles.iconTextField}>
             <input name={forName} className={customCStyles.input} placeholder={forName} value={value}
-                   onChange={handleChange}/>
+                   onChange={handleChange} onKeyDown={handleKeyDown} />
             <label form={forName} className={customCStyles.iconTextFieldLabel}>
                 {icon}
             </label>
