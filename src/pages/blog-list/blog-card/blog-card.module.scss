@@ -45,7 +45,7 @@ $orange: #ff5a5f;
   }
 
   .description {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #484848;
     line-height: 1.714;
     margin-bottom: 0;
@@ -73,7 +73,8 @@ $orange: #ff5a5f;
       margin-right: 20px;
     }
 
-    .name, .date {
+    .name,
+    .date {
       height: 100%;
       margin: 0 10px 0 0;
       font-size: 14px;
@@ -81,7 +82,11 @@ $orange: #ff5a5f;
       line-height: 1.2;
     }
   }
+}
 
-  .readMore {
+@media (max-width: 600px) {
+  .description {
+    font-size: 1rem;
   }
+
 }

@@ -1,6 +1,7 @@
 $fontColor: #484848;
 $faintColor: #777777;
 $orange: #ff5a5f;
+
 .card {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
@@ -31,9 +32,13 @@ $orange: #ff5a5f;
 }
 
 .detail {
-  & > div {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-
+  &>div {
     * {
       margin: 0;
     }
@@ -43,6 +48,7 @@ $orange: #ff5a5f;
 .content {
   padding: 10px 30px;
   width: 100%;
+
   h4 {
     font-size: 18px;
     color: $fontColor;

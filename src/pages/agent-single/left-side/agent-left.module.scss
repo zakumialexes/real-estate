@@ -1,0 +1,25 @@
+$textOrange: #ff5a5f;
+$textBlack: #484848;
+.container {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.colorOrange {
+  color: $textOrange;
+}
+.header {
+  padding-bottom: 10px;
+}
+.headerText {
+  font-size: 30px;
+  line-height: 1.2;
+  color: $textBlack;
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding-bottom: 20px;
+  }
+}

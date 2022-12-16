@@ -55,7 +55,8 @@ export default function CommentSection() {
         rating: 4,
     })
     return (
-        <Box sx={{ marginTop: "20px" }}>
+        <Box sx={{ marginTop: "20px" }} 
+        id="review">
             <Paper sx={{ padding: "25px 25px 15px 25px" }}>
                 <Grid container>
                     <Grid
