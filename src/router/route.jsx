@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import AgentList from "../pages/agent-list/agent-list"
 import Login from "../pages/authentication/Login"
 import Register from "../pages/authentication/Register"
@@ -19,39 +19,41 @@ import { dataAdapter } from "../utils/utils"
 import MyProperties from "../pages/my-properties/my-properties"
 import MyFavourites from "../pages/my-properties/my-favourite"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import { DashBoardLayout, Layout } from "../layout/layout"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="agents" element={<AgentList />} />
-            <Route path="agents/:id" element={<AgentSingle />} />
-            <Route path="houses" element={<HouseList />} />
+            <Route path="/" element={<Layout children={<Home />} />} />
+            <Route path="agents" element={<Layout children={<AgentList />} />} />
+            <Route path="agents/:id" element={<Layout children={<AgentSingle />} />} />
+            <Route path="houses" element={<Layout children={<HouseList />} />} />
             <Route
                 path="houses/:id"
-                element={<HouseDetail />}
+                element={<Layout children={<HouseDetail />} />}
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `houses/${id}` })}
             />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="faq" element={<Faq />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="terms-and-conditions" element={<TermsAndCondition />} />
-            <Route path="gallery" element={<Gallery />} />
-            <Route path="service" element={<Service />} />
-            <Route path="blogs" element={<BlogList />} />
+            <Route path="login" element={<Layout children={<Login />} />} />
+            <Route path="register" element={<Layout children={<Register />} />} />
+            <Route path="faq" element={<Layout children={<Faq />} />} />
+            <Route path="about" element={<Layout children={<About />} />} />
+            <Route path="contact" element={<Layout children={<Contact />} />} />
+            <Route path="terms-and-conditions" element={<Layout children={<TermsAndCondition />} />} />
+            <Route path="gallery" element={<Layout children={<Gallery />} />} />
+            <Route path="service" element={<Layout children={<Service />} />} />
+            <Route path="blogs" element={<Layout children={<BlogList />} />} />
             <Route
                 path="blogs/:id"
-                element={<BlogSingle />}
+                element={<Layout children={<BlogSingle />} />}
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
-            <Route path="*" element={<ErrorPage />} />
-            <Route path="/" element={<Home />} />
-            <Route path="my-properties" element={<MyProperties />} />
-            <Route path="my-favourites" element={<MyFavourites />} />
-            <Route path="main-dashboard" element={<MainDashboard />} />
+            <Route path="*" element={<Layout children={<ErrorPage />} />} />
+            <Route path="dashboard" element={<DashBoardLayout />}>
+                <Route path="my-properties" element={<DashBoardLayout children={<MyProperties />} />} />
+                <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
+                <Route path="main-dashboard" element={<DashBoardLayout children={<MainDashboard />} />} />
+            </Route>
         </>
     )
 )
-
 export default router
