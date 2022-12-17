@@ -30,7 +30,7 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
         }
 
         fetchData().catch((error) => setError(error))
-    }, [pageNumber, limit, pageLink, searched,query])
+    }, [pageNumber, limit, pageLink, searched])
     const totalPageCount = useMemo(() => {
         return Math.ceil(allData.length / limit)
     }, [allData, limit])
