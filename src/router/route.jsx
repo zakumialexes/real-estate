@@ -19,6 +19,7 @@ import { dataAdapter } from "../utils/utils"
 import MyProperties from "../pages/my-properties/my-properties"
 import MyFavourites from "../pages/my-properties/my-favourite"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import SavedSearch from "../pages/saved-search/saved-search"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
             <Route path="my-properties" element={<MyProperties />} />
             <Route path="my-favourites" element={<MyFavourites />} />
             <Route path="main-dashboard" element={<MainDashboard />} />
+            <Route path="saved-search" element={<SavedSearch />} />
         </>
     )
 )
