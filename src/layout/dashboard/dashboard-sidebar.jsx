@@ -15,12 +15,20 @@ import {
   faSearch,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-const NestedList = ({ id, icon = "", selected, handleOpen, children }) => {
+const NestedList = ({
+  select,
+  handleActive,
+  id,
+  icon = "",
+  selected,
+  handleOpen,
+  children,
+}) => {
   return (
     <ListItem
       component="div"
       className={`${style.listItem} ${
-        selected === id ? `${style.active}` : null
+        select === id ? `${style.active}` : null
       }`}
       sx={{ flexDirection: "column" }}
       disablePadding
@@ -31,7 +39,7 @@ const NestedList = ({ id, icon = "", selected, handleOpen, children }) => {
         <Typography>My Properties</Typography>
         <FontAwesomeIcon
           className={style.arrowDown}
-          icon={selected === id ? faChevronUp : faChevronDown}
+          icon={select === id ? faChevronUp : faChevronDown}
         />
       </Link>
       <Collapse
@@ -39,7 +47,7 @@ const NestedList = ({ id, icon = "", selected, handleOpen, children }) => {
           width: "100%",
           padding: "5px 0",
         }}
-        in={selected === id ? true : false}
+        in={select === id ? true : false}
         timeout="auto"
         unmountOnExit
       >
@@ -60,15 +68,7 @@ const NestedListItem = ({ title, to }) => {
     </ListItem>
   );
 };
-const ListComponent = ({ id, title, icon, to = "#" }) => {
-  const [select, setSelect] = useState("dashboard");
-  const handleActive = (e) => {
-    if (select !== id) {
-      setSelect(id);
-    }
-    console.log(e.target.id);
-  };
-  console.log(select, id);
+const ListComponent = ({ select, handleActive, id, title, icon, to = "#" }) => {
   return (
     <ListItem
       disablePadding
@@ -91,30 +91,50 @@ const ListTitle = ({ title }) => {
 
 const DashboardSidebar = () => {
   const [selected, setSelected] = useState(null);
-
+  const [select, setSelect] = useState("dashboard");
+  const handleActive = (e) => {
+    setSelect(e.target.id);
+  };
   const handleOpen = (id) => {
-    if (selected === id) {
-      return setSelected(null);
+    if (select === id) {
+      return setSelect(null);
     }
-    setSelected(id);
+    setSelect(id);
   };
 
   return (
     <Box className={style.sidebar}>
       <Box component="header" className={style.header}>
-        <img src="asset/header-logo2.png" alt="" />
-        <Typography>Shwe Real Estate</Typography>
+        <img className={style.logo} src="asset/header-logo2.png" alt="" />
+        <Typography fontSize="20px">Shwe Real Estate</Typography>
       </Box>
       <Box component="ul" className={style.ul}>
         <ListTitle title="Main" />
         {/* 1 main*/}
-        <ListComponent id="dashboard" title="Dashboard" icon={faLayerGroup} />
-        <ListComponent id="message" title="Message" icon={faEnvelope} />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="dashboard"
+          title="Dashboard"
+          icon={faLayerGroup}
+        />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="message"
+          title="Message"
+          icon={faEnvelope}
+        />
         {/* 2 main */}
 
         {/* 3 main */}
         <ListTitle title="Manage Listing" />
         <NestedList
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
           title="My Properties"
           id="my-property"
           icon={faHome}
@@ -123,9 +143,26 @@ const DashboardSidebar = () => {
         >
           <NestedListItem title="dashboard" />
         </NestedList>
-        <ListComponent id="favourite" title="My Favourite" icon={faHeart} />
-        <ListComponent id="search" title="Saved Search" icon={faSearch} />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="favourite"
+          title="My Favourite"
+          icon={faHeart}
+        />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="search"
+          title="Saved Search"
+          icon={faSearch}
+        />
         <NestedList
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
           icon={faMessage}
           id="review"
           selected={selected}
@@ -136,9 +173,29 @@ const DashboardSidebar = () => {
         </NestedList>
         {/* 4 main */}
         <ListTitle title="Manage Account" />
-        <ListComponent id="package" title="My Package" icon={faBox} />
-        <ListComponent id="profile" title="My Profile" icon={faUser} />
-        <ListComponent title="Logout" icon={faRightFromBracket} />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="package"
+          title="My Package"
+          icon={faBox}
+        />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          id="profile"
+          title="My Profile"
+          icon={faUser}
+        />
+        <ListComponent
+          select={select}
+          setSelect={setSelect}
+          handleActive={handleActive}
+          title="Logout"
+          icon={faRightFromBracket}
+        />
         {/* 5main */}
       </Box>
     </Box>

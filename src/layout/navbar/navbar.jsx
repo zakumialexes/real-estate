@@ -8,6 +8,10 @@ import {
   Stack,
   List,
   ListItem,
+  Tooltip,
+  IconButton,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Style from "../navbar/navbar.module.scss";
@@ -15,77 +19,139 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export const DesktopNav = ({ large }) => {
-  const [sticky, setSticky] = useState(false);
-  const onNavScroll = () => {
-    if (window.scrollY > 30) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
+const settings = [
+  "My Profile",
+  "Message",
+  "Purchase History",
+  "Account",
+  "Help",
+  "Logout",
+];
+export const DesktopNav = ({ sticky, dashboard, large }) => {
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", onNavScroll);
-    return () => {
-      window.removeEventListener("scroll", onNavScroll);
-    };
-  }, []);
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
     <Container
       component="header"
       maxWidth={false}
-      className={Style.navbar}
       sx={{
-        alignItems: "center",
-        justifyContent: "space-between",
-        display: "flex",
-        flexDirection: "row",
-        height: "83px",
-        left: 0,
+        height: large ? "85px" : "83px",
         top: sticky ? 0 : "-500px",
         position: sticky ? "fixed" : null,
         transition: "all .8s ease-in-out",
         boxShadow: sticky ? "0 5px 25px #00000018" : null,
       }}
+      className={Style.navbar}
     >
-      <Box sx={{ gap: 1 }} className={Style.center}>
-        <Avatar
-          sx={{
-            height: "auto",
-            maxWidth: "100%",
-            borderRadius: "0",
-            marginBottom: "10px",
-          }}
-          src={"asset/header-logo2.png"}
-          alt=""
-        />
-        <Typography
-          component="h2"
-          fontWeight="bold"
-          fontSize="28px"
-          color="#484848"
-        >
-          Shwe Real Estate
-        </Typography>
-      </Box>
+      {!dashboard && (
+        <Box sx={{ gap: 1 }} className={Style.center}>
+          <Avatar
+            className={Style.logo}
+            src={"asset/header-logo2.png"}
+            alt=""
+          />
+          <Typography
+            component="h2"
+            fontWeight="bold"
+            fontSize="28px"
+            color="#484848"
+          >
+            Shwe Real Estate
+          </Typography>
+        </Box>
+      )}
 
-      <Stack direction={"row"} gap={2} alignItems="center">
+      <Stack
+        direction={"row"}
+        gap={2}
+        alignItems="center"
+        sx={dashboard && { ml: "auto" }}
+      >
         <Stack direction={"row"} alignItems="center" gap={2} sx={{}}>
           <Link href="">
             <Typography fontSize="16px" color="#484848">
               Contact
             </Typography>
           </Link>
+
           <span className={Style.divider}></span>
 
-          <Link href="login" className={Style.center}>
-            <FontAwesomeIcon className={Style.text} icon={faUser} />
-            <Typography fontSize="16px" color="#484848" marginLeft={1}>
-              Login/Register
-            </Typography>
-          </Link>
+          {dashboard ? (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar
+                    sx={{ width: "35px", height: "35px" }}
+                    alt="Remy Sharp"
+                    src="/static/images/avatar/2.jpg"
+                  />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{
+                  mt: "45px",
+                  "& .MuiMenu-paper": {
+                    width: "300px",
+                    top: "30px",
+                    minHeight: "250px",
+                    padding: "20px 30px",
+                  },
+                }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                <Box sx={{ mb: "20px", display: "flex", gap: 2 }}>
+                  <Avatar
+                    sx={{ borderRadius: "2px" }}
+                    src="https://loremflickr.com/320/240"
+                  />
+                  <Box>
+                    <Typography className={Style.text}> Ali Tufan</Typography>
+                    <Typography className={Style.text}>
+                      alitufan@gmail.com
+                    </Typography>
+                  </Box>
+                </Box>
+                {settings.map((setting) => (
+                  <MenuItem
+                    className={Style.menuItem}
+                    key={setting}
+                    onClick={handleCloseUserMenu}
+                  >
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          ) : (
+            <Link href="login" className={Style.center}>
+              <FontAwesomeIcon className={Style.text} icon={faUser} />
+              <Typography fontSize="16px" color="#484848" marginLeft={1}>
+                Login/Register
+              </Typography>
+            </Link>
+          )}
         </Stack>
+
         <Button
           sx={{
             width: { xs: "100px", lg: "180px" },
@@ -173,7 +239,7 @@ export const Sidebar = ({ openSidebar }) => {
   );
 };
 
-const MobileNav = ({ setOpenSidebar, openSidebar }) => {
+const MobileNav = ({ setOpenSidebar, openSidebar, dashboard }) => {
   const handleSideBar = () => {
     setOpenSidebar(!openSidebar);
   };
@@ -198,11 +264,14 @@ const MobileNav = ({ setOpenSidebar, openSidebar }) => {
           alignItems="center"
           sx={{ height: "100%" }}
         >
-          <div className={Style.line} onClick={handleSideBar}>
-            <span className={Style.line1} />
-            <span className={Style.line2} />
-            <span className={Style.line3} />
-          </div>
+          {!dashboard && (
+            <div className={Style.line} onClick={handleSideBar}>
+              <span className={Style.line1} />
+              <span className={Style.line2} />
+              <span className={Style.line3} />
+            </div>
+          )}
+
           <Stack direction="row" alignItems="center" gap={1}>
             <Avatar
               sx={{
@@ -227,11 +296,26 @@ const MobileNav = ({ setOpenSidebar, openSidebar }) => {
   );
 };
 
-const Navbar = ({ openSidebar, setOpenSidebar, large, medium }) => {
+const Navbar = ({ dashboard, openSidebar, setOpenSidebar, large, medium }) => {
+  const [sticky, setSticky] = useState(false);
+
+  const onNavScroll = () => {
+    if (window.scrollY > 30) {
+      return setSticky(true);
+    } else {
+      return setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
+
+    return () => window.removeEventListener("scroll", onNavScroll);
+  }, []);
   return !medium ? (
-    <DesktopNav large={large} />
+    <DesktopNav sticky={sticky} large={large} dashboard />
   ) : (
-    <MobileNav openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
+    <MobileNav dashboard />
   );
 };
 

@@ -30,13 +30,7 @@ const links = [
   { id: "link-10", icon: faRightFromBracket, to: "#", title: "logout" },
 ];
 
-const ListsItem = ({ id, icon, to = "/", title }) => {
-  const [active, setActive] = useState("link-1");
-  const handleClick = (e) => {
-    e.preventDefault();
-    setActive(null);
-    setActive(e.target.id);
-  };
+const ListsItem = ({ handleClick, active, id, icon, to = "/", title }) => {
   console.log("active", active, id);
   return (
     <li>
@@ -58,26 +52,41 @@ const MobileDashboardNavbar = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
+
+  const [active, setActive] = useState("link-1");
+  const handleClick = (e) => {
+    e.preventDefault();
+    return setActive(e.target.id);
+  };
+
   return (
-    <Container
-      component="nav"
-      maxWidth="false"
-      sx={{ marginY: "10px", p: { xs: 0, lg: 3 } }}
-    >
-      <div className={style.dropdownBtn} onClick={handleOpen}>
-        <Stack direction="row" alignItems="center" gap={2} height="100%">
-          <FontAwesomeIcon style={{ cursor: "pointer" }} icon={faBars} />
-          <Typography>Dashboard Navigation</Typography>
-        </Stack>
-      </div>
+    <>
+      <Container
+        component="nav"
+        maxWidth="false"
+        sx={{ marginY: "10px", p: { xs: 0, lg: 3 } }}
+      >
+        <div className={style.dropdownBtn} onClick={handleOpen}>
+          <Stack direction="row" alignItems="center" gap={2} height="100%">
+            <FontAwesomeIcon style={{ cursor: "pointer" }} icon={faBars} />
+            <Typography fontSize="16px">Dashboard Navigation</Typography>
+          </Stack>
+        </div>
+      </Container>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <Box component="ul" className={style.ul}>
           {links.map((item, i) => (
-            <ListsItem key={i} {...item} />
+            <ListsItem
+              handleClick={handleClick}
+              setActive={setActive}
+              active={active}
+              key={i}
+              {...item}
+            />
           ))}
         </Box>
       </Collapse>
-    </Container>
+    </>
   );
 };
 
