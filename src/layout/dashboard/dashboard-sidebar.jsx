@@ -90,7 +90,6 @@ const ListTitle = ({ title }) => {
 };
 
 const DashboardSidebar = () => {
-  const [selected, setSelected] = useState(null);
   const [select, setSelect] = useState("dashboard");
   const handleActive = (e) => {
     setSelect(e.target.id);
@@ -138,7 +137,6 @@ const DashboardSidebar = () => {
           title="My Properties"
           id="my-property"
           icon={faHome}
-          selected={selected}
           handleOpen={handleOpen}
         >
           <NestedListItem title="dashboard" />
@@ -165,7 +163,6 @@ const DashboardSidebar = () => {
           handleActive={handleActive}
           icon={faMessage}
           id="review"
-          selected={selected}
           handleOpen={handleOpen}
         >
           <NestedListItem title="My Review" />

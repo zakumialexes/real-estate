@@ -7,7 +7,8 @@ import { default as Header } from "./header/header";
 import { default as Banner } from "./banner/banner";
 import { Context } from "../utils/utils";
 import DashboardSidebar from "./dashboard/dashboard-sidebar";
-import MobileDashboardNavbard from "./dashboard/mobile-dashboard-navbar";
+import MobileDashboardNavbar from "./dashboard/mobile-dashboard-navbar";
+import Copyright from "./copyright/copyright";
 
 const style = {
   marginLeft: "65vw",
@@ -63,14 +64,14 @@ const ContentBox = ({ medium, children }) => {
   return (
     <Box
       sx={{
-        bgcolor: "skyblue",
         minHeight: "100vh",
         p: medium ? "90px 20px" : "30px 20px",
         ml: !medium ? "25%" : "0",
       }}
     >
       {children}
-      Content
+
+      <Copyright />
     </Box>
   );
 };
@@ -88,16 +89,10 @@ export const DashBoardLayout = ({ children }) => {
         }
       }}
     >
-      <Navbar
-        dashboard
-        large={large}
-        medium={medium}
-        openSidebar={openSideBar}
-        setOpenSidebar={setOpenSideBar}
-      />
+      <Navbar dashboard={true} large={large} medium={medium} />
       {!medium && <DashboardSidebar />}
       <ContentBox medium={medium}>
-        {medium && <MobileDashboardNavbard />}
+        {medium && <MobileDashboardNavbar />}
       </ContentBox>
       {children}
     </Box>

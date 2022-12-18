@@ -35,10 +35,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Context.Provider value={[state, dispatch]}>
-        {/* <Layout>
+        <Layout>
           <RouterProvider router={router} />
-        </Layout> */}
-        <RouterProvider router={router} />
+        </Layout>
+        {/* <RouterProvider router={router} /> */}
       </Context.Provider>
     </ThemeProvider>
   );

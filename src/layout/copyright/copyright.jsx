@@ -4,7 +4,7 @@ import React from "react";
 const Copyright = ({ align = "center", top = 0 }) => {
   const date = new Date();
   return (
-    <Box sx={{ textAlign: align, mt: top }}>
+    <Box sx={{ textAlign: align, mt: "20px" }}>
       <Typography
         sx={{ transition: "all .5s" }}
         fontSize="14px"

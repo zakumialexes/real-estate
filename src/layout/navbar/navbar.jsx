@@ -27,17 +27,14 @@ const settings = [
   "Help",
   "Logout",
 ];
-export const DesktopNav = ({ sticky, dashboard, large }) => {
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
+export const DesktopNav = ({
+  anchorElUser,
+  handleOpenUserMenu,
+  handleCloseUserMenu,
+  sticky,
+  dashboard,
+  large,
+}) => {
   return (
     <Container
       component="header"
@@ -99,7 +96,7 @@ export const DesktopNav = ({ sticky, dashboard, large }) => {
                 sx={{
                   mt: "45px",
                   "& .MuiMenu-paper": {
-                    width: "300px",
+                    width: !large ? "250px" : "300px",
                     top: "30px",
                     minHeight: "250px",
                     padding: "20px 30px",
@@ -239,7 +236,14 @@ export const Sidebar = ({ openSidebar }) => {
   );
 };
 
-const MobileNav = ({ setOpenSidebar, openSidebar, dashboard }) => {
+const MobileNav = ({
+  anchorElUser,
+  handleOpenUserMenu,
+  handleCloseUserMenu,
+  setOpenSidebar,
+  openSidebar,
+  dashboard,
+}) => {
   const handleSideBar = () => {
     setOpenSidebar(!openSidebar);
   };
@@ -283,12 +287,72 @@ const MobileNav = ({ setOpenSidebar, openSidebar, dashboard }) => {
               src={"asset/header-logo2.png"}
               alt=""
             />
-            <Typography component="h2" fontWeight="bold" fontSize="28px">
+            <Typography component="h2" fontWeight="bold" fontSize="24px">
               Shwe Real Estate
             </Typography>
           </Stack>
           <Box>
-            <FontAwesomeIcon icon={faUser} />
+            {dashboard ? (
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                      sx={{ width: "35px", height: "35px" }}
+                      alt="Remy Sharp"
+                      src="/static/images/avatar/2.jpg"
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{
+                    mt: "45px",
+                    "& .MuiMenu-paper": {
+                      width: "250px",
+                      top: "30px",
+                      minHeight: "250px",
+                      padding: "20px 30px",
+                    },
+                  }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <Box sx={{ mb: "20px", display: "flex", gap: 2 }}>
+                    <Avatar
+                      sx={{ borderRadius: "2px" }}
+                      src="https://loremflickr.com/320/240"
+                    />
+                    <Box>
+                      <Typography className={Style.text}> Ali Tufan</Typography>
+                      <Typography className={Style.text}>
+                        alitufan@gmail.com
+                      </Typography>
+                    </Box>
+                  </Box>
+                  {settings.map((setting) => (
+                    <MenuItem
+                      className={Style.menuItem}
+                      key={setting}
+                      onClick={handleCloseUserMenu}
+                    >
+                      <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+            ) : (
+              <FontAwesomeIcon icon={faUser} />
+            )}
           </Box>
         </Stack>
       </Container>
@@ -297,6 +361,8 @@ const MobileNav = ({ setOpenSidebar, openSidebar, dashboard }) => {
 };
 
 const Navbar = ({ dashboard, openSidebar, setOpenSidebar, large, medium }) => {
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   const [sticky, setSticky] = useState(false);
 
   const onNavScroll = () => {
@@ -306,16 +372,37 @@ const Navbar = ({ dashboard, openSidebar, setOpenSidebar, large, medium }) => {
       return setSticky(false);
     }
   };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   useEffect(() => {
     window.addEventListener("scroll", onNavScroll);
 
     return () => window.removeEventListener("scroll", onNavScroll);
   }, []);
+  
   return !medium ? (
-    <DesktopNav sticky={sticky} large={large} dashboard />
+    <DesktopNav
+      anchorElUser={anchorElUser}
+      handleOpenUserMenu={handleOpenUserMenu}
+      handleCloseUserMenu={handleCloseUserMenu}
+      sticky={sticky}
+      large={large}
+      dashboard={dashboard}
+    />
   ) : (
-    <MobileNav dashboard />
+    <MobileNav
+      anchorElUser={anchorElUser}
+      dashboard={dashboard}
+      handleOpenUserMenu={handleOpenUserMenu}
+      handleCloseUserMenu={handleCloseUserMenu}
+      openSidebar={openSidebar}
+      setOpenSidebar={setOpenSidebar}
+    />
   );
 };
 
