@@ -1,0 +1,15 @@
+$font-color:#484848;
+$active-color:rgb(255, 90, 95);
+
+@mixin bpBtn($background, $color) {
+    border: 1px solid $background !important;
+    background-color: $background !important;
+    color: $color !important;
+    margin-top: 0;
+    outline: 0;
+    text-align: center;
+    padding: 10px 20px !important;
+    &:hover{
+        background-color: $background !important;
+    }
+}

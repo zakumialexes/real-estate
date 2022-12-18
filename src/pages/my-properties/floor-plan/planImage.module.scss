@@ -1,0 +1,22 @@
+@import '../bottomProperties';
+
+.prevImgBox{
+    position: relative;
+    svg{
+        position: absolute;
+        right:0.7rem;
+        top:0.7rem;
+        padding: 10px;
+        background-color: $active-color;
+        color:white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    img{
+        border-radius: 8px;
+    }
+}
+
+.uploadBtn{
+    @include bpBtn(rgb(29, 41, 62), #fff);
+}

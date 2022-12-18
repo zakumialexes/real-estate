@@ -1,6 +1,6 @@
-@import 'color';
+@import '../bottomProperties';
 
-.bottomProp{
+.floorPlan{
     background-color: #ffffff;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 8px;
@@ -11,15 +11,9 @@
     p{
         color:&$font-color;
     }
+
+    .fpBtn{
+        @include bpBtn(#ff5a5f, #fff);
+    }
 }
 
-.attachments{
-   h5{
-    line-height: 1.2;
-    color: #484848;
-    font-weight: 500;
-   }
-   .textAttach{
-    display: none;
-   }
-}

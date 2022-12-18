@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import styles from './properties.module.scss'
+import styles from './propertiesMedia.module.scss'
 import { 
          Typography, 
          Box,
-         Button
+         Button,
+         Stack
          } from '@mui/material'
 import DragDrop from './dragAndDrop'
 import TextAttachment from './textAttachment'
@@ -11,14 +12,12 @@ import TextAttachment from './textAttachment'
 
 
 
-const Properties = () => {
+const PropertiesMedia = () => {
   const [image,setImage] = useState([])
   const [text,setText] = useState([])
 
-  useEffect(()=> console.log(image, text), [image,text])
-
   const handleUpload = () => {
-
+    console.log('Properties Image array', image, 'Properties text array', text)
   }
 
   return (
@@ -32,10 +31,12 @@ const Properties = () => {
               <Typography variant='h5'>Attachments</Typography>
               <TextAttachment onTextUploadSuccess={file => setText(file)}/>
             </Box>
-            <Button onClick={()=>{handleUpload()}}>Upload</Button>
+            <Stack direction='row' justifyContent='center'>
+              <Button className={styles.pmBtn} variant='contained' onClick={()=>{handleUpload()}}>Submit</Button>
+            </Stack>
         </div>
     </>
   )
 }
 
-export default Properties
+export default PropertiesMedia

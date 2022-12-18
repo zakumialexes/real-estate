@@ -19,7 +19,6 @@ function TextAttachment({onTextUploadSuccess}) {
         if(acceptedFiles[0]){
             acceptedFiles.forEach( data => setTextFiles( prevFiles => [...prevFiles,{id:v4(), ...data} ]))
         }
-        
     }, [])
 
     useEffect( () => onTextUploadSuccess(textFiles), [textFiles,onTextUploadSuccess])
@@ -42,9 +41,9 @@ function TextAttachment({onTextUploadSuccess}) {
             <input {...getInputProps()} />
             {onDropRejected && <p>Only Text Files are allowed</p>}
             <Button variant='contained' className={styles.attachBtn} onClick={open}>
-                Open File Dialog
+                Select Attachment
             </Button>
-      </div>
+        </div>
         </Grid>
         <Grid item lg={6} xs={12}>
             <List>
