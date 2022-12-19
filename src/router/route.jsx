@@ -48,10 +48,11 @@ const router = createBrowserRouter(
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
             <Route path="*" element={<Layout children={<ErrorPage />} />} />
-            <Route path="dashboard" element={<DashBoardLayout />}>
+            <Route path="dashboard">
+                <Route path="*" element={<DashBoardLayout children={<ErrorPage />} />} />
                 <Route path="my-properties" element={<DashBoardLayout children={<MyProperties />} />} />
                 <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
-                <Route path="main-dashboard" element={<DashBoardLayout children={<MainDashboard />} />} />
+                <Route path="" element={<DashBoardLayout children={<MainDashboard />} />} />
             </Route>
         </>
     )
