@@ -974,7 +974,180 @@
                     "new_psw": "",
                     "confirmed_psw": ""
                 }
-            ]
+            ],
+    "my-properties": [
+        {
+            "image": "./assets/myproperties/grid-photo-6.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 2,
+            "price": 13000,
+            "tags": ["For Rent"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-7.jpg",
+            "name": "Renovated Apartment",
+            "location": "processing",
+            "date": "30 December, 2020",
+            "status": "processing",
+            "view": 2345,
+            "id": 3,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-8.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "pending",
+            "view": 2345,
+            "id": 4,
+            "price": 13000,
+            "tags": ["For Rent"]
+        },
+        {
+            "image": "./assets/myproperties/img3.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 5,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/img4.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 6,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-1.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "pending",
+            "view": 2345,
+            "id": 7,
+            "price": 13000,
+            "tags": ["For Rent"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-6.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 8,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-7.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "processing",
+            "view": 2345,
+            "id": 9,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-8.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "pending",
+            "view": 2345,
+            "id": 4,
+            "price": 13000,
+            "tags": ["For Rent"]
+        },
+        {
+            "image": "./assets/myproperties/img3.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 10,
+            "price": 13000,
+            "tags": ["For Sale"]
+        },
+        {
+            "image": "./assets/myproperties/img4.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "date": "30 December, 2020",
+            "status": "published",
+            "view": 2345,
+            "id": 11,
+            "price": 13000,
+            "tags": ["For Rent"]
+        }
+    ],
+    "my-favourites": [
+        {
+            "image": "./assets/myproperties/grid-photo-6.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 23000,
+            "tags": ["For Rent"],
+            "id": 2
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-7.jpg",
+            "name": "Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 34000,
+            "tags": ["For Sale"],
+            "id": 3
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-6.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 23000,
+            "tags": ["For Rent"],
+            "id": 5
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-1.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 13000,
+            "tags": ["For Rent"],
+            "id": 7
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-6.jpg",
+            "name": "Renovated Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 23000,
+            "tags": ["For Rent"],
+            "id": 8
+        },
+        {
+            "image": "./assets/myproperties/grid-photo-7.jpg",
+            "name": "Apartment",
+            "location": "1421 San Pedro St, Los Angeles, CA 90015",
+            "price": 34000,
+            "tags": ["For Sale"],
+            "id": 9
+        }
+    ]
         }
     }
 }

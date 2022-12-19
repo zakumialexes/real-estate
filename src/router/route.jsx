@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import AgentList from "../pages/agent-list/agent-list"
 import Login from "../pages/authentication/Login"
 import Register from "../pages/authentication/Register"
@@ -16,32 +16,36 @@ import ErrorPage from "../pages/404-error/errorPage"
 import Home from "../pages/home/home"
 import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
+import MyProperties from "../pages/my-properties/my-properties"
+import MyFavourites from "../pages/my-properties/my-favourite"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import { DashBoardLayout, Layout } from "../layout/layout"
 import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="agents" element={<AgentList />} />
-            <Route path="agents/:id" element={<AgentSingle />} />
-            <Route path="houses" element={<HouseList />} />
+            <Route path="/" element={<Layout children={<Home />} />} />
+            <Route path="agents" element={<Layout children={<AgentList />} />} />
+            <Route path="agents/:id" element={<Layout children={<AgentSingle />} />} />
+            <Route path="houses" element={<Layout children={<HouseList />} />} />
             <Route
                 path="houses/:id"
-                element={<HouseDetail />}
+                element={<Layout children={<HouseDetail />} />}
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `houses/${id}` })}
             />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="faq" element={<Faq />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="terms-and-conditions" element={<TermsAndCondition />} />
-            <Route path="gallery" element={<Gallery />} />
-            <Route path="service" element={<Service />} />
-            <Route path="blogs" element={<BlogList />} />
+            <Route path="login" element={<Layout children={<Login />} />} />
+            <Route path="register" element={<Layout children={<Register />} />} />
+            <Route path="faq" element={<Layout children={<Faq />} />} />
+            <Route path="about" element={<Layout children={<About />} />} />
+            <Route path="contact" element={<Layout children={<Contact />} />} />
+            <Route path="terms-and-conditions" element={<Layout children={<TermsAndCondition />} />} />
+            <Route path="gallery" element={<Layout children={<Gallery />} />} />
+            <Route path="service" element={<Layout children={<Service />} />} />
+            <Route path="blogs" element={<Layout children={<BlogList />} />} />
             <Route
                 path="blogs/:id"
-                element={<BlogSingle />}
+                element={<Layout children={<BlogSingle />} />}
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
             <Route path="*" element={<ErrorPage />} />
@@ -51,5 +55,4 @@ const router = createBrowserRouter(
         </>
     )
 )
-
 export default router

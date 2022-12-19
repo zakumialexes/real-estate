@@ -56,6 +56,8 @@ const inputStyle = {
   },
 };
 
+
+
 export const options = {
   plugins: {
     tooltip: {
@@ -122,7 +124,8 @@ export const monthlyData = {
       label: "Dataset 1",
       data: [65, 60, 21, 81, 56, 55, 40],
       backgroundColor: "rgba(238,158,182, 0.5)",
-      borderColor: "#E35C85",
+      borderColor: "rgb(238,158,182)",
+      borderWidth: 2,
     },
   ],
 };
