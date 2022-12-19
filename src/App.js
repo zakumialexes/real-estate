@@ -2,8 +2,10 @@ import { RouterProvider } from "react-router-dom"
 import router from "./router/route"
 import { Context, reducer } from "./utils/utils"
 import { useReducer, useContext } from "react"
-import { Layout } from "./layout/layout"
+import { DashBoardLayout, Layout } from "./layout/layout"
 import { createTheme, ThemeProvider } from "@mui/material"
+import DashboardSidebar from "./layout/dashboard/dashboard-sidebar"
+import { DesktopNav } from "./layout/navbar/navbar"
 
 const theme = createTheme({
     components: {
@@ -33,9 +35,7 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Context.Provider value={[state, dispatch]}>
-                <Layout>
-                    <RouterProvider router={router} />
-                </Layout>
+                <RouterProvider router={router} />
             </Context.Provider>
         </ThemeProvider>
     )
