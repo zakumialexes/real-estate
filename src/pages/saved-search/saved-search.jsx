@@ -4,7 +4,8 @@ import { Box, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
 import api from "../my-properties/api";
-import { CustomTextField } from "../my-properties/customComponents";
+import { CustomTextField, PaginationCon } from "../my-properties/customComponents";
+import usePagination from "./pagination";
 import SavedTable from "./table";
 
 const style = {
@@ -20,8 +21,18 @@ const style = {
 
 const SavedSearch = () => {
   const [data, setData] = useState([]);
-
+  const [query, setQuery] = useState("");
   const url = "http://localhost:3500/saved-search";
+  let [page, setPage] = useState(1);
+  const PER_PAGE = 4;
+
+  const count = Math.ceil(data.length / PER_PAGE);
+  const _DATA = usePagination(data, PER_PAGE);
+
+  const handlePageChange = (e, p) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
 
   const fetchData = async () => {
     try {
@@ -35,28 +46,28 @@ const SavedSearch = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [query]);
 
   const Delete = (id) => {
     api.delete(`${url}/${id}`).then(() => {
-      //   setOpen(false)
       fetchData();
     });
   };
 
-  const action = () => {
-    // let random = Math.random()
-    // while (random === searched) random = Math.random()
-    // setSearched(random)
-    // setPage(1)
+  const handleSearch = () => {
+    let filterData = data.filter((data) =>
+      data.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setData(filterData);
+    setPage(1);
+    _DATA.jump(1);
   };
 
   const handleInput = (e) => {
-    // setQuery(e.target.value)
+    setQuery(e.target.value);
   };
   return (
-    <Box  p={{ xs: 2, lg: 5 }}
-    backgroundColor="#f7f7f7">
+    <Box p={{ xs: 2, lg: 5 }} backgroundColor="#f7f7f7">
       <Stack
         direction={{ xs: "column", lg: "row" }}
         justifyContent="space-between"
@@ -74,19 +85,19 @@ const SavedSearch = () => {
           <Typography variant="body1">We glad to see you again!</Typography>
         </Box>
         <CustomTextField
-          onKeyUp={(e) => e.key === "Enter" && action()}
+          onKeyUp={(e) => e.key === "Enter" && handleSearch()}
           sx={style.search}
           margin="normal"
           required
           onChange={handleInput}
           fullWidth
-          // value={query}
+          value={query}
           name="search"
           autoComplete="Search"
           placeholder="Search Courses"
           InputProps={{
             endAdornment: (
-              <Box onClick={action}>
+              <Box onClick={handleSearch} sx={{ cursor: "pointer" }}>
                 <FontAwesomeIcon icon={faSearch} />
               </Box>
             ),
@@ -94,7 +105,8 @@ const SavedSearch = () => {
           }}
         />
       </Stack>
-      <SavedTable data={data} Delete={Delete} />
+      <SavedTable data={_DATA.currentData()} Delete={Delete} />
+      <PaginationCon page={page} totalPage={count} handleChange={handlePageChange} />
     </Box>
   );
 };
