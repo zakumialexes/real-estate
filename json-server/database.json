@@ -934,7 +934,6 @@
             "gallery_img": "/images/gallery/img9.jpg"
         }
     ],
-    "dashboard": {
     "my-properties": [
         {
             "image": "./assets/myproperties/grid-photo-6.jpg",
@@ -1243,5 +1242,4 @@
             "createdAt": "December 30, 2022"
         }
     ]
-    }
 }
