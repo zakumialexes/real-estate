@@ -110,7 +110,7 @@ const Contact = () => {
                 >
                   Send Us An Email
                 </Typography>
-                <Typography fontSize="14px" marginBottom="30px">
+                <Typography className={Style.text}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                   gravida quis libero eleifend ornare. Maecenas mattis enim at
                   arcu feugiat, sit amet blandit nisl iaculis. Donec lacus odio,
@@ -203,7 +203,7 @@ const Contact = () => {
                 >
                   Contact Us
                 </Typography>
-                <Typography fontSize="14px" marginBottom="30px">
+                <Typography className={Style.text}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                   gravida quis libero eleifend ornare. habitasse platea
                   dictumst.
@@ -219,9 +219,7 @@ const Contact = () => {
                     >
                       {link.title}
                     </Typography>
-                    <Typography fontSize="14px" marginBottom="20px">
-                      {link.des}
-                    </Typography>
+                    <Typography className={Style.text}>{link.des}</Typography>
                   </React.Fragment>
                 ))}
                 <Typography
