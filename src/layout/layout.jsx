@@ -58,7 +58,7 @@ const ContentBox = ({ medium, children }) => {
         <Box
             sx={{
                 minHeight: "100vh",
-                p: medium ? "90px 20px" : "30px 20px",
+                // p: medium ? "90px 20px" : "30px 20px",
                 ml: !medium ? "25%" : "0",
             }}
         >
