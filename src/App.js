@@ -3,7 +3,7 @@ import router from "./router/route"
 import { Context, reducer } from "./utils/utils"
 import { useReducer, useContext } from "react"
 import { Layout } from "./layout/layout"
-import { createTheme, ThemeProvider } from "@mui/material"
+import { createTheme, ThemeProvider } from '@mui/material'
 
 const theme = createTheme({
     components: {
@@ -18,6 +18,8 @@ const theme = createTheme({
     palette: {
         primary: {
             main: "#ff5a5f",
+            white: "#fff",
+            background: "#f7f7f7"
         },
         text: {
             main: "#484848",

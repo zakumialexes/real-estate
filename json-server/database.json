@@ -933,5 +933,48 @@
             "id": 9,
             "gallery_img": "/images/gallery/img9.jpg"
         }
-    ]
+    ],
+    "dashboard": {
+        "profile": {
+            "information": [
+                {
+                    "id": 1,
+                    "profile_photo": "/assets/user/user.png",
+                    "user_name": "Ngwe Sin",
+                    "email": "test@gmail.com",
+                    "first_name": "Ngwe Sin",
+                    "last_name": "Sandar",
+                    "position": "",
+                    "license": "",
+                    "tax_number": "",
+                    "phone": "",
+                    "fax_num": "",
+                    "language": "",
+                    "company_name": "",
+                    "address": "",
+                    "about_me": ""
+                }
+            ],
+            "socials": [
+                {
+                    "id": 1,
+                    "skype": "",
+                    "website": "",
+                    "facebook": "",
+                    "twitter": "",
+                    "linkedin": "",
+                    "insta": "",
+                    "youtube": "",
+                    "pinterest": ""
+                }
+            ],
+            "password": [
+                {
+                    "id": 1,
+                    "new_psw": "",
+                    "confirmed_psw": ""
+                }
+            ]
+        }
+    }
 }

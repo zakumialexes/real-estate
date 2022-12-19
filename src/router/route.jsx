@@ -17,6 +17,7 @@ import Home from "../pages/home/home"
 import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
             <Route path="*" element={<ErrorPage />} />
             <Route path="/" element={<Home />} />
             <Route path="main-dashboard" element={<MainDashboard />} />
+            <Route path="dashboard-profile" element={<DashboardProfile />} />
         </>
     )
 )
