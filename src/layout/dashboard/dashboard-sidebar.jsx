@@ -16,7 +16,7 @@ import {
     faSearch,
     faUser,
 } from "@fortawesome/free-solid-svg-icons"
-const NestedList = ({ select, handleActive, id, icon = "", selected, handleOpen, children }) => {
+const NestedList = ({ select, handleActive, id, icon = "", selected, handleOpen, children, title }) => {
     return (
         <ListItem
             component="div"
@@ -27,7 +27,7 @@ const NestedList = ({ select, handleActive, id, icon = "", selected, handleOpen,
         >
             <Link className={style.menuItem}>
                 <FontAwesomeIcon icon={icon} />
-                <Typography>My Properties</Typography>
+                <Typography>{title}</Typography>
                 <FontAwesomeIcon className={style.arrowDown} icon={select === id ? faChevronUp : faChevronDown} />
             </Link>
             <Collapse
@@ -144,7 +144,7 @@ const DashboardSidebar = () => {
                     select={select}
                     setSelect={setSelect}
                     handleActive={handleActive}
-                    id="search"
+                    id="my-saved-searchs"
                     title="Saved Search"
                     icon={faSearch}
                 />
@@ -153,7 +153,8 @@ const DashboardSidebar = () => {
                     setSelect={setSelect}
                     handleActive={handleActive}
                     icon={faMessage}
-                    id="review"
+                    id="reviews"
+                    title="My Reviews"
                     handleOpen={handleOpen}
                 >
                     <NestedListItem title="My Review" />
