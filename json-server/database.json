@@ -1204,5 +1204,42 @@
             "storageSpace": 10,
             "expiredDate": "January 31, 2020"
         }
+    ],
+    "saved-search": [
+        {
+            "id": 1,
+            "title": "List London",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 2,
+            "title": "Property List New York",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 3,
+            "title": "London 3 beds",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 4,
+            "title": "Paris $100-$100",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 5,
+            "title": "Free",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 6,
+            "title": "$300-$900",
+            "createdAt": "December 30, 2022"
+        },
+        {
+            "id": 8,
+            "title": "Property List New York",
+            "createdAt": "December 30, 2022"
+        }
     ]
 }

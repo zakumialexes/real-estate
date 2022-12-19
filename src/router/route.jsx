@@ -19,6 +19,7 @@ import { dataAdapter } from "../utils/utils"
 import MyProperties from "../pages/my-properties/my-properties"
 import MyFavourites from "../pages/my-properties/my-favourite"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import SavedSearch from "../pages/saved-search/saved-search"
 import MyPackage from "../pages/package/my-package"
 import { DashBoardLayout, Layout } from "../layout/layout"
 
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
                 <Route path="my-properties" element={<DashBoardLayout children={<MyProperties />} />} />
                 <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
                 <Route path="my-packages" element={<DashBoardLayout children={<MyPackage />} />} />
+                <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
             </Route>
         </>
     )
