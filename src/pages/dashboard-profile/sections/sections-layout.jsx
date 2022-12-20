@@ -13,12 +13,12 @@ const SectionsLayout = (props) => {
           padding: "30px",
         }}
       >
-        <Grid item md="2">
+        <Grid item md={2} sx={{marginBottom: {xs: "20px"}}}>
           <Typography variant="h4" fontSize="18px" fontWeight="bold">
             {props.title}
           </Typography>
         </Grid>
-        <Grid item md="10">
+        <Grid item md={10}>
             {props.children}
         </Grid>
       </Grid>

@@ -1,6 +1,6 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import ProfileStyle from "../../dashboard-profile.module.sass";
-import { useEffect, useContext, useState } from "react";
+import { useState } from "react";
 import staticSrc from "../../../../assets/testimonial/testimonialPerson.png";
 import PublishIcon from "@mui/icons-material/Publish";
 import {
@@ -22,15 +22,17 @@ const ProfileSection = () => {
     };
   };
 
-  useEffect(() => {}, []);
+  const submitProfileInformations = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
       <SectionsLayout title="Profile Information">
-        <form>
+        <form onSubmit={submitProfileInformations}>
           <Grid container spacing={6}>
             {/* Profile Photo Upload */}
-            <Grid item xs="12">
+            <Grid item xs={12}>
               <Box
                 sx={{
                   position: "relative",
@@ -79,56 +81,58 @@ const ProfileSection = () => {
 
             {/* Profile Information Upload */}
             {/* Username */}
-            <Grid item md="6">
-              <InputTextField label="User's Name" />
+            <Grid item md={6}>
+              <InputTextField id="username" type="text" label="User's Name" />
             </Grid>
             {/* Email */}
-            <Grid item md="6">
-              <InputTextField label="Email" />
+            <Grid item md={6}>
+              <InputTextField id="email" type="email" label="Email" />
             </Grid>
             {/* Name */}
-            <Grid item md="6">
-              <InputTextField label="Full Name" />
+            <Grid item md={6}>
+              <InputTextField id="full_name" type="text" label="Full Name" />
             </Grid>
             {/* Position */}
-            <Grid item md="6">
-              <InputTextField label="Position" />
+            <Grid item md={6}>
+              <InputTextField id="position" type="text" label="Position" />
             </Grid>
             {/* License */}
-            <Grid item md="6">
-              <InputTextField label="License" />
+            <Grid item md={6}>
+              <InputTextField id="license" type="text" label="License" />
             </Grid>
             {/* Tax Number */}
-            <Grid item md="6">
-              <InputTextField label="Tax Number" />
+            <Grid item md={6}>
+              <InputTextField id="tax" type="text" label="Tax Number" />
             </Grid>
             {/* Fax Num */}
-            <Grid item md="6">
-              <InputTextField label="Fax Number" />
+            <Grid item md={6}>
+              <InputTextField id="fax" type="text" label="Fax Number" />
             </Grid>
             {/* Ph */}
-            <Grid item md="6">
-              <InputTextField label="Phone" />
+            <Grid item md={6}>
+              <InputTextField id="phone" type="text" label="Phone" />
             </Grid>
             {/* language */}
-            <Grid item md="6">
-              <InputTextField label="Language" />
+            <Grid item md={6}>
+              <InputTextField id="language" type="text" label="Language" />
             </Grid>
             {/* Company Name */}
-            <Grid item md="6">
-              <InputTextField label="Company Name" />
+            <Grid item md={6}>
+              <InputTextField id="company_name" type="text" label="Company Name" />
             </Grid>
             {/* Address */}
-            <Grid item xs="12">
-              <InputTextField label="Address" />
+            <Grid item xs={12}>
+              <InputTextField id="address" type="text" label="Address" />
             </Grid>
             {/* About me */}
-            <Grid item xs="12">
+            <Grid item xs={12}>
               <InputTextAreaField label="About Me" />
             </Grid>
             {/* Update Btn */}
-            <Grid item xs="12">
-              <button className={ProfileStyle.updateBtn}>Update Profile</button>
+            <Grid item xs={12}>
+              <button type="submit" className={ProfileStyle.updateBtn}>
+                Update Profile
+              </button>
             </Grid>
           </Grid>
         </form>

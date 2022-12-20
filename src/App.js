@@ -7,6 +7,39 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import DashboardSidebar from "./layout/dashboard/dashboard-sidebar";
 import { DesktopNav } from "./layout/navbar/navbar";
 
+// const theme = createTheme({
+//     components: {
+//         MuiRating: {
+//             defaultProps: { style: { color: "#FFE700", fontSize: "18px" } },
+//         },
+//     },
+//   },
+//   typography: {
+//     allVariants: { lineHeight: "1rem" },
+//     fontFamily: "Nunito",
+//   },
+//   palette: {
+//     primary: {
+//       main: "#ff5a5f",
+//       background: "#f7f7f7",
+//     typography: {
+//         allVariants: { lineHeight: "1rem" },
+//         fontFamily: "Nunito",
+//     },
+//     palette: {
+//         primary: {
+//             main: "#ff5a5f",
+//         },
+//         text: {
+//             main: "#484848",
+//         },
+//         reviewSubmitButton: {
+//             main: "#ff5a5f",
+//             contrastText: "#fff",
+//         },
+//     },
+// })
+
 const theme = createTheme({
   components: {
     MuiRating: {
@@ -20,7 +53,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#ff5a5f",
-      background: "#f7f7f7"
+      background: "#f7f7f7",
     },
     text: {
       main: "#484848",
@@ -36,9 +69,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Context.Provider value={[state, dispatch]}>
-        {/* <Layout>
-          <RouterProvider router={router} />
-        </Layout> */}
         <RouterProvider router={router} />
       </Context.Provider>
     </ThemeProvider>

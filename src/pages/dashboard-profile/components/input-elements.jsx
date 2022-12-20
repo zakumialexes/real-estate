@@ -3,7 +3,8 @@ import TextField from "@mui/material/TextField";
 export function InputTextField(props) {
   return (
     <TextField
-      id="outlined-basic"
+      id={props.id}
+      type={props.type}
       label={props.label}
       variant="outlined"
       sx={{ width: "100%" }}
@@ -14,7 +15,7 @@ export function InputTextField(props) {
 export function InputTextAreaField(props) {
   return (
     <TextField
-      id="outlined-basic"
+      id="outlined-basic-multiple"
       label={props.label}
       variant="outlined"
       sx={{ width: "100%" }}
