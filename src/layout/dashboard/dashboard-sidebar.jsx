@@ -105,7 +105,7 @@ const DashboardSidebar = () => {
                     setSelect={setSelect}
                     handleActive={handleActive}
                     to={select}
-                    id=" "
+                    id=""
                     title="Dashboard"
                     icon={faLayerGroup}
                 />
@@ -165,7 +165,7 @@ const DashboardSidebar = () => {
                     select={select}
                     setSelect={setSelect}
                     handleActive={handleActive}
-                    id="package"
+                    id="my-packages"
                     title="My Package"
                     icon={faBox}
                 />
