@@ -179,7 +179,7 @@ const StatusChip = ({ status, children }) => {
 
 const TableListRow = ({ image, date, status, price, name, location, view, tags, id, source, deleteF, setDeleteF }) => {
     const smallScreen = useMediaQuery("(max-width:550px)")
-
+    console.log(price)
     return (
         <TableRow>
             <TableCell sx={{ minWidth: smallScreen ? "225px" : "350px" }}>
@@ -248,7 +248,7 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
                 </TableHead>
                 <TableBody>
                     {properties.map((property) => {
-                        console.log(property)
+                        console.log(properties)
                         return (
                             <TableListRow
                                 deleteF={deleteF}

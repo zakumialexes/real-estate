@@ -53,6 +53,7 @@ const router = createBrowserRouter(
                 <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
                 <Route path="main-dashboard" element={<DashBoardLayout children={<MainDashboard />} />} />
             </Route>
+            <Route path="my-properties" element={<MyProperties />} />
         </>
     )
 )

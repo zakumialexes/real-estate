@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-export default function usePaginate(pageLink, pageNumber, limit, query, searched) {
+export default function usePaginate(pageLink, pageNumber, limit, query, searched, filter) {
     const [allData, setAllData] = useState([])
     const [paginatedData, setPaginatedData] = useState([])
     const [loading, setLoading] = useState(true)
@@ -14,8 +14,10 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
                   curPage: `http://localhost:3500/${pageLink}?q=${query}&&_page=${pageNumber}&&_limit=${limit}`,
               }
             : {
-                  all: `http://localhost:3500/${pageLink}`,
-                  curPage: `http://localhost:3500/${pageLink}?_page=${pageNumber}&&_limit=${limit}`,
+                  all: `http://localhost:3500/${pageLink}${filter === "Old Review" ? `_sort=view&_order=desc` : ""}`,
+                  curPage: `http://localhost:3500/${pageLink}?_page=${pageNumber}&&_limit=${limit}${
+                      filter === "Old Review" ? `_sort=view&_order=desc` : ""
+                  }`,
               }
 
         async function fetchData() {
@@ -31,7 +33,7 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
         }
 
         fetchData().catch((error) => setError(error))
-    }, [pageNumber, limit, pageLink, searched])
+    }, [pageNumber, limit, pageLink, searched, filter])
     console.log(allData)
     console.log(paginatedData)
     const totalPageCount = useMemo(() => {

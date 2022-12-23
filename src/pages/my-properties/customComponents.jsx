@@ -12,6 +12,7 @@ import {
     Zoom,
     Modal,
 } from "@mui/material"
+import ClearIcon from "@mui/icons-material/Clear"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck, faSearch } from "@fortawesome/free-solid-svg-icons"
 import { CustomMenuItem } from "../agent-list/custom-components/custom-components"
@@ -122,8 +123,8 @@ export const Title = () => {
     )
 }
 
-export const SearchBar = ({ query, setSearch, setQuery, action, filter, setFilter }) => {
-    const options = ["Featured First", "Recent", "Old Reiview"]
+export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, setSearch }) => {
+    const options = ["Featured First", "Recent", "Old Review"]
     const smallScreen = useMediaQuery("(max-width:500px)")
     const medium = useMediaQuery("(max-width: 993px)")
     const style = {
@@ -145,6 +146,10 @@ export const SearchBar = ({ query, setSearch, setQuery, action, filter, setFilte
 
     const handleInput = (e) => {
         setQuery(e.target.value)
+    }
+    const handleClear = () => {
+        setSearch(false)
+        setQuery("")
     }
     return (
         <Stack direction={medium ? "column" : "row"} justifyContent="space-between">
@@ -174,9 +179,19 @@ export const SearchBar = ({ query, setSearch, setQuery, action, filter, setFilte
                     placeholder="Search Courses"
                     InputProps={{
                         endAdornment: (
-                            <Box onClick={action}>
-                                <FontAwesomeIcon icon={faSearch} />
-                            </Box>
+                            <>
+                                {search && (
+                                    <ClearIcon
+                                        color="primary"
+                                        onClick={handleClear}
+                                        sx={{ cursor: "pointer", margin: "10px" }}
+                                    />
+                                )}
+
+                                <Box onClick={action}>
+                                    <FontAwesomeIcon icon={faSearch} />
+                                </Box>
+                            </>
                         ),
                         disableUnderline: true,
                     }}

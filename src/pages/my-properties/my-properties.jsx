@@ -15,7 +15,7 @@ const MyProperties = ({}) => {
         paginatedData: paginatedProperties,
         deleteF,
         setDeleteF,
-    } = usePaginate(source, page, 4, query, searched)
+    } = usePaginate(source, page, 4, query, searched, filter)
 
     const action = () => {
         let random = Math.random()
@@ -23,6 +23,7 @@ const MyProperties = ({}) => {
         setSearched(random)
         setPage(1)
     }
+    console.log(filter)
 
     return (
         <TableContainerCon
