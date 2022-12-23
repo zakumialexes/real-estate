@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
+import { useSelector } from "react-redux"
 
 const api = axios.create({
     baseURL: "http://localhost:3500",
@@ -18,6 +19,9 @@ export const dataFetch = createAsyncThunk("database", async ([url, method, body]
             case "delete": {
                 return await api["method"](url)
             }
+            case "all":
+                const { data } = await api.get(url)
+                return data.length
             default: {
                 await api["method"](url, body)
                 return true
@@ -30,14 +34,27 @@ export const dataFetch = createAsyncThunk("database", async ([url, method, body]
 })
 const fetchReducer = createSlice({
     name: "data",
-    initialState: { data: {}, error: "" },
-    reducers: {},
+    initialState: { data: null, error: "", totalCount: 0 },
+    reducers: {
+        handleRouteChange: (state) => {
+            state.data = null
+        },
+        setTotalCount: (state, { payload }) => {
+            state.totalCount = payload
+        },
+    },
     extraReducers: (builder) => {
-        builder.addCase(dataFetch.fulfilled, (state, { type, payload }) => {
-            state.data = payload
+        builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
+            if (typeof payload !== Number) {
+                state.data = payload
+            } else {
+                state.totalCount = payload
+            }
             state.error = ""
         })
         builder.addCase(dataFetch.rejected, (state, action) => {
+            state.data = null
+            state.totalCount = 0
             state.error = action.error.message
         })
     },
@@ -62,6 +79,6 @@ const main = createSlice({
     },
 })
 export const { updateConfidentails, updateTheme, updateIsAuthenticated } = main.actions
-
+export const { handleRouteChange } = fetchReducer.actions
 const reducers = [main.reducer, fetchReducer.reducer]
 export default reducers

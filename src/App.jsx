@@ -1,9 +1,6 @@
 import { RouterProvider } from "react-router-dom"
 import router from "./router/route"
 import { createTheme, ThemeProvider } from "@mui/material"
-import { useDispatch, useSelector } from "react-redux"
-import { dataFetch } from "./utils/reducers"
-import { useEffect } from "react"
 
 const theme = createTheme({
     components: {
@@ -29,12 +26,6 @@ const theme = createTheme({
     },
 })
 function App() {
-    const dispatch = useDispatch()
-    const data = useSelector((state) => state.data)
-    console.log(data)
-    useEffect(() => {
-        dispatch(dataFetch(["properties/1", "get"]))
-    }, [])
     return (
         <ThemeProvider theme={theme}>
             <RouterProvider router={router} />
