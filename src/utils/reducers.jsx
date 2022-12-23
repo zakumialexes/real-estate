@@ -45,7 +45,7 @@ const fetchReducer = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
-            if (typeof payload !== Number) {
+            if (typeof payload !== "number") {
                 state.data = payload
             } else {
                 state.totalCount = payload
