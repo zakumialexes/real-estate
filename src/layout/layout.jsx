@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux"
+import { handleRouteChange } from "../utils/reducers"
 import { useMediaQuery, useTheme } from "@mui/material"
 import { Box } from "@mui/system"
 import { useEffect, useState, useContext } from "react"
@@ -9,6 +11,7 @@ import { Context } from "../utils/utils"
 import DashboardSidebar from "./dashboard/dashboard-sidebar"
 import MobileDashboardNavbar from "./dashboard/mobile-dashboard-navbar"
 import Copyright from "./copyright/copyright"
+import { useLocation } from "react-router-dom"
 
 const style = {
     marginLeft: "65vw",
@@ -25,11 +28,16 @@ export const Layout = ({ children }) => {
     const theme = useTheme()
     const medium = useMediaQuery(theme.breakpoints.down(991))
     const large = useMediaQuery(theme.breakpoints.up("lg"))
+    const location = useLocation()
+    const dispatch = useDispatch()
     useEffect(() => {
         if (!medium) {
             setOpenSideBar(false)
         }
     }, [medium])
+    useEffect(() => {
+        dispatch(handleRouteChange())
+    }, [location.pathname])
     const NavImageNotIncludedPages = ["home", "houses/"]
     return (
         <>
@@ -73,6 +81,11 @@ export const DashBoardLayout = ({ children }) => {
     const theme = useTheme()
     const medium = useMediaQuery(theme.breakpoints.down(991))
     const large = useMediaQuery(theme.breakpoints.up("lg"))
+    const location = useLocation()
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(handleRouteChange())
+    }, [location.pathname])
     return (
         <Box
             sx={openSideBar ? { ...style } : null}
