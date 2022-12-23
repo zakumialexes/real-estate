@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
 import AgentList from "../pages/agent-list/agent-list"
 import Login from "../pages/authentication/Login"
 import Register from "../pages/authentication/Register"
@@ -19,7 +19,10 @@ import { dataAdapter } from "../utils/utils"
 import MyProperties from "../pages/my-properties/my-properties"
 import MyFavourites from "../pages/my-properties/my-favourite"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
+import SavedSearch from "../pages/saved-search/saved-search"
+import MyPackage from "../pages/package/my-package"
 import { DashBoardLayout, Layout } from "../layout/layout"
+import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -48,10 +51,14 @@ const router = createBrowserRouter(
                 loader={({ params: { id } }) => dataAdapter({ type: "get", url: `blog-list/${id}` })}
             />
             <Route path="*" element={<Layout children={<ErrorPage />} />} />
-            <Route path="dashboard" element={<DashBoardLayout />}>
+            <Route path="dashboard">
+                <Route path="*" element={<DashBoardLayout children={<ErrorPage />} />} />
+                <Route path="" element={<DashBoardLayout children={<MainDashboard />} />} />
                 <Route path="my-properties" element={<DashBoardLayout children={<MyProperties />} />} />
                 <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
-                <Route path="main-dashboard" element={<DashBoardLayout children={<MainDashboard />} />} />
+                <Route path="profile" element={<DashBoardLayout children={<DashboardProfile />} />} />
+                <Route path="my-packages" element={<DashBoardLayout children={<MyPackage />} />} />
+                <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
             </Route>
             <Route path="my-properties" element={<MyProperties />} />
         </>
