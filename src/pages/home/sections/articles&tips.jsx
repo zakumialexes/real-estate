@@ -1,8 +1,10 @@
 import Wrapper from "./wrapper"
-import { useEffect, useState } from "react"
+
 import { Box, Card, CardContent, CardMedia, Stack, Avatar, Divider, Typography } from "@mui/material"
 import style from "./articles&tips.module.scss"
-import api from "../../../api/api"
+
+import { useSelector } from "react-redux"
+
 const ArticleCard = ({ image, avatar, author, date, title, type }) => {
     return (
         <Card className={style.wrapper}>
@@ -44,19 +46,10 @@ const ArticleCard = ({ image, avatar, author, date, title, type }) => {
     )
 }
 const ArticleTips = () => {
+    const data = useSelector((state) => state.data.data?.articles) ?? []
     const title = "Articles & Tips"
     const content = "Lorem jgi sdaij aijdfa gaioa"
-    const [articles, setArticles] = useState()
-    useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const response = await api.get("/articles-tips")
-                setArticles(response.data)
-            } catch (err) {}
-        }
-        fetchArticles()
-    }, [])
-
+    console.log(data)
     return (
         <Wrapper color={"#f7f7f7"} title={title} content={content}>
             <Stack
@@ -67,7 +60,7 @@ const ArticleTips = () => {
                 flexWrap="wrap"
                 sx={{ width: "fit-content" }}
             >
-                {articles?.map((article, index) => (
+                {data.map((article, index) => (
                     <ArticleCard
                         key={index}
                         image={article.image}

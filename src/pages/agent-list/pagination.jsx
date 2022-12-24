@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-export default function usePaginate(pageLink, pageNumber, limit, query, searched) {
+export default function usePaginate(pageLink, pageNumber, limit, query, searched, filter) {
     const [allData, setAllData] = useState([])
     const [paginatedData, setPaginatedData] = useState([])
     const [loading, setLoading] = useState(true)
@@ -9,13 +9,13 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
     const fetchCallBack = useCallback(() => {
         const url = searched
             ? {
-                all: `http://localhost:3500/${pageLink}?q=${query}`,
-                curPage: `http://localhost:3500/${pageLink}?q=${query}&&_page=${pageNumber}&&_limit=${limit}`,
-            }
+                  all: `http://localhost:3500/${pageLink}?q=${query}`,
+                  curPage: `http://localhost:3500/${pageLink}?q=${query}&&_page=${pageNumber}&&_limit=${limit}`,
+              }
             : {
-                all: `http://localhost:3500/${pageLink}`,
-                curPage: `http://localhost:3500/${pageLink}?_page=${pageNumber}&&_limit=${limit}`,
-            }
+                  all: `http://localhost:3500/${pageLink}`,
+                  curPage: `http://localhost:3500/${pageLink}?_page=${pageNumber}&&_limit=${limit}`,
+              }
 
         async function fetchData() {
             const [all, currentPageData] = await Promise.all([
@@ -31,6 +31,7 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
 
         fetchData().catch((error) => setError(error))
     }, [pageNumber, limit, pageLink, searched])
+
     const totalPageCount = useMemo(() => {
         return Math.ceil(allData.length / limit)
     }, [allData, limit])

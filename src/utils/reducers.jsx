@@ -17,11 +17,14 @@ export const dataFetch = createAsyncThunk("database", async ([url, method, body]
                 return data
             }
             case "delete": {
-                return await api["method"](url)
+                api[method](url).then(() => {
+                    return "deleted"
+                })
             }
-            case "all":
+            case "all": {
                 const { data } = await api.get(url)
                 return data.length
+            }
             default: {
                 await api["method"](url, body)
                 return true
@@ -45,11 +48,13 @@ const fetchReducer = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
-            if (typeof payload !== "number") {
+            let type = typeof payload
+            if (type !== "number" && payload !== "deleted") {
                 state.data = payload
             } else {
                 state.totalCount = payload
             }
+
             state.error = ""
         })
         builder.addCase(dataFetch.rejected, (state, action) => {
