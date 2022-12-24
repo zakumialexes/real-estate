@@ -1,6 +1,6 @@
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {ArrowBackOutlined, ArrowForwardOutlined} from "@mui/icons-material";
+import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
 import {
     Grid,
     Typography,
@@ -12,39 +12,50 @@ import {
     TableBody,
     PaginationItem
 } from "@mui/material";
-import {Container} from "@mui/system";
-import {useState} from "react";
-import {ColorButton, CustomPagination, IconTextField} from "../agent-list/custom-components/custom-components";
-import usePaginate from "../agent-list/pagination";
+import { Container } from "@mui/system";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ColorButton, CustomPagination, IconTextField } from "../agent-list/custom-components/custom-components";
+import { dataFetch } from "../../utils/reducers"
 
 export default function MyPackage() {
-    // For initial search keyword
-    const [otherSearch, setOtherSearch] = useState("")
-    // For setting the search keyword for usePaginate
-    const [packageSearch, setPackageSearch] = useState("");
     const [paginationPage, setPaginationPage] = useState(1);
+    const [searchKeyword, setSearchKeyword] = useState("")
+    const [search, setSearch] = useState(false)
 
-    function handlePaginationChange(event, value) {
-        setPaginationPage(value);
-    }
+    const dispatch = useDispatch()
+    let paginatedPackages = useSelector(state => state.data.data) ?? []
+    let totalPageCount;
 
-    function handleSearchOnEnter(event) {
-        if (event.keyCode === 13) {
-            setPaginationPage(1)
-            setPackageSearch(otherSearch)
-        }
+
+    function handleSearchKeyword(event) {
+        setSearchKeyword(event.target.value)
+        event.target.value ? setSearch(false) : setSearch(true)
     }
 
     function handleSearchOnIcon() {
+        setSearch(true)
         setPaginationPage(1)
-        setPackageSearch(otherSearch)
     }
 
-    const {
-        totalPageCount,
-        paginatedData: paginatedPackages
-    } = usePaginate("packages", paginationPage, 7, packageSearch, !!packageSearch)
-
+    function handleEnter(event) {
+        if (event.keyCode === 13) {
+            setSearch(true)
+            setPaginationPage(1)
+        }
+    }
+    const paginateLink = [`packages?_page=${paginationPage}&&_limit=7`, "get"]
+    useEffect(() => {
+        dispatch(dataFetch(["packages", "all"]))
+        dispatch(dataFetch(paginateLink))
+    }, [])
+    useEffect(() => {
+        if (search) {
+            searchKeyword ?
+                dispatch(dataFetch([`packages?q=${searchKeyword}&&_page=${paginationPage}&&_limit=${7}`, "get"])) :
+                dispatch(dataFetch(paginateLink))
+        }
+    }, [searchKeyword, paginationPage, search])
     return (
         <Container maxWidth="lg">
             <Grid container justifyContent="space-between">
@@ -63,14 +74,16 @@ export default function MyPackage() {
                     }}>We are glad to see you again!</Typography>
                 </Grid>
                 <Grid item xs={4}>
-                    <IconTextField value={otherSearch} handleKeyDown={handleSearchOnEnter}
-                                   handleChange={e => setOtherSearch(e.target.value)} forName="package search"
-                                   icon={<FontAwesomeIcon icon={faSearch}
-                                                          onClick={handleSearchOnIcon}/>}/>
+                    <IconTextField value={searchKeyword} handleKeyDown={handleEnter}
+                        handleChange={handleSearchKeyword} forName="package search"
+                        icon={<>
+                            <FontAwesomeIcon icon={faX} style={{ marginRight: "20px" }} onClick={() => setSearchKeyword("")} />
+                            <FontAwesomeIcon icon={faSearch} onClick={handleSearchOnIcon} />
+                        </>} />
                 </Grid>
             </Grid>
             <TableContainer>
-                <Table sx={{minWidth: 650}} aria-label="simple table">
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead sx={{
                         "& .MuiTableCell-root": {
                             backgroundColor: 'rgb(36, 50, 74)',
@@ -100,7 +113,7 @@ export default function MyPackage() {
                             <TableRow
                                 key={`packageKey${i}`}
                             >
-                                <TableCell component="th" scope="row" sx={{textTransform: "capitalize"}}>
+                                <TableCell component="th" scope="row" sx={{ textTransform: "capitalize" }}>
                                     {paginatedPackage.currentPackage}
                                 </TableCell>
                                 <TableCell>{paginatedPackage.propertiesRemaining}</TableCell>
@@ -116,15 +129,15 @@ export default function MyPackage() {
             <Grid container justifyContent="end" margin="20px 0">
                 <Grid container item xs={12} justifyContent="center">
                     <CustomPagination page={paginationPage} size="large" count={totalPageCount} variant="outlined"
-                                      renderItem={(item) => (
-                                          <PaginationItem slots={{
-                                              previous: ArrowBackOutlined,
-                                              next: ArrowForwardOutlined
-                                          }} {...item} />
-                                      )} onChange={handlePaginationChange}/>
+                        renderItem={(item) => (
+                            <PaginationItem slots={{
+                                previous: ArrowBackOutlined,
+                                next: ArrowForwardOutlined
+                            }} {...item} />
+                        )} onChange={(e, v) => setPaginationPage(v)} />
                 </Grid>
                 <Grid item>
-                    <ColorButton sx={{padding: "0 30px"}}>Change Package</ColorButton>
+                    <ColorButton sx={{ padding: "0 30px" }}>Change Package</ColorButton>
                 </Grid>
             </Grid>
         </Container>

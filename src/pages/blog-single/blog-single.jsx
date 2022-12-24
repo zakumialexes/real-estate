@@ -14,19 +14,15 @@ import RelatedBlogCard from "./related-post-card/related-blog-card"
 import { Grid, Typography } from "@mui/material"
 import CommentSection from "./comment-section/comment-section"
 import { useLoaderData } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { dataFetch } from "../../utils/reducers"
 
 function BlogSingle() {
     const blog = useLoaderData().data
-    const [relatedBlogs, setRelatedBlogs] = useState([])
-    async function fetchBlogs() {
-        const fetchedRelatedBlog = await fetch("http://localhost:3500/blog-list?_limit=2").then((response) =>
-            response.json()
-        )
-        setRelatedBlogs(fetchedRelatedBlog)
-    }
-
+    const relatedBlogs = useSelector(state => state.data.data) ?? []
+    const dispatch = useDispatch()
     useEffect(() => {
-        fetchBlogs()
+        dispatch(dataFetch(["blog-list?_limit=2", "get"]))
     }, [])
 
     return (
