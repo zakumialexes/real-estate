@@ -11,10 +11,10 @@ export default function HouseList() {
     const [paginationPage, setPaginationPage] = useState(1);
     const [isGrid, setIsGrid] = useState(true);
     const [showSearchOverlay, setShowSearchOverlay] = useState(false)
+
     const dispatch = useDispatch()
     const housesPerPage = 6
     const totalPageCount = Math.ceil(useSelector(state => state.data.totalCount) / housesPerPage)
-
 
     useEffect(() => {
         showSearchOverlay ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
