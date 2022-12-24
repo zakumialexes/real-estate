@@ -1,4 +1,4 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
 import {
@@ -76,8 +76,10 @@ export default function MyPackage() {
                 <Grid item xs={4}>
                     <IconTextField value={searchKeyword} handleKeyDown={handleEnter}
                         handleChange={handleSearchKeyword} forName="package search"
-                        icon={<FontAwesomeIcon icon={faSearch}
-                            onClick={handleSearchOnIcon} />} />
+                        icon={<>
+                            <FontAwesomeIcon icon={faX} style={{ marginRight: "20px" }} onClick={() => setSearchKeyword("")} />
+                            <FontAwesomeIcon icon={faSearch} onClick={handleSearchOnIcon} />
+                        </>} />
                 </Grid>
             </Grid>
             <TableContainer>
