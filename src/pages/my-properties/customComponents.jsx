@@ -112,18 +112,18 @@ export const CustomTextField = styled(TextField)({
     },
 })
 
-export const Title = () => {
+export const Title = ({ name }) => {
     return (
         <Box sx={{ maxWidth: "100%", minWidth: "100px", margin: "30px 0" }}>
             <Typography variant="h4" sx={{ marginBottom: "10px" }}>
-                My Properties
+                My {name}
             </Typography>
             <Typography variant="body2">We glad to see you again!</Typography>
         </Box>
     )
 }
 
-export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, setSearch }) => {
+export const SearchBar = ({ query, search, setQuery, filter, setFilter, setSearch, setPage, name }) => {
     const options = ["Featured First", "Recent", "Old Review"]
     const smallScreen = useMediaQuery("(max-width:500px)")
     const medium = useMediaQuery("(max-width: 993px)")
@@ -143,18 +143,32 @@ export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, 
             width: "220px",
         },
     }
-
+    const searching = () => {
+        setSearch((pre) => !pre)
+        setPage(1)
+    }
     const handleInput = (e) => {
         setQuery(e.target.value)
     }
     const handleClear = () => {
-        setSearch(false)
+        searching()
         setQuery("")
+    }
+    const handleEnter = () => {
+        searching()
+    }
+    const handleSearch = () => {
+        setSearch((pre) => !pre)
+        setPage(1)
+    }
+    if (query === "" && search === true) {
+        setSearch(false)
+        setPage(1)
     }
     return (
         <Stack direction={medium ? "column" : "row"} justifyContent="space-between">
             <Box>
-                <Title />
+                <Title name={name} />
             </Box>
             <Stack
                 direction="row"
@@ -166,7 +180,7 @@ export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, 
                 sx={style.container}
             >
                 <CustomTextField
-                    onKeyUp={(e) => e.key === "Enter" && action()}
+                    onKeyUp={(e) => e.key === "Enter" && query && handleEnter()}
                     sx={style.search}
                     margin="normal"
                     required
@@ -188,7 +202,7 @@ export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, 
                                     />
                                 )}
 
-                                <Box onClick={action}>
+                                <Box onClick={handleSearch} sx={{ cursor: "pointer" }}>
                                     <FontAwesomeIcon icon={faSearch} />
                                 </Box>
                             </>
@@ -220,6 +234,7 @@ export const SearchBar = ({ query, search, setQuery, action, filter, setFilter, 
 }
 
 export const TableContainerCon = ({
+    name,
     search,
     setSearch,
     query,
@@ -251,12 +266,14 @@ export const TableContainerCon = ({
         <Box sx={style.container}>
             <Box sx={{ margin: "30px", maxWidth: "1114px" }}>
                 <SearchBar
+                    name={name}
                     search={search}
                     setSearch={setSearch}
                     query={query}
                     setQuery={setQuery}
                     action={action}
                     filter={filter}
+                    setPage={setPage}
                     setFilter={setFilter}
                 />
                 <Box sx={style.tableContainer}>

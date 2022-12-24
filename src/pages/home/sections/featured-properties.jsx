@@ -6,6 +6,9 @@ import Slider from "react-slick"
 import { Heading } from "./wrapper"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useDispatch, useSelector } from "react-redux"
+import { dataFetch } from "../../../utils/reducers"
+
 const PrevArrow = (props) => {
     const { className, style, onClick } = props
     return <div className={className} style={{ ...style, display: "none" }} onClick={onClick} />
@@ -16,18 +19,10 @@ const NextArrow = (props) => {
 }
 
 const FeaturedPro = () => {
+    const data = useSelector((state) => state.data.data?.properties) ?? []
     const title = "Featured Properties"
     const content = "Handpicked properties by our team"
-    const [properties, setProperties] = useState()
-    useEffect(() => {
-        const fetchProperties = async () => {
-            try {
-                const response = await api.get("/properties")
-                setProperties(response.data)
-            } catch (err) {}
-        }
-        fetchProperties()
-    }, [])
+
     const settings = {
         dots: true,
         infinite: true,
@@ -76,24 +71,27 @@ const FeaturedPro = () => {
                     }}
                 >
                     <Slider {...settings}>
-                        {properties?.map((property) => (
-                            <EsCard
-                                property={property.property}
-                                propertyImage={property.propertyImage}
-                                type={property.type}
-                                location={property.location}
-                                price={property.price}
-                                sale={property.sale}
-                                rent={property.rent}
-                                bed={property.bed}
-                                bath={property.bath}
-                                area={property.area}
-                                poster={property.poster}
-                                posterImage={property.posterImage}
-                                date={property.date}
-                                featured={property.featured}
-                                key={property.id}
-                            />
+                        {data?.map((property) => (
+                            <>
+                                {console.log(property.propertyImage)}
+                                <EsCard
+                                    property={property.property}
+                                    propertyImage={property.propertyImage}
+                                    type={property.type}
+                                    location={property.location}
+                                    price={property.price}
+                                    sale={property.sale}
+                                    rent={property.rent}
+                                    bed={property.bed}
+                                    bath={property.bath}
+                                    area={property.area}
+                                    poster={property.poster}
+                                    posterImage={property.posterImage}
+                                    date={property.date}
+                                    featured={property.featured}
+                                    key={property.id}
+                                />
+                            </>
                         ))}
                     </Slider>
                 </Box>

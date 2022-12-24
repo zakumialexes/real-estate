@@ -60,7 +60,6 @@ const router = createBrowserRouter(
                 <Route path="my-packages" element={<DashBoardLayout children={<MyPackage />} />} />
                 <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
             </Route>
-            <Route path="my-properties" element={<MyProperties />} />
         </>
     )
 )

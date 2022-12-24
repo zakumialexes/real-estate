@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import HomeDesign from "./sections/home-design"
 import FeaturedPro from "./sections/featured-properties"
 import CityPro from "./sections/city-properties"
@@ -8,8 +8,14 @@ import Partner from "./sections/our-partners"
 import ArticleTips from "./sections/articles&tips"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useDispatch } from "react-redux"
+import { dataFetch } from "../../utils/reducers"
 
 const Home = () => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(dataFetch(["home", "get"]))
+    }, [])
     return (
         <>
             <HomeDesign />

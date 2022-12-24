@@ -12,13 +12,16 @@ import {
     useMediaQuery,
     Button,
 } from "@mui/material"
+import { useDispatch } from "react-redux"
+import { dataFetch } from "../../utils/reducers"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { editBtn } from "./svg"
 import { IconButton, DeleteModal } from "./customComponents"
 import api from "./api"
-export const Action = ({ children, id, source, deleteF, setDeleteF }) => {
+export const Action = ({ children, id, setWatcher }) => {
+    const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
     const [modalId, setModalId] = useState()
     const style = {
@@ -34,13 +37,9 @@ export const Action = ({ children, id, source, deleteF, setDeleteF }) => {
         },
     }
     const handleDelete = () => {
-        console.log(modalId)
-        api.delete(`/${source}/${modalId}`).then(() => {
-            let no = Math.random()
-            while (no === deleteF) no = Math.random()
-            setDeleteF(no)
-            setOpen(false)
-        })
+        dispatch(dataFetch([`my-properties/${modalId}`, "delete"]))
+        setOpen(false)
+        setWatcher((pre) => !pre)
     }
     const handleOpen = () => {
         setOpen(true)
@@ -177,9 +176,9 @@ const StatusChip = ({ status, children }) => {
     )
 }
 
-const TableListRow = ({ image, date, status, price, name, location, view, tags, id, source, deleteF, setDeleteF }) => {
+const TableListRow = ({ image, date, status, price, name, location, view, tags, id, setWatcher }) => {
     const smallScreen = useMediaQuery("(max-width:550px)")
-    console.log(price)
+
     return (
         <TableRow>
             <TableCell sx={{ minWidth: smallScreen ? "225px" : "350px" }}>
@@ -195,7 +194,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
                 <Typography>{view}</Typography>
             </TableCell>
             <TableCell>
-                <Action id={id} source={source} deleteF={deleteF} setDeleteF={setDeleteF}>
+                <Action id={id} setWatcher={setWatcher}>
                     <IconButton path={editBtn} title="Edit" />
                 </Action>
             </TableCell>
@@ -203,9 +202,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
     )
 }
 
-const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
-    console.log(properties)
-
+const ListTable = ({ properties, setWatcher }) => {
     const style = {
         table: {
             borderRadius: "10px",
@@ -215,7 +212,7 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
             backgroundColor: "rgb(36, 50, 74)",
         },
     }
-
+    console.log(properties)
     const TableHeader = ({ children }) => {
         return (
             <Typography color="white" align="center">
@@ -247,12 +244,10 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {properties.map((property) => {
-                        console.log(properties)
+                    {properties?.map((property) => {
                         return (
                             <TableListRow
-                                deleteF={deleteF}
-                                setDeleteF={setDeleteF}
+                                setWatcher={setWatcher}
                                 image={property.image}
                                 date={property.date}
                                 status={property.status}
@@ -263,7 +258,6 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
                                 id={property.id}
                                 view={property.view}
                                 tags={property.tags}
-                                source={source}
                             />
                         )
                     })}
