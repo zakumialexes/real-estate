@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
-import { useSelector } from "react-redux"
 
 const api = axios.create({
     baseURL: "http://localhost:3500",
@@ -9,7 +8,7 @@ const api = axios.create({
 // use this reducer for async api calls
 // Example in app.jsx
 // Caution: pass arguments in this order in an array url(eg:agent/1), method(get,post,etc...), body(with data when make an update)
-export const dataFetch = createAsyncThunk("database", async ([url, method, body]) => {
+export const dataFetch = createAsyncThunk("database", async ([url, method, body, entryPerPage]) => {
     try {
         switch (method) {
             case "get": {
@@ -17,13 +16,12 @@ export const dataFetch = createAsyncThunk("database", async ([url, method, body]
                 return data
             }
             case "delete": {
-                api[method](url).then(() => {
-                    return "deleted"
-                })
+                await api.delete(url)
+                return true
             }
             case "all": {
                 const { data } = await api.get(url)
-                return data.length
+                return Math.ceil(data.length / entryPerPage)
             }
             default: {
                 await api["method"](url, body)
@@ -37,29 +35,29 @@ export const dataFetch = createAsyncThunk("database", async ([url, method, body]
 })
 const fetchReducer = createSlice({
     name: "data",
-    initialState: { data: null, error: "", totalCount: 0 },
+    initialState: { data: null, error: "", totalPage: 0 },
     reducers: {
         handleRouteChange: (state) => {
             state.data = null
         },
-        setTotalCount: (state, { payload }) => {
-            state.totalCount = payload
+        setTotalPage: (state, { payload }) => {
+            state.totalPage = payload
         },
     },
     extraReducers: (builder) => {
         builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
             let type = typeof payload
-            if (type !== "number" && payload !== "deleted") {
-                state.data = payload
-            } else {
-                state.totalCount = payload
-            }
-
             state.error = ""
+            if (type === "boolean") return
+            if (type === "number") {
+                state.totalPage = payload
+            } else {
+                state.data = payload
+            }
         })
         builder.addCase(dataFetch.rejected, (state, action) => {
             state.data = null
-            state.totalCount = 0
+            state.totalPage = 0
             state.error = action.error.message
         })
     },
@@ -83,7 +81,10 @@ const main = createSlice({
         },
     },
 })
+const reducers = [main.reducer, fetchReducer.reducer]
 export const { updateConfidentails, updateTheme, updateIsAuthenticated } = main.actions
 export const { handleRouteChange } = fetchReducer.actions
-const reducers = [main.reducer, fetchReducer.reducer]
+export const dataSelector = (state) => state.data.data
+export const totalPageSelector = (state) => state.data.totalPage
+export { useDispatch, useSelector } from "react-redux"
 export default reducers

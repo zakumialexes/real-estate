@@ -8,13 +8,14 @@ import Partner from "./sections/our-partners"
 import ArticleTips from "./sections/articles&tips"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { useDispatch } from "react-redux"
-import { dataFetch } from "../../utils/reducers"
+import { dataFetch, useDispatch, useSelector, dataSelector } from "../../utils/reducers"
 
 const Home = () => {
     const dispatch = useDispatch()
+    const data = useSelector(dataSelector)
+
     useEffect(() => {
-        dispatch(dataFetch(["home", "get"]))
+        !data && dispatch(dataFetch(["home", "get"]))
     }, [])
     return (
         <>

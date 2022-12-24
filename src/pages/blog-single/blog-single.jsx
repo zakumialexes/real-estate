@@ -14,12 +14,11 @@ import RelatedBlogCard from "./related-post-card/related-blog-card"
 import { Grid, Typography } from "@mui/material"
 import CommentSection from "./comment-section/comment-section"
 import { useLoaderData } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import { dataFetch } from "../../utils/reducers"
+import { dataFetch, useDispatch, useSelector, dataSelector } from "../../utils/reducers"
 
 function BlogSingle() {
     const blog = useLoaderData().data
-    const relatedBlogs = useSelector(state => state.data.data) ?? []
+    const relatedBlogs = useSelector(dataSelector) ?? []
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(dataFetch(["blog-list?_limit=2", "get"]))

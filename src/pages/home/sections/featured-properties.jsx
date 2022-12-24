@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react"
 import { Box, Typography } from "@mui/material"
 import EsCard from "../../../components/card"
-import api from "../../../api/api"
 import Slider from "react-slick"
 import { Heading } from "./wrapper"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { useDispatch, useSelector } from "react-redux"
-import { dataFetch } from "../../../utils/reducers"
+import { useSelector, dataSelector } from "../../../utils/reducers"
 
 const PrevArrow = (props) => {
     const { className, style, onClick } = props
@@ -19,7 +16,7 @@ const NextArrow = (props) => {
 }
 
 const FeaturedPro = () => {
-    const data = useSelector((state) => state.data.data?.properties) ?? []
+    const data = useSelector(dataSelector)?.properties ?? []
     const title = "Featured Properties"
     const content = "Handpicked properties by our team"
 

@@ -1,17 +1,14 @@
-import { Box } from "@mui/material"
-import usePaginate from "../agent-list/pagination"
 import ListTable from "./table"
 import { useState } from "react"
 import { TableContainerCon } from "./customComponents"
-import { useDispatch, useSelector } from "react-redux"
-import { dataFetch } from "../../utils/reducers"
+import { dataFetch, useDispatch, useSelector, dataSelector, totalPageSelector } from "../../utils/reducers"
 import { useEffect } from "react"
 const MyProperties = ({}) => {
     const dispatch = useDispatch()
-    const data = useSelector((state) => state.data.data) ?? []
+    const data = useSelector(dataSelector) ?? []
+    console.log(data)
     const pageName = "Properties"
-    const totalCount = Math.ceil(useSelector((state) => state.data.totalCount) / 4)
-    console.log(totalCount)
+    const totalCount = useSelector(totalPageSelector)
     const [page, setPage] = useState(1)
     const [query, setQuery] = useState("")
     const [searched, setSearched] = useState(false)
@@ -19,8 +16,8 @@ const MyProperties = ({}) => {
     const [filter, setFilter] = useState("default")
     useEffect(() => {
         searched || query
-            ? dispatch(dataFetch([`my-properties?q=${query}`, "all"]))
-            : dispatch(dataFetch([`my-properties`, "all"]))
+            ? dispatch(dataFetch([`my-properties?q=${query}`, "all", "", 4]))
+            : dispatch(dataFetch([`my-properties`, "all", "", 4]))
     }, [searched])
     useEffect(() => {
         searched || query

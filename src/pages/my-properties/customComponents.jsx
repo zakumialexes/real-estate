@@ -220,6 +220,7 @@ export const SearchBar = ({ query, search, setQuery, filter, setFilter, setSearc
                         </CustomMenuItem>
                         {options.map((option, i) => (
                             <CustomMenuItem value={option} key={i}>
+                                {console.log(i)}
                                 {option}
                                 <span>
                                     <FontAwesomeIcon icon={faCheck} />

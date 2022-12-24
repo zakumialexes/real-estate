@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { editBtn } from "./svg"
 import { IconButton, DeleteModal } from "./customComponents"
-import api from "./api"
+
 export const Action = ({ children, id, setWatcher }) => {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
