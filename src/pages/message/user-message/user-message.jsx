@@ -2,15 +2,23 @@ import React from "react";
 import { Avatar, Box, Button, Input, Typography } from "@mui/material";
 
 import Ima from "../../agent-single/house-card/grid-photo-2.jpg";
-import { Message } from "../reuse/reuse";
+import { Message, WriteMessage } from "../reuse/reuse";
 const styleRule = {
   position: "absolute",
   right: "0",
   left: "0",
   height: "0.1px",
 };
-const UserMessage = ({ conservationRoom }) => {
+const UserMessage = ({ conservationRoom, insertNewMessage }) => {
   const userId = "001";
+  const sendData = (data) => {
+    const cloneConservationRoomData = { ...conservationRoom };
+    cloneConservationRoomData.chatRoom.messages = [
+      ...cloneConservationRoomData.chatRoom.messages,
+      data,
+    ];
+    insertNewMessage(cloneConservationRoomData);
+  };
   return (
     <Box
       sx={{
@@ -39,17 +47,14 @@ const UserMessage = ({ conservationRoom }) => {
             </Box>
           </Box>
           <hr style={styleRule} />
+
           <Box my={5}>
             {conservationRoom.chatRoom.messages.map((msg) => (
               <Message msg={msg} userId={userId} />
             ))}
           </Box>
-          <Box>
-            <Input defaultValue="Hello world" />
-            <Button color="error" sx={{ padding: "20px" }} variant="contained">
-              Send Message
-            </Button>
-          </Box>
+
+          <WriteMessage sendData={sendData} userId={userId} />
         </Box>
       )}
     </Box>

@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { SearchBox, ChatRoom } from "../reuse/reuse";
 
-const AllMessage = ({ chatRooms, activeConservation }) => {
+const AllMessage = ({ chatRooms, activeConservation, searchFeature }) => {
   return (
     <Box
       sx={{
@@ -12,7 +12,7 @@ const AllMessage = ({ chatRooms, activeConservation }) => {
         padding: "20px",
       }}
     >
-      <SearchBox />
+      <SearchBox searchFeature={searchFeature} />
       <Box mt={4}>
         {chatRooms.map(
           (chatRoom) =>

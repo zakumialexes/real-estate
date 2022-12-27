@@ -1,5 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Box, TextField, Typography, styled, IconButton, Grid, Avatar } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Typography,
+  styled,
+  IconButton,
+  Grid,
+  Avatar,
+  Input,
+  Button,
+} from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "../../agent-single/house-card/grid-photo-2.jpg";
@@ -30,10 +40,15 @@ export const CustomTextField = styled(TextField)({
   },
 });
 
-export const SearchBox = () => {
+export const SearchBox = ({ searchFeature }) => {
+  const [searchKeyWord, setSearchKeyWord] = useState("");
+  const onChangeHandler = (e) => {
+    searchFeature(e.target.value);
+  };
   return (
     <CustomTextField
       placeholder="Search"
+      onChange={(e) => onChangeHandler(e)}
       InputProps={{
         endAdornment: (
           <IconButton size="small">
@@ -100,6 +115,33 @@ export const Message = ({ msg, userId }) => {
         </Typography>
         <Box className={reuseStyle.message}>{msg.message}</Box>
       </Box>
+    </Box>
+  );
+};
+
+export const WriteMessage = ({ sendData, userId }) => {
+  const [message, setMessage] = useState("");
+  const onClickHandler = () => {
+    sendData({ sendUserId: userId, date: "7 August 2019", message: message });
+    setMessage("");
+  };
+  return (
+    <Box>
+      <Input
+        placeholder="Write Message"
+        defaultValue={message}
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+      />
+      <Button
+        color="error"
+        sx={{ padding: "20px" }}
+        variant="contained"
+        onClick={() => onClickHandler()}
+      >
+        Send Message
+      </Button>
     </Box>
   );
 };

@@ -9,15 +9,33 @@ import api from "../my-properties/api";
 const Message = () => {
   const [chatRooms, setChatRooms] = useState([]);
   const [conservationRoom, setConservationRoom] = useState({ chatRoom: [] });
+  const [filterChatRooms, setFilterChatRooms] = useState([]);
   useEffect(() => {
-    api.get("/messages").then(({ data }) => setChatRooms(data));
+    start();
   }, []);
 
+  const start = () => {
+    api.get("/messages").then(({ data }) => setChatRooms(data));
+  };
   const activeConservation = (id) => {
     var setConservationData = chatRooms.filter((data) => data.chatRoom && data.chatRoom.id == id);
-    console.log({ setConservationData });
-
     setConservationRoom(...setConservationData);
+  };
+
+  const searchFeature = (keyword) => {
+    const data = chatRooms.filter((data) =>
+      data.name.toLowerCase().includes(keyword.toLowerCase())
+    );
+    setFilterChatRooms(data);
+  };
+
+  const insertNewMessage = (data) => {
+    const index = chatRooms.findIndex(function (chatRoom) {
+      return chatRoom.userId == data.userId;
+    });
+
+    api.put(`/messages/${index + 1}`, data);
+    start();
   };
 
   return (
@@ -31,10 +49,14 @@ const Message = () => {
       <Title title="Message" />
       <Grid container spacing={2} mt={5}>
         <Grid item xs={12} lg={5}>
-          <AllMessage chatRooms={chatRooms} activeConservation={activeConservation} />
+          <AllMessage
+            chatRooms={filterChatRooms.length > 0 ? filterChatRooms : chatRooms}
+            activeConservation={activeConservation}
+            searchFeature={searchFeature}
+          />
         </Grid>
         <Grid item xs={12} lg={7}>
-          <UserMessage conservationRoom={conservationRoom} />
+          <UserMessage conservationRoom={conservationRoom} insertNewMessage={insertNewMessage} />
         </Grid>
       </Grid>
     </Box>
