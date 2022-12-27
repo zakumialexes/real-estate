@@ -129,7 +129,7 @@ export const WriteMessage = ({ sendData, userId }) => {
     <Box>
       <Input
         placeholder="Write Message"
-        defaultValue={message}
+        value={message}
         onChange={(e) => {
           setMessage(e.target.value);
         }}
