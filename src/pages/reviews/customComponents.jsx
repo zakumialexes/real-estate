@@ -222,8 +222,6 @@ export const Action = ({ children, reviewId, setSearchfilterData }) => {
     )
 }
 
-
-
 export const Review = ({
     id,
     myReview,
@@ -232,9 +230,7 @@ export const Review = ({
     reviewedName,
     date,
     rate,
-    setRating,
     bodyText,
-    reviewId,
     setSearchfilterData,
 }) => {
     const smallScreen = useMediaQuery("(max-width:760px)")
@@ -242,7 +238,21 @@ export const Review = ({
 
     const [action, setAction] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
+    const [rating, setRating] = useState(rate);
 
+    const GiveRating = async ({ newValue, id }) => {
+        // console.log(newValue)
+        setRating(newValue)
+        if (newValue == null) newValue = 0
+        try {
+            const response = await api.get(`/Reviews/${id}`)
+            const putData = {
+                ...response.data, rating: newValue,
+            };
+            await api.put(`/Reviews/${id}`, putData)
+        } catch (err) { console.log(err.message) }
+
+    }
 
     const EditReview = (id) => {
         setIsEdit(true)
@@ -296,9 +306,9 @@ export const Review = ({
                     <Box >
                         <StyledRating
                             name="review  rating"
-                            value={rate}
+                            value={rating}
                             onChange={(event, newValue) => {
-                                setRating(newValue);
+                                GiveRating({ newValue, id })
                             }}
                         />
                     </Box>
@@ -326,7 +336,7 @@ export const Review = ({
 
                             <IconButton path={editBtn} title="Edit" clicked={() => EditReview(id)} />
                             <Action
-                                reviewId={reviewId}
+                                reviewId={id}
                                 setSearchfilterData={setSearchfilterData}
                             />
                         </Stack>

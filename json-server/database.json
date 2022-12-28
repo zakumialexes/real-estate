@@ -1207,7 +1207,7 @@
       "proFileSrc": "./assets/reviews/review1.png",
       "reviewedName": "Villa Wallker",
       "date": "December 28,2020",
-      "rating": "4",
+      "rating": 3,
       "bodyText": "Beautiful house! Edited  by creating modify"
     },
     {
@@ -1216,7 +1216,7 @@
       "proFileSrc": "./assets/reviews/review2.png",
       "reviewedName": "Nina Wallker",
       "date": "December 28,2020",
-      "rating": "4",
+      "rating": 3,
       "bodyText": "Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates eum, velit recusandae, ducimus earum aperiam commodi error officia optio aut et quae nam nostrum!"
     },
     {
@@ -1225,7 +1225,7 @@
       "proFileSrc": "./assets/reviews/review3.png",
       "reviewedName": "Kathy Brown",
       "date": "December 28,2020",
-      "rating": "4",
+      "rating": 5,
       "bodyText": " Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! Lorem ipsum dolor sit amet, consectetur adipisicing elit. "
     },
     {
@@ -1243,7 +1243,7 @@
       "proFileSrc": "./assets/reviews/review2.png",
       "reviewedName": "Sunset Studio",
       "date": "December 28,2020",
-      "rating": "4",
+      "rating": 3,
       "bodyText": "apple Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! "
     },
     {
@@ -1252,7 +1252,7 @@
       "proFileSrc": "./assets/reviews/review4.png",
       "reviewedName": "Anna Harrison",
       "date": "December 28,2020",
-      "rating": "4",
+      "rating": 2,
       "bodyText": " apple flower Beautiful home, consectetur adipisicing elit. Accusantium voluptates eum"
     }
   ]

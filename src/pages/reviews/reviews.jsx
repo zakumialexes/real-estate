@@ -10,7 +10,6 @@ import { SearchBar, Review } from "./customComponents"
 
 const Reviews = () => {
     const mediumScreen = useMediaQuery('(max-width:990px)');
-    const [rating, setRating] = useState(4);
     const [ReviewData, setReviewData] = useState()
     const [searchfilterData, setSearchfilterData] = useState(ReviewData);
     let isMyReview = false;
@@ -18,12 +17,11 @@ const Reviews = () => {
 
     useEffect(() => {
         fetch("http://localhost:3500/Reviews?")
-        
+
             .then((response) => response.json())
             .then((data) => {
                 setReviewData(data)
                 setSearchfilterData(data)
-                setRating(ReviewData.rating)
             })
     }, [])
     const deleteReview = async (reviewId) => {
@@ -78,11 +76,9 @@ const Reviews = () => {
                                                 alt="Review profile img"
                                                 reviewedName={data.reviewedName}
                                                 date={data.date}
-                                                rate={rating}
-                                                setRating={setRating}
+                                                rate={data.rating}
                                                 bodyText={data.bodyText}
                                                 deleteReview={deleteReview}
-                                                reviewId={data.id}
                                                 setSearchfilterData={setSearchfilterData}
 
                                             />
@@ -120,13 +116,13 @@ const Reviews = () => {
                                                 < Box sx={{ width: '100%', borderBottom: '1px solid #ebebeb;', marginBottom: '30px' }} />
                                             }
                                             <Review
+                                                id={data.id}
                                                 myReview={data.myReview}
                                                 proFileSrc={data.proFileSrc}
                                                 alt="Review profile img"
                                                 reviewedName={data.reviewedName}
                                                 date={data.date}
-                                                rate={rating}
-                                                setRating={setRating}
+                                                rate={data.rating}
                                                 bodyText={data.bodyText}
                                                 setReviewData={setReviewData}
                                             />
