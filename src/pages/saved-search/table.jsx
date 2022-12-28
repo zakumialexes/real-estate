@@ -24,71 +24,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "rgb(36, 50, 74)",
     color: theme.palette.common.white,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
-    fontWeight: 600
+    fontWeight: 600,
   },
 }));
 
@@ -97,7 +36,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-
 
 const style = {
   container: {
@@ -123,16 +61,13 @@ const style = {
   },
 };
 
-const SavedTable = ({data , Delete}) => {
+const SavedTable = ({ data, Delete }) => {
   const [open, setOpen] = useState(false);
   const [modalId, setModalId] = useState();
 
- 
-
-
   const handleDelete = () => {
     Delete(modalId);
-    setOpen(false)
+    setOpen(false);
   };
 
   return (
@@ -214,7 +149,7 @@ const SavedTable = ({data , Delete}) => {
       </TableContainer>
       <Modal
         open={open}
-        onClose={()=> setOpen(false)}
+        onClose={() => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -232,10 +167,10 @@ const SavedTable = ({data , Delete}) => {
             spacing={2}
             sx={style.buttons}
           >
-            <Button variant="contained" onClick={()=> setOpen(false)}>
+            <Button variant="contained" onClick={() => setOpen(false)}>
               Cancel
             </Button>
-            <Button variant="contained" onClick={(handleDelete)}>
+            <Button variant="contained" onClick={handleDelete}>
               Delete
             </Button>
           </Stack>

@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  dataFetch,
+  dataSelector,
+} from "../../utils/reducers";
 import api from "../my-properties/api";
-import { CustomTextField, PaginationCon } from "../my-properties/customComponents";
+import {
+  CustomTextField,
+  PaginationCon,
+} from "../my-properties/customComponents";
 import usePagination from "./pagination";
 import SavedTable from "./table";
 
@@ -20,52 +28,50 @@ const style = {
 };
 
 const SavedSearch = () => {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const data = useSelector(dataSelector) ?? [];
   const [query, setQuery] = useState("");
-  const url = "http://localhost:3500/saved-search";
+  const [filterData, setFilterData] = useState([]);
+  const [search, setSearch] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   let [page, setPage] = useState(1);
   const PER_PAGE = 4;
+  const count = Math.ceil(
+    (search ? filterData.length : data.length) / PER_PAGE
+  );
+  const _DATA = usePagination(search ? filterData : data, PER_PAGE, count);
 
-  const count = Math.ceil(data.length / PER_PAGE);
-  const _DATA = usePagination(data, PER_PAGE);
+  useEffect(() => {
+    dispatch(dataFetch([`saved-search`, "get", "", 4]));
+  }, [refresh, search]);
 
   const handlePageChange = (e, p) => {
     setPage(p);
     _DATA.jump(p);
   };
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(url);
-      const json = await response.json();
-      setData(json);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [query]);
-
   const Delete = (id) => {
-    api.delete(`${url}/${id}`).then(() => {
-      fetchData();
-    });
+    dispatch(dataFetch([`saved-search/${id}`, "delete"]));
+    setRefresh((pre) => !pre);
   };
 
   const handleSearch = () => {
-    let filterData = data.filter((data) =>
-      data.title.toLowerCase().includes(query.toLowerCase())
+    setFilterData(
+      data.filter((data) =>
+        data.title.toLowerCase().includes(query.toLowerCase())
+      )
     );
-    setData(filterData);
+
+    setSearch(true);
     setPage(1);
     _DATA.jump(1);
   };
 
   const handleInput = (e) => {
     setQuery(e.target.value);
+    setSearch(false);
   };
+
   return (
     <Box p={{ xs: 2, lg: 5 }} backgroundColor="#f7f7f7">
       <Stack
@@ -106,7 +112,11 @@ const SavedSearch = () => {
         />
       </Stack>
       <SavedTable data={_DATA.currentData()} Delete={Delete} />
-      <PaginationCon page={page} totalPage={count} handleChange={handlePageChange} />
+      <PaginationCon
+        page={page}
+        totalPage={count}
+        handleChange={handlePageChange}
+      />
     </Box>
   );
 };
