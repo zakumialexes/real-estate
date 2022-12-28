@@ -111,7 +111,7 @@ export const Message = ({ msg, userId }) => {
       )}
       <Box>
         <Typography variant="body2" mb={1}>
-          Today, 10:31
+          {msg.date}
         </Typography>
         <Box className={reuseStyle.message}>{msg.message}</Box>
       </Box>
@@ -121,15 +121,43 @@ export const Message = ({ msg, userId }) => {
 
 export const WriteMessage = ({ sendData, userId }) => {
   const [message, setMessage] = useState("");
+
+  const getDate = () => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const today = new Date();
+    const month = today.getMonth();
+    const date = today.getDate();
+    const hours = today.getHours();
+    const min = today.getMinutes();
+    return `${date} ${months[month]} ${hours}:${min}`;
+  };
   const onClickHandler = () => {
-    sendData({ sendUserId: userId, date: "7 August 2019", message: message });
-    setMessage("");
+    if (message.trim() != "") {
+      const data = getDate();
+
+      sendData({ sendUserId: userId, date: data, message: message });
+      setMessage("");
+    }
   };
   return (
-    <Box>
+    <Box className={reuseStyle.messageBox}>
       <Input
         placeholder="Write Message"
         value={message}
+        sx={{ width: "70%" }}
         onChange={(e) => {
           setMessage(e.target.value);
         }}

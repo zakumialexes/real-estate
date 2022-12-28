@@ -13,7 +13,7 @@ const AllMessage = ({ chatRooms, activeConservation, searchFeature }) => {
       }}
     >
       <SearchBox searchFeature={searchFeature} />
-      <Box mt={4}>
+      <Box mt={4} py={2} sx={{ maxHeight: "1000px", overflowY: "scroll", overflowX: "hidden" }}>
         {chatRooms.map(
           (chatRoom) =>
             chatRoom.userId != "001" && (
