@@ -6,15 +6,13 @@ import { useState, useEffect } from 'react'
 //customComponents
 import { SearchBar, Review } from "./customComponents"
 
-
-
 const Reviews = () => {
     const mediumScreen = useMediaQuery('(max-width:990px)');
     const [ReviewData, setReviewData] = useState()
     const [searchfilterData, setSearchfilterData] = useState(ReviewData);
+
     let isMyReview = false;
     let isVisitorReview = false;
-
     useEffect(() => {
         fetch("http://localhost:3500/Reviews?")
 
@@ -24,8 +22,11 @@ const Reviews = () => {
                 setSearchfilterData(data)
             })
     }, [])
-    const deleteReview = async (reviewId) => {
-        console.log(Math.random())
+    const getReplies = (replyId) => {
+        return searchfilterData.filter(reply => reply.parentId === replyId)
+            .sort(
+                (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+            )
     }
     const style = {
         titleCon: {
@@ -54,47 +55,39 @@ const Reviews = () => {
             <Card variant='outlined' sx={{ marginBottom: '30px' }}>
                 <CardContent>
                     <Typography sx={{ marginBottom: '20px', fontWeight: '700' }}>My Reviews</Typography>
-                    {
-                        searchfilterData ?
-
-                            <Stack spacing={4} direction="column"
-                                sx={{ justifyContent: "flex-start" }}
-                            >
-                                {
-                                    searchfilterData?.map((data, index) => (
-                                        data.myReview &&
-
-                                        <Stack key={index} sx={{ marginTop: '0 !important' }}>
-                                            {
-                                                isMyReview &&
-                                                < Box sx={{ width: '100%', borderBottom: '1px solid #ebebeb;', marginBottom: '30px' }} />
-                                            }
-                                            <Review
-                                                id={data.id}
-                                                myReview={data.myReview}
-                                                proFileSrc={data.proFileSrc}
-                                                alt="Review profile img"
-                                                reviewedName={data.reviewedName}
-                                                date={data.date}
-                                                rate={data.rating}
-                                                bodyText={data.bodyText}
-                                                deleteReview={deleteReview}
-                                                setSearchfilterData={setSearchfilterData}
-
-                                            />
-                                            {isMyReview = true}
-                                        </Stack>
-
-
-                                    ))
-                                }
-                                {!isMyReview &&
-                                    <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
-                                }
-
-                            </Stack>
-                            :
-                            <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
+                    {searchfilterData ?
+                        <Stack spacing={4} direction="column"
+                            sx={{ justifyContent: "flex-start" }}
+                        >
+                            {searchfilterData?.map((data, index) => (
+                                data.myReview && data.parentId == null &&
+                                <Stack key={index} sx={{ marginTop: '0 !important' }}>
+                                    {
+                                        isMyReview &&
+                                        < Box sx={{ width: '100%', borderBottom: '1px solid #ebebeb;', marginBottom: '30px' }} />
+                                    }
+                                    <Review
+                                        id={data.id}
+                                        myReview={data.myReview}
+                                        proFileSrc={data.proFileSrc}
+                                        alt="Review profile img"
+                                        reviewedName={data.reviewedName}
+                                        date={data.date}
+                                        rate={data.rating}
+                                        bodyText={data.bodyText}
+                                        setSearchfilterData={setSearchfilterData}
+                                        replies={getReplies(data.id)}
+                                    />
+                                    {isMyReview = true}
+                                </Stack>
+                            ))
+                            }
+                            {!isMyReview &&
+                                <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
+                            }
+                        </Stack>
+                        :
+                        <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
                     }
                 </CardContent>
             </Card>
@@ -102,43 +95,42 @@ const Reviews = () => {
                 <CardContent>
                     <Typography sx={{ marginBottom: '20px', fontWeight: '700' }}>Visitor Reviews</Typography>
 
-                    {
-                        searchfilterData ?
-                            <Stack spacing={4} direction="column"
-                                sx={{ justifyContent: "flex-start" }}
-                            >
-                                {
-                                    searchfilterData?.map((data, index) => (
-                                        !data.myReview &&
-                                        <Stack key={index} sx={{ marginTop: '0 !important' }}>
-                                            {
-                                                isVisitorReview &&
-                                                < Box sx={{ width: '100%', borderBottom: '1px solid #ebebeb;', marginBottom: '30px' }} />
-                                            }
-                                            <Review
-                                                id={data.id}
-                                                myReview={data.myReview}
-                                                proFileSrc={data.proFileSrc}
-                                                alt="Review profile img"
-                                                reviewedName={data.reviewedName}
-                                                date={data.date}
-                                                rate={data.rating}
-                                                bodyText={data.bodyText}
-                                                setReviewData={setReviewData}
-                                            />
+                    {searchfilterData ?
+                        <Stack spacing={4} direction="column"
+                            sx={{ justifyContent: "flex-start" }}
+                        >
+                            {searchfilterData?.map((data, index) => (
+                                !data.myReview && data.parentId == null &&
+                                <Stack key={index} sx={{ marginTop: '0 !important' }}>
+                                    {
+                                        isVisitorReview &&
+                                        < Box sx={{ width: '100%', borderBottom: '1px solid #ebebeb;', marginBottom: '30px' }} />
+                                    }
+                                    <Review
+                                        id={data.id}
+                                        Reply="true"
+                                        myReview={data.myReview}
+                                        proFileSrc={data.proFileSrc}
+                                        alt="Review profile img"
+                                        reviewedName={data.reviewedName}
+                                        date={data.date}
+                                        rate={data.rating}
+                                        bodyText={data.bodyText}
+                                        setSearchfilterData={setSearchfilterData}
+                                        replies={getReplies(data.id)}
+                                    />
+                                    {isVisitorReview = true}
 
-                                            {isVisitorReview = true}
+                                </Stack>
 
-                                        </Stack>
-
-                                    ))
-                                }
-                                {!isVisitorReview &&
-                                    <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
-                                }
-                            </Stack>
-                            :
-                            <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
+                            ))
+                            }
+                            {!isVisitorReview &&
+                                <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
+                            }
+                        </Stack>
+                        :
+                        <Typography sx={{ color: 'red', fontWeight: '700' }}>No data avaliable</Typography>
                     }
                 </CardContent>
             </Card>

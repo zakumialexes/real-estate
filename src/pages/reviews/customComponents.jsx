@@ -75,7 +75,7 @@ export const CustomTextField = styled(TextField)({
     },
 })
 
-export const SearchBar = ({ searchInputData, setSearchfilterData, action, }) => {
+export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
     const medium = useMediaQuery("(max-width: 990px)")
     const smallScreen = useMediaQuery("(max-width:500px)")
     const style = {
@@ -97,7 +97,6 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action, }) => 
         },
     }
     const [searchInput, setSearchInput] = useState("");
-
     const handleInput = (e) => {
         setSearchInput(e.target.value)
         const searchData = searchInputData.filter(
@@ -110,7 +109,6 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action, }) => 
         )
         setSearchfilterData(searchData)
     }
-
     return (
 
         <Stack direction={medium ? "column" : "row"}
@@ -158,7 +156,6 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action, }) => 
 
 export const RoundedProfImg = ({ src, alt }) => {
     const smallScreen = useMediaQuery("(max-width:500px)")
-    const medium = useMediaQuery("(max-width: 993px)")
     const style = {
         width: smallScreen ? '120px' : '120px',
         height: '120px',
@@ -186,16 +183,17 @@ export const Action = ({ children, reviewId, setSearchfilterData }) => {
         },
     }
     const handleDelete = (reviewId) => {
-        console.log("review deleted ...", reviewId)
-        api.delete(`/Reviews/${reviewId}`).then(() => {
-            fetch("http://localhost:3500/Reviews?")
-                .then((response) => response.json())
-                .then((data) => { setSearchfilterData(data) })
-            setOpen(false)
-        })
+        api.delete(`/Reviews/${reviewId}`)
+            .then(() => {
+                fetch("http://localhost:3500/Reviews?")
+                    .then((response) => response.json())
+                    .then((data) => { setSearchfilterData(data) })
+                setOpen(false)
+            })
     }
     const handleOpen = () => { setOpen(true) }
     const handleClose = () => { setOpen(false) }
+
     return (
         <Stack direction="row" justifyContent="center" alignItems="center" gap={2}>
             {children}
@@ -232,6 +230,7 @@ export const Review = ({
     rate,
     bodyText,
     setSearchfilterData,
+    replies,
 }) => {
     const smallScreen = useMediaQuery("(max-width:760px)")
     const E_smallScreen = useMediaQuery("(max-width:560px)")
@@ -239,7 +238,6 @@ export const Review = ({
     const [action, setAction] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
     const [rating, setRating] = useState(rate);
-
     const GiveRating = async ({ newValue, id }) => {
         // console.log(newValue)
         setRating(newValue)
@@ -253,7 +251,6 @@ export const Review = ({
         } catch (err) { console.log(err.message) }
 
     }
-
     const EditReview = (id) => {
         setIsEdit(true)
         setAction((prevState) => !prevState)
@@ -298,7 +295,10 @@ export const Review = ({
                 <Stack direction={E_smallScreen ? 'column' : 'row'} style={style.nameContainer}>
                     <Box>
                         <Stack direction={smallScreen ? 'column' : 'row'} spacing={2}>
-                            <Typography variant='h6' style={style.titleContainer}>Your review on</Typography>
+                            {
+                                myReview &&
+                                <Typography variant='h6' style={style.titleContainer}>Your review on</Typography>
+                            }
                             <Typography style={style.titleContainer} sx={{ color: '#ff5a5f' }}>{reviewedName}</Typography>
                         </Stack>
                         <Typography variant='subtitle1'>{date}</Typography>
@@ -313,7 +313,6 @@ export const Review = ({
                         />
                     </Box>
                 </Stack>
-
                 {
                     action && isEdit &&
                     <Stack sx={{ width: '100%' }}>
@@ -322,7 +321,7 @@ export const Review = ({
                             bodyText={bodyText}
                             myReview={myReview}
                             setAction={setAction}
-                            isEdit={isEdit}
+                            setIsEdit={setIsEdit}
                         />
                     </Stack>
                 }{
@@ -341,26 +340,43 @@ export const Review = ({
                             />
                         </Stack>
                         :
-
                         <Stack spacing={2} direction="row">
                             <IconButton path={replyBtn} title="Reply" clicked={() => ReplyReview(id)} />
                         </Stack>
                 }
                 {
                     action && !isEdit &&
-                    <>
-
-                        <Stack sx={{ width: '100%' }}>
-                            <WriteReply
-                                replyId={id}
-                                myReview={myReview}
-                                setAction={setAction}
-                                isEdit={isEdit}
-                            />
-                        </Stack>
-
-                    </>
+                    <Stack sx={{ width: '100%' }}>
+                        <WriteReply
+                            Reply={true}
+                            replyId={id}
+                            myReview={myReview}
+                            setAction={setAction}
+                            setIsEdit={setIsEdit}
+                        />
+                    </Stack>
                 }
+                <Stack sx={{ width: '100%' }}>
+                    {replies?.length > 0 && (
+                        replies.map((replies, index) => (
+                            <Review
+                                key={index}
+                                id={replies.id}
+                                myReview={replies.myReview}
+                                proFileSrc={replies.proFileSrc}
+                                alt="Review profile img"
+                                reviewedName={replies.reviewedName}
+                                date={replies.date}
+                                rate={replies.rating}
+                                bodyText={replies.bodyText}
+                                setSearchfilterData={setSearchfilterData}
+                            />
+                        ))
+                    )}
+
+                </Stack>
+
+
             </Stack>
         </Stack >
 
