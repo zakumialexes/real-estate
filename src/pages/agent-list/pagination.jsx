@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-export default function usePaginate(pageLink, pageNumber, limit, query, searched) {
+export default function usePaginate(pageLink, pageNumber, limit, query, searched, filter) {
     const [allData, setAllData] = useState([])
     const [paginatedData, setPaginatedData] = useState([])
     const [loading, setLoading] = useState(true)
     const [deleteF, setDeleteF] = useState("")
     const [error, setError] = useState("")
     const fetchCallBack = useCallback(() => {
-        console.log(pageNumber)
         const url = searched
             ? {
                   all: `http://localhost:3500/${pageLink}?q=${query}`,
@@ -32,8 +31,7 @@ export default function usePaginate(pageLink, pageNumber, limit, query, searched
 
         fetchData().catch((error) => setError(error))
     }, [pageNumber, limit, pageLink, searched])
-    console.log(allData)
-    console.log(paginatedData)
+
     const totalPageCount = useMemo(() => {
         return Math.ceil(allData.length / limit)
     }, [allData, limit])

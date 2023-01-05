@@ -21,6 +21,7 @@ import {
   Link,
 } from "@mui/material";
 import React from "react";
+import Copyright from "../copyright/copyright";
 
 const contact = [
   "info.house.com",
@@ -54,10 +55,10 @@ const Footer = () => {
             sm={6}
             lg={3}
             justifyContent="space-between"
-            sx={{ paddingX: { xs: "15px", lg: "0" } }}
+            sx={{ paddingX: { xs: "15px", lg: "0" }, mt: { xs: 3, lg: 0 } }}
           >
             <h4>About Site</h4>
-            <Typography sx={{ color: "#8a99b3", fontSize: "14px" }}>
+            <Typography sx={{ color: "#8a99b3", fontSize: "14px", mt: 2 }}>
               We’re reimagining how you buy, sell and rent. It’s now easier to
               get into a place you love. So let’s do this, together.
             </Typography>
@@ -70,10 +71,10 @@ const Footer = () => {
             md={5}
             lg={2}
             paddingX="15px"
-            sx={{ paddingLeft: { lg: "30px" } }}
+            sx={{ paddingLeft: { lg: "30px" }, mt: { xs: 3, lg: 0 } }}
           >
             <h4>Quick Links</h4>
-            <List disablePadding>
+            <List sx={{ mt: 1 }} disablePadding>
               <ListItem disableGutters>
                 <Link className={`${Style.text} ${Style.textHover}`}>
                   About
@@ -102,9 +103,16 @@ const Footer = () => {
             </List>
           </Grid>
           {/* 3 */}
-          <Grid item xs={12} sm={6} lg={3} paddingX="15px">
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            lg={3}
+            sx={{ mt: { xs: 3, lg: 0 } }}
+            paddingX="15px"
+          >
             <h4>Contact Us</h4>
-            <List disablePadding>
+            <List disablePadding sx={{ mt: 1 }}>
               {contact.map((item, i) => (
                 <ListItem disableGutters key={i}>
                   <Link className={`${Style.text} ${Style.textHover}`} href="">
@@ -115,11 +123,22 @@ const Footer = () => {
             </List>
           </Grid>
           {/* 4 */}
-          <Grid item xs={12} sm={6} lg={3} paddingX="15px">
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            lg={3}
+            sx={{ mt: { xs: 3, lg: 0 } }}
+            paddingX="15px"
+          >
             <h4>Follow Us</h4>
             <List
               disablePadding
-              sx={{ display: "flex", gap: { xs: 2, md: 4 } }}
+              sx={{
+                display: "flex",
+                gap: { xs: 2, md: 4 },
+                mt: { md: 1, lg: 2 },
+              }}
             >
               {social.map((item, i) => {
                 return (
@@ -137,11 +156,12 @@ const Footer = () => {
                 );
               })}
             </List>
-            <h4>Subscribe</h4>
+            <h4 style={{ marginTop: "16px" }}>Subscribe</h4>
             <Box
               sx={{
                 display: "flex",
                 gap: 1,
+                mt: { xs: 2, lg: 3 },
                 // flexDirection: { xs: "column", lg: "row" },
               }}
             >
@@ -206,11 +226,7 @@ const Footer = () => {
               ))}
             </List>
           </Box>
-          <Box>
-            <Typography className={Style.text}>
-              © 2020 Find House. Made with love.
-            </Typography>
-          </Box>
+          <Copyright sx={{ mt: 4 }} />
         </Container>
       </Box>
     </Box>

@@ -1,8 +1,5 @@
 import { RouterProvider } from "react-router-dom"
 import router from "./router/route"
-import { Context, reducer } from "./utils/utils"
-import { useReducer, useContext } from "react"
-import { Layout } from "./layout/layout"
 import { createTheme, ThemeProvider } from "@mui/material"
 
 const theme = createTheme({
@@ -29,14 +26,9 @@ const theme = createTheme({
     },
 })
 function App() {
-    const [state, dispatch] = useReducer(reducer, useContext(Context))
     return (
         <ThemeProvider theme={theme}>
-            <Context.Provider value={[state, dispatch]}>
-                <Layout>
-                    <RouterProvider router={router} />
-                </Layout>
-            </Context.Provider>
+            <RouterProvider router={router} />
         </ThemeProvider>
     )
 }
