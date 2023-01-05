@@ -22,6 +22,7 @@ import MainDashboard from "../pages/main-dashboard/main-dashboard"
 import SavedSearch from "../pages/saved-search/saved-search"
 import MyPackage from "../pages/package/my-package"
 import { DashBoardLayout, Layout } from "../layout/layout"
+import Reviews from "../pages/reviews/reviews"
 import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
 
 const router = createBrowserRouter(
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
                 <Route path="my-favourites" element={<DashBoardLayout children={<MyFavourites />} />} />
                 <Route path="profile" element={<DashBoardLayout children={<DashboardProfile />} />} />
                 <Route path="my-packages" element={<DashBoardLayout children={<MyPackage />} />} />
+                <Route path="reviews" element={<DashBoardLayout children={<Reviews />} />} />
                 <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
             </Route>
         </>
