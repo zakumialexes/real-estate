@@ -9,7 +9,22 @@
     margin-top: 30px;
 
     p{
-        color:&$font-color;
+        color:$font-color;
+    }
+
+    .textArea{
+        padding: 10px;
+        border:1px solid rgba(0, 0, 0, 0.23);
+        border-radius: 3px;
+        &:focus{
+            outline: none !important;
+            border: 1.8px solid $active-color !important;
+        }
     }
 }
+
+
+
+
+
 
