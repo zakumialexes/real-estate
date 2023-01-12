@@ -24,6 +24,7 @@ import MyPackage from "../pages/package/my-package"
 import { DashBoardLayout, Layout } from "../layout/layout"
 import Reviews from "../pages/reviews/reviews"
 import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
+import Message from "../pages/message/message"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -60,6 +61,7 @@ const router = createBrowserRouter(
                 <Route path="profile" element={<DashBoardLayout children={<DashboardProfile />} />} />
                 <Route path="my-packages" element={<DashBoardLayout children={<MyPackage />} />} />
                 <Route path="reviews" element={<DashBoardLayout children={<Reviews />} />} />
+                <Route path="message" element={<DashBoardLayout children={<Message />} />} />
                 <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
             </Route>
         </>

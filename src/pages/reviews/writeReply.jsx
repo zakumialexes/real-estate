@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { useRef } from "react"
 import { Stack, styled, TextField, IconButton, createTheme } from "@mui/material"
 
-import api from "./api"
-
 //icons
 import ClearIcon from "@mui/icons-material/Clear"
 import CheckIcon from "@mui/icons-material/Check"

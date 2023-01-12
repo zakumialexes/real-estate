@@ -16,7 +16,7 @@ export default axios.create({
 export const api = createApi({
     reducerPath: "api",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3500" }),
-    tagTypes: ["Property", "Agent", "Blog", "House", "Favourite", "Package", "SavedSearch", "Review"],
+    tagTypes: ["Property", "Agent", "Blog", "House", "Favourite", "Package", "SavedSearch", "Review", "Message"],
     endpoints: (builder) => ({
         getHome: queryBuilder(builder, "/home"),
         getAbout: queryBuilder(builder, "/about"),
@@ -25,6 +25,7 @@ export const api = createApi({
         getItems: queryBuilder(builder, "/items"),
         getGallery: queryBuilder(builder, "/gallery"),
         getByParameters: queryBuilderWithOthers(builder),
+        getByParametersMessages: queryBuilderWithOthers(builder, "Message"),
         getByParametersAgentList: queryBuilderWithOthers(builder, "Agent"),
         getByParametersBlogList: queryBuilderWithOthers(builder, "Blog"),
         getByParametersHouseList: queryBuilderWithOthers(builder, "House"),
@@ -33,7 +34,8 @@ export const api = createApi({
         getByParametersPackageList: queryBuilderWithOthers(builder, "Package"),
         getByParametersSavedSearchList: queryBuilderWithOthers(builder, "SavedSearch"),
         getByParametersReviewList: queryBuilderWithOthers(builder, "Review"),
-        postReply: mutationPost(builder, "Review", "reviewReplies"),
+        postReply: mutationPost(builder, "Review", "/reviewReplies"),
+        addMessage: mutationPatch(builder, "Message", "/messages"),
         patchReview: mutationPatch(builder, "Review", "/reviews"),
         deleteProperty: mutationDelete(builder, "Property"),
         deleteFavourite: mutationDelete(builder, "Favourite"),
@@ -49,6 +51,7 @@ export const {
     useGetItemsQuery,
     useGetGalleryQuery,
     useGetByParametersQuery,
+    useGetByParametersMessagesQuery,
     useGetByParametersAgentListQuery,
     useGetByParametersBlogListQuery,
     useGetByParametersHouseListQuery,
@@ -63,4 +66,5 @@ export const {
     useDeleteSavedSearchMutation,
     useDeleteReviewMutation,
     usePostReplyMutation,
+    useAddMessageMutation,
 } = api

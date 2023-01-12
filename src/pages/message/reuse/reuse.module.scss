@@ -1,0 +1,40 @@
+.chatroom {
+    height: 80px;
+    width: 100%;
+    cursor: pointer;
+}
+.bradge {
+    border-radius: 50%;
+    background-color: rgb(252, 68, 90);
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 21px;
+    height: 21px;
+    text-align: center;
+    width: 21px;
+}
+
+.active {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    background: darkgreen;
+}
+.message {
+    padding: 10px;
+    border-radius: 3px;
+    background: #f7f7f7;
+}
+
+.messageBox {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
