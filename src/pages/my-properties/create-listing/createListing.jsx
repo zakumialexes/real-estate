@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Typography,
          Grid,
          TextField,
+         Stack,
+         Button
           } from '@mui/material'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import styles from './createListing.module.scss'
@@ -21,6 +23,10 @@ const CreateListing = () => {
 
   const handleChange = (e) => {
     setListing({...listing, [e.target.id]:[e.target.value]})
+  }
+
+  const handleSubmit = () => {
+    console.log(listing)
   }
 
   return (
@@ -47,6 +53,11 @@ const CreateListing = () => {
         </Grid>
         <Grid item xs={12} md={4}>
           <TextField fullWidth label="Room" variant='outlined' onChange={handleChange} value={listing.room} id="room" type='number'/>
+        </Grid>
+        <Grid item xs={12}>
+                <Stack direction='row' justifyContent='center'>
+                    <Button onClick={handleSubmit} className={styles.fpBtn} variant='contained'>Submit</Button>
+                </Stack>
         </Grid>
       </Grid>
     </div>

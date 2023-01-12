@@ -4,6 +4,7 @@ import PropertiesMedia from './properties-media/propertiesMedia'
 import Typography from '@mui/material/Typography'
 import './myProperties.scss'
 import CreateListing from './create-listing/createListing'
+import DetailInformation from './detail-information/detailInformation'
 
 const MyProperties = () => {
   return (
@@ -13,6 +14,7 @@ const MyProperties = () => {
           <Typography mt={2}>We are glad to see you again!</Typography>
         </div>
         <CreateListing/>
+        <DetailInformation/>
         <PropertiesMedia/>
         <FloorPlan/>
     </>
