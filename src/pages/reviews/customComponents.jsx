@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import {
     styled,
     TextField,
@@ -11,13 +11,12 @@ import {
     Zoom,
     Modal,
     Rating,
-    text
 } from "@mui/material"
-import api from "./api"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { editBtn, deleteBtn, replyBtn } from "./svg"
 import { WriteReply } from "./writeReply"
+import { useDeleteReviewMutation } from "../../api/api"
 
 export const IconButton = ({ path, title, clicked }) => {
     const style = {
@@ -75,20 +74,20 @@ export const CustomTextField = styled(TextField)({
     },
 })
 
-export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
+export const SearchBar = ({ searchInput, setSearchInput, setSearchedKeyword }) => {
     const medium = useMediaQuery("(max-width: 990px)")
     const smallScreen = useMediaQuery("(max-width:500px)")
     const style = {
         container: {
             margin: "20px 0",
-            width: '100%',
+            width: "100%",
         },
         search: {
             backgroundColor: "white",
             borderRadius: "5px",
             minWidth: medium ? "" : "300px",
-            width: medium && '100%',
-            justifyContent: 'center',
+            width: medium && "100%",
+            justifyContent: "center",
         },
         select: {
             height: "100%",
@@ -96,27 +95,19 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
             width: "220px",
         },
     }
-    const [searchInput, setSearchInput] = useState("");
-    const handleInput = (e) => {
-        setSearchInput(e.target.value)
-        const searchData = searchInputData.filter(
-            data => {
-                return (
-                    data.reviewedName.toLowerCase().includes(searchInput.toLowerCase()) ||
-                    data.bodyText.toLowerCase().includes(searchInput.toLowerCase())
-                )
-            }
-        )
-        setSearchfilterData(searchData)
+    const handleInput = ({ target: { value } }) => {
+        !value && setSearchedKeyword("")
+        setSearchInput(value)
     }
     return (
-
-        <Stack direction={medium ? "column" : "row"}
+        <Stack
+            direction={medium ? "column" : "row"}
             sx={{
-                width: '100%',
+                width: "100%",
             }}
             CustomTextField
-            justifyContent="space-between">
+            justifyContent="space-between"
+        >
             <Stack
                 direction="row"
                 justifyContent={smallScreen ? "center" : "flex-end"}
@@ -126,13 +117,12 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
                 flexGrow={1}
                 sx={style.container}
             >
-
                 <CustomTextField
-                    onKeyUp={(e) => e.key === "Enter" && action()}
                     sx={style.search}
                     margin="normal"
                     required
                     onChange={handleInput}
+                    onKeyDown={(e) => e.key === "Enter" && setSearchedKeyword(searchInput)}
                     fullWidth
                     value={searchInput}
                     id="search"
@@ -141,7 +131,7 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
                     placeholder="Search Courses"
                     InputProps={{
                         endAdornment: (
-                            <Box onClick={action}>
+                            <Box onClick={() => setSearchedKeyword(searchInput)}>
                                 <FontAwesomeIcon icon={faSearch} />
                             </Box>
                         ),
@@ -153,13 +143,12 @@ export const SearchBar = ({ searchInputData, setSearchfilterData, action }) => {
     )
 }
 
-
 export const RoundedProfImg = ({ src, alt }) => {
     const smallScreen = useMediaQuery("(max-width:500px)")
     const style = {
-        width: smallScreen ? '120px' : '120px',
-        height: '120px',
-        borderRadius: '50%'
+        width: smallScreen ? "120px" : "120px",
+        height: "120px",
+        borderRadius: "50%",
     }
     return (
         <Box>
@@ -168,8 +157,9 @@ export const RoundedProfImg = ({ src, alt }) => {
     )
 }
 
-export const Action = ({ children, reviewId, setSearchfilterData }) => {
+export const Action = ({ children, reviewId, reply = false }) => {
     const [open, setOpen] = useState(false)
+    const [deleteReview] = useDeleteReviewMutation()
     const style = {
         heading: {
             color: "red",
@@ -182,17 +172,14 @@ export const Action = ({ children, reviewId, setSearchfilterData }) => {
             margin: "15px 0",
         },
     }
-    const handleDelete = (reviewId) => {
-        api.delete(`/Reviews/${reviewId}`)
-            .then(() => {
-                fetch("http://localhost:3500/Reviews?")
-                    .then((response) => response.json())
-                    .then((data) => { setSearchfilterData(data) })
-                setOpen(false)
-            })
+    const handleDelete = async (reviewId) => {
+        setOpen(false)
+        deleteReview(`/${reply ? "reviewReplies" : "reviews"}/${reviewId}`)
     }
-    const handleOpen = () => { setOpen(true) }
-    const handleClose = () => { setOpen(false) }
+    const handleOpen = () => {
+        setOpen(true)
+    }
+    const handleClose = () => setOpen(false)
 
     return (
         <Stack direction="row" justifyContent="center" alignItems="center" gap={2}>
@@ -208,10 +195,7 @@ export const Action = ({ children, reviewId, setSearchfilterData }) => {
                     <Button variant="contained" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button
-                        variant="contained"
-                        onClick={() => handleDelete(reviewId)}
-                    >
+                    <Button variant="contained" onClick={() => handleDelete(reviewId)}>
                         Delete
                     </Button>
                 </Stack>
@@ -229,28 +213,15 @@ export const Review = ({
     date,
     rate,
     bodyText,
-    setSearchfilterData,
-    replies,
+    replies = [],
+    reply = false,
 }) => {
     const smallScreen = useMediaQuery("(max-width:760px)")
     const E_smallScreen = useMediaQuery("(max-width:560px)")
 
     const [action, setAction] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
-    const [rating, setRating] = useState(rate);
-    const GiveRating = async ({ newValue, id }) => {
-        // console.log(newValue)
-        setRating(newValue)
-        if (newValue == null) newValue = 0
-        try {
-            const response = await api.get(`/Reviews/${id}`)
-            const putData = {
-                ...response.data, rating: newValue,
-            };
-            await api.put(`/Reviews/${id}`, putData)
-        } catch (err) { console.log(err.message) }
-
-    }
+    const [rating, setRating] = useState(rate)
     const EditReview = (id) => {
         setIsEdit(true)
         setAction((prevState) => !prevState)
@@ -261,62 +232,65 @@ export const Review = ({
         setAction((prevState) => !prevState)
     }
 
-
     const StyledRating = styled(Rating)({
-        '& .MuiRating-iconFilled': {
-            color: '#bcc52a',
+        "& .MuiRating-iconFilled": {
+            color: "#bcc52a",
         },
-        '& .MuiRating-iconHover': {
-            color: '#d5e01c',
+        "& .MuiRating-iconHover": {
+            color: "#d5e01c",
         },
-    });
+    })
     const style = {
         nameContainer: {
-            width: '100%',
-            alignItems: E_smallScreen ? 'flex-start' : 'center',
-            justifyContent: 'space-between'
+            width: "100%",
+            alignItems: E_smallScreen ? "flex-start" : "center",
+            justifyContent: "space-between",
         },
         titleContainer: {
-            margin: smallScreen ? '0 0 5px 0' : '0 5px 10px 0',
-            fontSize: '18px',
-            fontWeight: '900',
+            margin: smallScreen ? "0 0 5px 0" : "0 5px 10px 0",
+            fontSize: "18px",
+            fontWeight: "900",
         },
         replyCon: {
-            width: '100%',
-            padding: '20px',
-            justifyContent: 'flex-start',
-        }
-
+            width: "100%",
+            padding: "20px",
+            justifyContent: "flex-start",
+        },
     }
     return (
-        <Stack Stack spacing={3} direction={E_smallScreen ? 'column' : 'row'} style={style.replyCon} >
+        <Stack Stack spacing={3} direction={E_smallScreen ? "column" : "row"} style={style.replyCon}>
             <RoundedProfImg src={proFileSrc} alt={alt} />
-            <Stack direction='column' spacing={2} sx={{ width: '100%' }}>
-                <Stack direction={E_smallScreen ? 'column' : 'row'} style={style.nameContainer}>
+            <Stack direction="column" spacing={2} sx={{ width: "100%" }}>
+                <Stack direction={E_smallScreen ? "column" : "row"} style={style.nameContainer}>
                     <Box>
-                        <Stack direction={smallScreen ? 'column' : 'row'} spacing={2}>
-                            {
-                                myReview &&
-                                <Typography variant='h6' style={style.titleContainer}>Your review on</Typography>
-                            }
-                            <Typography style={style.titleContainer} sx={{ color: '#ff5a5f' }}>{reviewedName}</Typography>
+                        <Stack direction={smallScreen ? "column" : "row"} spacing={2}>
+                            {myReview && (
+                                <Typography variant="h6" style={style.titleContainer}>
+                                    Your review on
+                                </Typography>
+                            )}
+                            <Typography style={style.titleContainer} sx={{ color: "#ff5a5f" }}>
+                                {reviewedName}
+                            </Typography>
                         </Stack>
-                        <Typography variant='subtitle1'>{date}</Typography>
+                        <Typography variant="subtitle1">{date}</Typography>
                     </Box>
-                    <Box >
+                    <Box>
                         <StyledRating
                             name="review  rating"
-                            value={rating}
+                            value={Number(rating)}
+                            readOnly={!isEdit}
+                            precision={0.5}
                             onChange={(event, newValue) => {
-                                GiveRating({ newValue, id })
+                                setRating(newValue)
                             }}
                         />
                     </Box>
                 </Stack>
-                {
-                    action && isEdit &&
-                    <Stack sx={{ width: '100%' }}>
+                {action && isEdit && (
+                    <Stack sx={{ width: "100%" }}>
                         <WriteReply
+                            rating={rating}
                             replyId={id}
                             bodyText={bodyText}
                             myReview={myReview}
@@ -324,29 +298,22 @@ export const Review = ({
                             setIsEdit={setIsEdit}
                         />
                     </Stack>
-                }{
-                    !isEdit &&
-                    <Typography >{bodyText}</Typography>
-                }
-                {
-                    myReview ?
-                        !action &&
+                )}
+                {!isEdit && <Typography>{bodyText}</Typography>}
+                {myReview ? (
+                    !action && (
                         <Stack spacing={2} direction="row">
-
                             <IconButton path={editBtn} title="Edit" clicked={() => EditReview(id)} />
-                            <Action
-                                reviewId={id}
-                                setSearchfilterData={setSearchfilterData}
-                            />
+                            <Action reviewId={id} reply={reply} />
                         </Stack>
-                        :
-                        <Stack spacing={2} direction="row">
-                            <IconButton path={replyBtn} title="Reply" clicked={() => ReplyReview(id)} />
-                        </Stack>
-                }
-                {
-                    action && !isEdit &&
-                    <Stack sx={{ width: '100%' }}>
+                    )
+                ) : (
+                    <Stack spacing={2} direction="row">
+                        <IconButton path={replyBtn} title="Reply" clicked={() => ReplyReview(id)} />
+                    </Stack>
+                )}
+                {action && !isEdit && (
+                    <Stack sx={{ width: "100%" }}>
                         <WriteReply
                             Reply={true}
                             replyId={id}
@@ -355,30 +322,24 @@ export const Review = ({
                             setIsEdit={setIsEdit}
                         />
                     </Stack>
-                }
-                <Stack sx={{ width: '100%' }}>
-                    {replies?.length > 0 && (
-                        replies.map((replies, index) => (
-                            <Review
-                                key={index}
-                                id={replies.id}
-                                myReview={replies.myReview}
-                                proFileSrc={replies.proFileSrc}
-                                alt="Review profile img"
-                                reviewedName={replies.reviewedName}
-                                date={replies.date}
-                                rate={replies.rating}
-                                bodyText={replies.bodyText}
-                                setSearchfilterData={setSearchfilterData}
-                            />
-                        ))
-                    )}
-
+                )}
+                <Stack sx={{ width: "100%" }}>
+                    {replies.map((replies, index) => (
+                        <Review
+                            key={index}
+                            id={replies.id}
+                            myReview={replies.myReview}
+                            proFileSrc={replies.proFileSrc}
+                            alt="Review profile img"
+                            reviewedName={replies.reviewedName}
+                            date={replies.date}
+                            rate={replies.rating}
+                            bodyText={replies.bodyText}
+                            reply={true}
+                        />
+                    ))}
                 </Stack>
-
-
             </Stack>
-        </Stack >
-
+        </Stack>
     )
 }

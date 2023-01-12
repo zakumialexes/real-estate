@@ -12,18 +12,17 @@ import {
     useMediaQuery,
     Button,
 } from "@mui/material"
-import { useDispatch } from "react-redux"
-import { dataFetch } from "../../utils/reducers"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { editBtn } from "./svg"
 import { IconButton, DeleteModal } from "./customComponents"
+import { useDeletePropertyMutation, useDeleteFavouriteMutation } from "../../api/api"
 
-export const Action = ({ children, id, setWatcher }) => {
-    const dispatch = useDispatch()
+export const Action = ({ children, id, favourite = false }) => {
     const [open, setOpen] = useState(false)
-    const [modalId, setModalId] = useState()
+    const [deleteProperty] = useDeletePropertyMutation()
+    const [deleteFavourite] = useDeleteFavouriteMutation()
     const style = {
         heading: {
             color: "red",
@@ -36,14 +35,16 @@ export const Action = ({ children, id, setWatcher }) => {
             margin: "15px 0",
         },
     }
-    const handleDelete = () => {
-        dispatch(dataFetch([`my-properties/${modalId}`, "delete"]))
+    const handleDelete = async () => {
+        try {
+            favourite ? await deleteFavourite(`/my-favourites/${id}`) : await deleteProperty(`/my-properties/${id}`)
+        } catch (err) {
+            console.log(err)
+        }
         setOpen(false)
-        setWatcher((pre) => !pre)
     }
     const handleOpen = () => {
         setOpen(true)
-        setModalId(id)
     }
 
     const handleClose = () => setOpen(false)
@@ -61,7 +62,7 @@ export const Action = ({ children, id, setWatcher }) => {
                     <Button variant="contained" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="contained" onClick={handleDelete}>
+                    <Button variant="contained" onClick={() => handleDelete()}>
                         Delete
                     </Button>
                 </Stack>
@@ -176,7 +177,7 @@ const StatusChip = ({ status, children }) => {
     )
 }
 
-const TableListRow = ({ image, date, status, price, name, location, view, tags, id, setWatcher }) => {
+const TableListRow = ({ image, date, status, price, name, location, view, tags, id }) => {
     const smallScreen = useMediaQuery("(max-width:550px)")
 
     return (
@@ -194,7 +195,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
                 <Typography>{view}</Typography>
             </TableCell>
             <TableCell>
-                <Action id={id} setWatcher={setWatcher}>
+                <Action id={id}>
                     <IconButton path={editBtn} title="Edit" />
                 </Action>
             </TableCell>
@@ -202,7 +203,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
     )
 }
 
-const ListTable = ({ properties, setWatcher }) => {
+const ListTable = ({ properties }) => {
     const style = {
         table: {
             borderRadius: "10px",
@@ -212,7 +213,6 @@ const ListTable = ({ properties, setWatcher }) => {
             backgroundColor: "rgb(36, 50, 74)",
         },
     }
-    console.log(properties)
     const TableHeader = ({ children }) => {
         return (
             <Typography color="white" align="center">
@@ -247,7 +247,6 @@ const ListTable = ({ properties, setWatcher }) => {
                     {properties?.map((property) => {
                         return (
                             <TableListRow
-                                setWatcher={setWatcher}
                                 image={property.image}
                                 date={property.date}
                                 status={property.status}

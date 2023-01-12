@@ -6,7 +6,6 @@ import {
     Box,
     Stack,
     useMediaQuery,
-    Button,
     PaginationItem,
     Tooltip,
     Zoom,
@@ -143,26 +142,23 @@ export const SearchBar = ({ query, search, setQuery, filter, setFilter, setSearc
             width: "220px",
         },
     }
-    const searching = () => {
-        setSearch((pre) => !pre)
+    const handleEnter = () => {
+        setSearch(query)
         setPage(1)
     }
     const handleInput = (e) => {
         setQuery(e.target.value)
     }
     const handleClear = () => {
-        searching()
+        setSearch("")
         setQuery("")
-    }
-    const handleEnter = () => {
-        searching()
     }
     const handleSearch = () => {
         setSearch((pre) => !pre)
         setPage(1)
     }
     if (query === "" && search === true) {
-        setSearch(false)
+        setSearch("")
         setPage(1)
     }
     return (
@@ -194,7 +190,7 @@ export const SearchBar = ({ query, search, setQuery, filter, setFilter, setSearc
                     InputProps={{
                         endAdornment: (
                             <>
-                                {search && (
+                                {query && (
                                     <ClearIcon
                                         color="primary"
                                         onClick={handleClear}

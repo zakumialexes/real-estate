@@ -3,7 +3,7 @@ import ListHeader from "../agent-list/list-header/list-header"
 import { useEffect, useState } from "react"
 import LeftSide from "./left-side/left-side"
 import RightSide from "./right-side/right-side"
-import { dataFetch, useSelector, useDispatch, totalPageSelector } from "../../utils/reducers"
+import { useGetByParametersHouseListQuery } from "../../api/api"
 
 export default function HouseList() {
     const [sortBy, setSortBy] = useState(0)
@@ -11,20 +11,15 @@ export default function HouseList() {
     const [isGrid, setIsGrid] = useState(true)
     const [showSearchOverlay, setShowSearchOverlay] = useState(false)
 
-    const dispatch = useDispatch()
-    const totalPageCount = useSelector(totalPageSelector)
+    const { data: totalData, isSuccess: success1 } = useGetByParametersHouseListQuery(`/houses`)
+    const { data: houses, isSuccess: success2 } = useGetByParametersHouseListQuery(
+        `/houses?_page=${paginationPage}&_limit=6`
+    )
+    const totalPageCount = success1 && Math.ceil(totalData.length / 6)
 
     useEffect(() => {
         showSearchOverlay ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto")
     }, [showSearchOverlay])
-
-    const paginateLink = [`houses?_page=${paginationPage}&&_limit=${6}`, "get"]
-    useEffect(() => {
-        dispatch(dataFetch(["houses", "all", "", 6]))
-    }, [])
-    useEffect(() => {
-        dispatch(dataFetch(paginateLink))
-    }, [paginationPage])
     const leftSideProps = {
         isGrid,
         setSortBy,
@@ -32,22 +27,25 @@ export default function HouseList() {
         paginationPage,
         setPaginationPage,
         totalPageCount,
+        houses,
     }
-    return (
-        <div className={houseStyle.section}>
-            <div className={houseStyle.container}>
-                <ListHeader
-                    isGrid={isGrid}
-                    setIsGrid={setIsGrid}
-                    toggleSearchOverlay={() => setShowSearchOverlay((prevState) => !prevState)}
-                >
-                    Customer View
-                </ListHeader>
-                <div className={houseStyle.content}>
-                    <LeftSide {...leftSideProps} />
-                    <RightSide showSearchOverlay={showSearchOverlay} setShowSearchOverlay={setShowSearchOverlay} />
+    if (success1 && success2) {
+        return (
+            <div className={houseStyle.section}>
+                <div className={houseStyle.container}>
+                    <ListHeader
+                        isGrid={isGrid}
+                        setIsGrid={setIsGrid}
+                        toggleSearchOverlay={() => setShowSearchOverlay((prevState) => !prevState)}
+                    >
+                        Customer View
+                    </ListHeader>
+                    <div className={houseStyle.content}>
+                        <LeftSide {...leftSideProps} />
+                        <RightSide showSearchOverlay={showSearchOverlay} setShowSearchOverlay={setShowSearchOverlay} />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }

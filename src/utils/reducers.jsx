@@ -1,38 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import axios from "axios"
+import { createSlice } from "@reduxjs/toolkit"
 
-const api = axios.create({
-    baseURL: "http://localhost:3500",
-})
-
-// use this reducer for async api calls
-// Example in app.jsx
-// Caution: pass arguments in this order in an array url(eg:agent/1), method(get,post,etc...), body(with data when make an update)
-export const dataFetch = createAsyncThunk("database", async ([url, method, body, entryPerPage]) => {
-    try {
-        switch (method) {
-            case "get": {
-                const { data } = await api.get(url)
-                return data
-            }
-            case "delete": {
-                await api.delete(url)
-                return true
-            }
-            case "all": {
-                const { data } = await api.get(url)
-                return Math.ceil(data.length / entryPerPage)
-            }
-            default: {
-                await api["method"](url, body)
-                return true
-            }
-        }
-    } catch (error) {
-        const rejectionError = new Error(error.response.status + " " + error.response.statusText)
-        return Promise.reject(rejectionError)
-    }
-})
 const fetchReducer = createSlice({
     name: "data",
     initialState: { data: null, error: "", totalPage: 0 },
@@ -43,23 +10,6 @@ const fetchReducer = createSlice({
         setTotalPage: (state, { payload }) => {
             state.totalPage = payload
         },
-    },
-    extraReducers: (builder) => {
-        builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
-            let type = typeof payload
-            state.error = ""
-            if (type === "boolean") return
-            if (type === "number") {
-                state.totalPage = payload
-            } else {
-                state.data = payload
-            }
-        })
-        builder.addCase(dataFetch.rejected, (state, action) => {
-            state.data = null
-            state.totalPage = 0
-            state.error = action.error.message
-        })
     },
 })
 const main = createSlice({

@@ -4,7 +4,7 @@ import Slider from "react-slick"
 import { Heading } from "./wrapper"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { useSelector, dataSelector } from "../../../utils/reducers"
+import { useGetHomeQuery } from "../../../api/api"
 
 const PrevArrow = (props) => {
     const { className, style, onClick } = props
@@ -16,7 +16,9 @@ const NextArrow = (props) => {
 }
 
 const FeaturedPro = () => {
-    const data = useSelector(dataSelector)?.properties ?? []
+    const {
+        data: { properties },
+    } = useGetHomeQuery()
     const title = "Featured Properties"
     const content = "Handpicked properties by our team"
 
@@ -68,9 +70,8 @@ const FeaturedPro = () => {
                     }}
                 >
                     <Slider {...settings}>
-                        {data?.map((property) => (
+                        {properties?.map((property) => (
                             <>
-                                {console.log(property.propertyImage)}
                                 <EsCard
                                     property={property.property}
                                     propertyImage={property.propertyImage}

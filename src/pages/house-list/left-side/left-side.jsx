@@ -8,7 +8,6 @@ import GridHouseCard from "../grid-house-card/grid-house-card"
 import { PaginationItem } from "@mui/material"
 import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material"
 import ListHouseCard from "../list-house-card/list-house-card"
-import { useSelector } from "react-redux"
 
 export default function LeftSide({
     sortBy,
@@ -18,8 +17,8 @@ export default function LeftSide({
     setPaginationPage,
     totalPageCount,
     children,
+    houses,
 }) {
-    const houses = useSelector((state) => state.data.data) ?? []
     function handlePaginationChange(event, value) {
         setPaginationPage(value)
     }

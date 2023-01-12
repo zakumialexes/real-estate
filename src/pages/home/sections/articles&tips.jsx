@@ -4,6 +4,7 @@ import { Box, Card, CardContent, CardMedia, Stack, Avatar, Divider, Typography }
 import style from "./articles&tips.module.scss"
 
 import { useSelector } from "react-redux"
+import { useGetHomeQuery } from "../../../api/api"
 
 const ArticleCard = ({ image, avatar, author, date, title, type }) => {
     return (
@@ -46,10 +47,11 @@ const ArticleCard = ({ image, avatar, author, date, title, type }) => {
     )
 }
 const ArticleTips = () => {
-    const data = useSelector((state) => state.data.data?.articles) ?? []
+    const {
+        data: { articles },
+    } = useGetHomeQuery()
     const title = "Articles & Tips"
     const content = "Lorem jgi sdaij aijdfa gaioa"
-    console.log(data)
     return (
         <Wrapper color={"#f7f7f7"} title={title} content={content}>
             <Stack
@@ -60,7 +62,7 @@ const ArticleTips = () => {
                 flexWrap="wrap"
                 sx={{ width: "fit-content" }}
             >
-                {data.map((article, index) => (
+                {articles.map((article, index) => (
                     <ArticleCard
                         key={index}
                         image={article.image}
