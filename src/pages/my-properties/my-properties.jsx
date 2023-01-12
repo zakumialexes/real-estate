@@ -1,45 +1,39 @@
-import { Box } from "@mui/material"
-import usePaginate from "../agent-list/pagination"
 import ListTable from "./table"
 import { useState } from "react"
 import { TableContainerCon } from "./customComponents"
-
-const MyProperties = ({}) => {
-    const source = "my-properties"
+import { useGetByParametersPropertyListQuery } from "../../api/api"
+const MyProperties = () => {
+    const pageName = "Properties"
     const [page, setPage] = useState(1)
     const [query, setQuery] = useState("")
     const [searched, setSearched] = useState(false)
     const [filter, setFilter] = useState("default")
-    const {
-        totalPageCount,
-        paginatedData: paginatedProperties,
-        deleteF,
-        setDeleteF,
-    } = usePaginate(source, page, 4, query, searched)
-
-    const action = () => {
-        let random = Math.random()
-        while (random === searched) random = Math.random()
-        setSearched(random)
-        setPage(1)
-    }
-
-    return (
-        <TableContainerCon
-            search={searched}
-            setSearch={setSearched}
-            query={query}
-            setQuery={setQuery}
-            action={action}
-            page={page}
-            setPage={setPage}
-            totalPage={totalPageCount}
-            filter={filter}
-            setFilter={setFilter}
-        >
-            <ListTable properties={paginatedProperties} source={source} deleteF={deleteF} setDeleteF={setDeleteF} />
-        </TableContainerCon>
+    const { data: totalData, isSuccess: success1 } = useGetByParametersPropertyListQuery(
+        `/my-properties${searched ? `?q=${searched}` : ""}`,
+        "Property"
     )
+    const { data: displayData, isSuccess: success2 } = useGetByParametersPropertyListQuery(
+        `/my-properties?_page=${page}&_limit=${4}${searched ? `&q=${searched}` : ""}`,
+        "Property"
+    )
+    if (success1 && success2) {
+        return (
+            <TableContainerCon
+                name={pageName}
+                search={searched}
+                setSearch={setSearched}
+                query={query}
+                setQuery={setQuery}
+                page={page}
+                setPage={setPage}
+                totalPage={totalData.length / 4}
+                filter={filter}
+                setFilter={setFilter}
+            >
+                <ListTable properties={displayData} />
+            </TableContainerCon>
+        )
+    }
 }
 
 export default MyProperties

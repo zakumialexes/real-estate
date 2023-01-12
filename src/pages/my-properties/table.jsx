@@ -17,10 +17,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { editBtn } from "./svg"
 import { IconButton, DeleteModal } from "./customComponents"
-import api from "./api"
-export const Action = ({ children, id, source, deleteF, setDeleteF }) => {
+import { useDeletePropertyMutation, useDeleteFavouriteMutation } from "../../api/api"
+
+export const Action = ({ children, id, favourite = false }) => {
     const [open, setOpen] = useState(false)
-    const [modalId, setModalId] = useState()
+    const [deleteProperty] = useDeletePropertyMutation()
+    const [deleteFavourite] = useDeleteFavouriteMutation()
     const style = {
         heading: {
             color: "red",
@@ -33,18 +35,16 @@ export const Action = ({ children, id, source, deleteF, setDeleteF }) => {
             margin: "15px 0",
         },
     }
-    const handleDelete = () => {
-        console.log(modalId)
-        api.delete(`/${source}/${modalId}`).then(() => {
-            let no = Math.random()
-            while (no === deleteF) no = Math.random()
-            setDeleteF(no)
-            setOpen(false)
-        })
+    const handleDelete = async () => {
+        try {
+            favourite ? await deleteFavourite(`/my-favourites/${id}`) : await deleteProperty(`/my-properties/${id}`)
+        } catch (err) {
+            console.log(err)
+        }
+        setOpen(false)
     }
     const handleOpen = () => {
         setOpen(true)
-        setModalId(id)
     }
 
     const handleClose = () => setOpen(false)
@@ -62,7 +62,7 @@ export const Action = ({ children, id, source, deleteF, setDeleteF }) => {
                     <Button variant="contained" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="contained" onClick={handleDelete}>
+                    <Button variant="contained" onClick={() => handleDelete()}>
                         Delete
                     </Button>
                 </Stack>
@@ -177,7 +177,7 @@ const StatusChip = ({ status, children }) => {
     )
 }
 
-const TableListRow = ({ image, date, status, price, name, location, view, tags, id, source, deleteF, setDeleteF }) => {
+const TableListRow = ({ image, date, status, price, name, location, view, tags, id }) => {
     const smallScreen = useMediaQuery("(max-width:550px)")
 
     return (
@@ -195,7 +195,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
                 <Typography>{view}</Typography>
             </TableCell>
             <TableCell>
-                <Action id={id} source={source} deleteF={deleteF} setDeleteF={setDeleteF}>
+                <Action id={id}>
                     <IconButton path={editBtn} title="Edit" />
                 </Action>
             </TableCell>
@@ -203,9 +203,7 @@ const TableListRow = ({ image, date, status, price, name, location, view, tags, 
     )
 }
 
-const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
-    console.log(properties)
-
+const ListTable = ({ properties }) => {
     const style = {
         table: {
             borderRadius: "10px",
@@ -215,7 +213,6 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
             backgroundColor: "rgb(36, 50, 74)",
         },
     }
-
     const TableHeader = ({ children }) => {
         return (
             <Typography color="white" align="center">
@@ -247,12 +244,9 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {properties.map((property) => {
-                        console.log(property)
+                    {properties?.map((property) => {
                         return (
                             <TableListRow
-                                deleteF={deleteF}
-                                setDeleteF={setDeleteF}
                                 image={property.image}
                                 date={property.date}
                                 status={property.status}
@@ -263,7 +257,6 @@ const ListTable = ({ properties, source, deleteF, setDeleteF }) => {
                                 id={property.id}
                                 view={property.view}
                                 tags={property.tags}
-                                source={source}
                             />
                         )
                     })}

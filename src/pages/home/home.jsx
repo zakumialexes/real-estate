@@ -1,4 +1,3 @@
-import React from "react"
 import HomeDesign from "./sections/home-design"
 import FeaturedPro from "./sections/featured-properties"
 import CityPro from "./sections/city-properties"
@@ -8,19 +7,23 @@ import Partner from "./sections/our-partners"
 import ArticleTips from "./sections/articles&tips"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useGetHomeQuery } from "../../api/api"
 
 const Home = () => {
-    return (
-        <>
-            <HomeDesign />
-            <FeaturedPro />
-            <CityPro />
-            <WhyChoUs />
-            <ArticleTips />
-            <Testimonial />
-            <Partner />
-        </>
-    )
+    const { isSuccess } = useGetHomeQuery()
+    if (isSuccess) {
+        return (
+            <>
+                <HomeDesign />
+                <FeaturedPro />
+                <CityPro />
+                <WhyChoUs />
+                <ArticleTips />
+                <Testimonial />
+                <Partner />
+            </>
+        )
+    }
 }
 
 export default Home

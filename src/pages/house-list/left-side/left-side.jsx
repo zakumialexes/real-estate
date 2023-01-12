@@ -13,16 +13,15 @@ export default function LeftSide({
     sortBy,
     setSortBy,
     isGrid,
-    houses,
     paginationPage,
     setPaginationPage,
     totalPageCount,
     children,
+    houses,
 }) {
     function handlePaginationChange(event, value) {
         setPaginationPage(value)
     }
-
     return (
         <div className={style.leftSide}>
             {children}

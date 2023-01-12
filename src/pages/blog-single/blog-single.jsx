@@ -14,115 +14,107 @@ import RelatedBlogCard from "./related-post-card/related-blog-card"
 import { Grid, Typography } from "@mui/material"
 import CommentSection from "./comment-section/comment-section"
 import { useLoaderData } from "react-router-dom"
+import { useGetByParametersQuery } from "../../api/api"
 
 function BlogSingle() {
     const blog = useLoaderData().data
-    const [relatedBlogs, setRelatedBlogs] = useState([])
-    async function fetchBlogs() {
-        const fetchedRelatedBlog = await fetch("http://localhost:3500/blog-list?_limit=2").then((response) =>
-            response.json()
-        )
-        setRelatedBlogs(fetchedRelatedBlog)
-    }
-
-    useEffect(() => {
-        fetchBlogs()
-    }, [])
-
-    return (
-        <BlogLayout>
-            <div className={style.blogSingleContent}>
-                <div className={style.tagContainer}>
-                    {blog?.tags.map((tag, i) => (
-                        <a href="#" className={style.tag} key={i}>
-                            {tag}
-                        </a>
-                    ))}
-                </div>
-                <h3 className={style.blogTitle}>{blog?.title}</h3>
-                <div className={style.blogInfo}>
-                    <img src={blog?.creator.photo} alt="" />
-                    <p>{blog?.creator.name}</p>
-                    <p>
-                        <FontAwesomeIcon icon={faCalendarDays} /> {blog?.createdDate}
-                    </p>
-                    <p>
-                        <FontAwesomeIcon icon={faEye} /> 123
-                    </p>
-                    <p>
-                        <FontAwesomeIcon icon={faComment} /> 123
-                    </p>
-                </div>
-                <div className={style.imgContainer}>
-                    <img src={blog?.photo} alt="" />
-                </div>
-                <div className={style.description}>
-                    <p>{blog?.description}</p>
-                </div>
-                <div className={style.quoteContainer}>
-                    <div className={style.blockQuote}>
-                        <span className={style.quoteIcon}>
-                            <FontAwesomeIcon icon={faQuoteLeft} />
-                        </span>
-                        <br />
-                        <em className={style.quoteText}>
-                            Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin
-                            purus, quis rutrum mi accumsan nec.
-                        </em>
+    const { data: relatedBlogs, isSuccess } = useGetByParametersQuery("blog-list?_limit=2")
+    if (isSuccess) {
+        return (
+            <BlogLayout>
+                <div className={style.blogSingleContent}>
+                    <div className={style.tagContainer}>
+                        {blog?.tags.map((tag, i) => (
+                            <a href="#" className={style.tag} key={i}>
+                                {tag}
+                            </a>
+                        ))}
                     </div>
-                </div>
-                <div className={style.socials}>
-                    <p>Share</p>
-                    <div className={style.socialIcon}>
-                        <FontAwesomeIcon icon={faFacebookF} />
+                    <h3 className={style.blogTitle}>{blog?.title}</h3>
+                    <div className={style.blogInfo}>
+                        <img src={blog?.creator.photo} alt="" />
+                        <p>{blog?.creator.name}</p>
+                        <p>
+                            <FontAwesomeIcon icon={faCalendarDays} /> {blog?.createdDate}
+                        </p>
+                        <p>
+                            <FontAwesomeIcon icon={faEye} /> 123
+                        </p>
+                        <p>
+                            <FontAwesomeIcon icon={faComment} /> 123
+                        </p>
                     </div>
-                    <div className={style.socialIcon}>
-                        <FontAwesomeIcon icon={faTwitter} />
+                    <div className={style.imgContainer}>
+                        <img src={blog?.photo} alt="" />
                     </div>
-                    <div className={style.socialIcon}>
-                        <FontAwesomeIcon icon={faLinkedin} />
+                    <div className={style.description}>
+                        <p>{blog?.description}</p>
                     </div>
-                    <div className={style.socialIcon}>
-                        <FontAwesomeIcon icon={faGoogle} />
-                    </div>
-                    <div className={style.socialIcon}>
-                        <FontAwesomeIcon icon={faPinterest} />
-                    </div>
-                </div>
-                <div className={style.blogPaginate}>
-                    <div className={style.prevPage}>
-                        <a href="#">
-                            <FontAwesomeIcon icon={faChevronCircleLeft} />
-                        </a>
-                        <div className={style.blogPaginateContent}>
-                            <h5>Previous Post</h5>
-                            <p>Housing Marketing That</p>
+                    <div className={style.quoteContainer}>
+                        <div className={style.blockQuote}>
+                            <span className={style.quoteIcon}>
+                                <FontAwesomeIcon icon={faQuoteLeft} />
+                            </span>
+                            <br />
+                            <em className={style.quoteText}>
+                                Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit
+                                sollicitudin purus, quis rutrum mi accumsan nec.
+                            </em>
                         </div>
                     </div>
-                    <div className={style.nextPage}>
-                        <div className={style.blogPaginateContent}>
-                            <h5>Next Post</h5>
-                            <p>Housing Marketing That</p>
+                    <div className={style.socials}>
+                        <p>Share</p>
+                        <div className={style.socialIcon}>
+                            <FontAwesomeIcon icon={faFacebookF} />
                         </div>
-                        <a href="#">
-                            <FontAwesomeIcon icon={faChevronCircleRight} />
-                        </a>
+                        <div className={style.socialIcon}>
+                            <FontAwesomeIcon icon={faTwitter} />
+                        </div>
+                        <div className={style.socialIcon}>
+                            <FontAwesomeIcon icon={faLinkedin} />
+                        </div>
+                        <div className={style.socialIcon}>
+                            <FontAwesomeIcon icon={faGoogle} />
+                        </div>
+                        <div className={style.socialIcon}>
+                            <FontAwesomeIcon icon={faPinterest} />
+                        </div>
                     </div>
-                </div>
-                <Grid container spacing={4}>
-                    <Grid item xs={12}>
-                        <Typography variant="h6">Related Posts</Typography>
-                    </Grid>
-                    {relatedBlogs.map((relatedBlog, i) => (
-                        <Grid item key={i} sm={6}>
-                            <RelatedBlogCard blog={relatedBlog} />
+                    <div className={style.blogPaginate}>
+                        <div className={style.prevPage}>
+                            <a href="#">
+                                <FontAwesomeIcon icon={faChevronCircleLeft} />
+                            </a>
+                            <div className={style.blogPaginateContent}>
+                                <h5>Previous Post</h5>
+                                <p>Housing Marketing That</p>
+                            </div>
+                        </div>
+                        <div className={style.nextPage}>
+                            <div className={style.blogPaginateContent}>
+                                <h5>Next Post</h5>
+                                <p>Housing Marketing That</p>
+                            </div>
+                            <a href="#">
+                                <FontAwesomeIcon icon={faChevronCircleRight} />
+                            </a>
+                        </div>
+                    </div>
+                    <Grid container spacing={4}>
+                        <Grid item xs={12}>
+                            <Typography variant="h6">Related Posts</Typography>
                         </Grid>
-                    ))}
-                </Grid>
-                <CommentSection />
-            </div>
-        </BlogLayout>
-    )
+                        {relatedBlogs.map((relatedBlog, i) => (
+                            <Grid item key={i} sm={6}>
+                                <RelatedBlogCard blog={relatedBlog} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                    <CommentSection />
+                </div>
+            </BlogLayout>
+        )
+    }
 }
 
 export default BlogSingle
