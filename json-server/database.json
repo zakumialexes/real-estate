@@ -1,937 +1,1716 @@
 {
+  "home": {
     "properties": [
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img1.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 13000,
-            "sale": true,
-            "rent": false,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 1
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img2.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 2
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img3.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 3
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img1.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 4
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img2.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 5
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img3.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 6
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img1.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 7
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img2.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 8
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img3.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 9
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img1.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 10
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img2.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 11
-        },
-        {
-            "property": "Renovated Apartment",
-            "propertyImage": "./assets/home/featuredproperties/img3.jpg",
-            "type": "Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "price": 1300,
-            "sale": false,
-            "rent": true,
-            "bed": 4,
-            "bath": 2,
-            "area": 5280,
-            "poster": "Ali Tufan",
-            "posterImage": "./assets/home/featuredproperties/pposter1.png",
-            "date": "4 years ago",
-            "featured": true,
-            "id": 12
-        }
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img1.jpg",
+        "type": "Apartment",
+        "location": "1421 San PKedro St, Los Angeles, CA 90015",
+        "price": 13000,
+        "sale": true,
+        "rent": false,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 1
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img2.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 2
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img3.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 3
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img1.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 4
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img2.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 5
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img3.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 6
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img1.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 7
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img2.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 8
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img3.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 9
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img1.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 10
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img2.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 11
+      },
+      {
+        "property": "Renovated Apartment",
+        "propertyImage": "/assets/home/featuredproperties/img3.jpg",
+        "type": "Apartment",
+        "location": "1421 San Pedro St, Los Angeles, CA 90015",
+        "price": 1300,
+        "sale": false,
+        "rent": true,
+        "bed": 4,
+        "bath": 2,
+        "area": 5280,
+        "poster": "Ali Tufan",
+        "posterImage": "/assets/home/featuredproperties/pposter1.png",
+        "date": "4 years ago",
+        "featured": true,
+        "id": 12
+      }
     ],
-    "articles-tips": [
-        {
-            "image": "./assets/home/article/article1.jpg",
-            "author": "Ali Tufan",
-            "authorImg": "./assets/home/article/articlePerson.png",
-            "date": "7 August 2019",
-            "topic": "Business",
-            "title": "Skills That You Must Learn In The Real Estate Market"
-        },
-        {
-            "image": "./assets/home/article/article2bedroom.webp",
-            "author": "Ali Tufan",
-            "authorImg": "./assets/home/article/articlePerson.png",
-            "date": "7 August 2019",
-            "topic": "Business",
-            "title": "Bedroom Color You'll Never Regret"
-        },
-        {
-            "image": "./assets/home/article/article3investment.jpg",
-            "author": "Ali Tufan",
-            "authorImg": "./assets/home/article/articlePerson.png",
-            "date": "7 August 2019",
-            "topic": "Business",
-            "title": "5 Essential Step For Buying An Investment"
-        }
-    ],
-    "testimonial": [
-        {
-            "id": "1",
-            "name": "Augusta Silva",
-            "role": "Sales Manager",
-            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-        },
-        {
-            "id": "2",
-            "name": "Jennifer Barton",
-            "role": "Product Manager",
-            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-        },
-        {
-            "id": "3",
-            "name": "Kathleen Myers",
-            "role": "Casher",
-            "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
-        }
-    ],
-    "OurTeam": [
-        {
-            "id": "1",
-            "name": "Mariusz Ciesla",
-            "role": "Broker",
-            "img": "/assets/about/agent2.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Kathleen Myers",
-            "role": "agent",
-            "img": "/assets/about/broker1.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Helene Powers",
-            "role": "Broker",
-            "img": "/assets/about/broker3.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Jennifer Barton",
-            "role": "Broker",
-            "img": "/assets/about/broker4.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Jennifer Barton",
-            "role": "Broker",
-            "img": "/assets/about/broker3.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Jennifer Barton",
-            "role": "Broker",
-            "img": "/assets/about/broker1.jpg"
-        }
-    ],
-    "agent-list": [
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        },
-        {
-            "name": "Anna Herison",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Acer Hacker",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-3.jpg"
-        },
-        {
-            "name": "Pheonix Fellington",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-1.jpg"
-        },
-        {
-            "name": "Cult Leader",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-5.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Pheonix Fellington",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-1.jpg"
-        },
-        {
-            "name": "Cult Leader",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-5.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        },
-        {
-            "name": "Anna Herison",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        },
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        },
-        {
-            "name": "Anna Herison",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Acer Hacker",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-3.jpg"
-        },
-        {
-            "name": "Pheonix Fellington",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-1.jpg"
-        },
-        {
-            "name": "Cult Leader",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-5.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Pheonix Fellington",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-1.jpg"
-        },
-        {
-            "name": "Cult Leader",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-5.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        },
-        {
-            "name": "Anna Herison",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Harley Dvision",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "paluua@findhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-6.jpg"
-        },
-        {
-            "name": "Zuzu Parlar Pakulla",
-            "phoneNumber": {
-                "office": "134 456 789",
-                "mobile": "982 123 423",
-                "fax": "234 322 624"
-            },
-            "email": "palasd2dhouse.com",
-            "type": "agent",
-            "listing": 2,
-            "photo": "/images/agents/agent-2.jpg"
-        }
-    ],
-    "houses": [
-        {
-            "id": 1,
-            "name": "Nice Room With View",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-1.jpg", "/images/houses/grid-photo-2.jpg"],
-            "rent": 13000,
-            "type": "villa",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 2,
-            "name": "Renovated Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
-            "rent": 13000,
-            "type": "house",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 3,
-            "name": "Luxury Family House",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
-            "rent": 13000,
-            "type": "apartment",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 4,
-            "name": "Nice Room With View",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-6.jpg", "/images/houses/grid-photo-5.jpg"],
-            "rent": 13000,
-            "type": "villa",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 5,
-            "name": "Renovated Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-7.jpg", "/images/houses/grid-photo-8.jpg"],
-            "rent": 13000,
-            "type": "house",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 6,
-            "name": "Luxury Family House",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-9.jpg", "/images/houses/grid-photo-10.jpg"],
-            "rent": 13000,
-            "type": "apartment",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 7,
-            "name": "Renovated Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
-            "rent": 13000,
-            "type": "house",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 8,
-            "name": "Luxury Family House",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-3.jpg", "/images/houses/grid-photo-4.jpg"],
-            "rent": 13000,
-            "type": "apartment",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 9,
-            "name": "Renovated Apartment",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-6.jpg", "/images/houses/grid-photo-4.jpg"],
-            "rent": 13000,
-            "type": "house",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        },
-        {
-            "id": 10,
-            "name": "Luxury Family House",
-            "location": "1421 San Pedro St, Los Angeles, CA 90015",
-            "photos": ["/images/houses/grid-photo-8.jpg", "/images/houses/grid-photo-6.jpg"],
-            "rent": 13000,
-            "type": "apartment",
-            "beds": 4,
-            "baths": 3,
-            "sqFt": 5280,
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "4 years ago",
-            "tags": ["for rent", "featured"]
-        }
-    ],
-    "blog-list": [
-        {
-            "id": 1,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog1.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        },
-        {
-            "id": 2,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog2.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        },
-        {
-            "id": 3,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog3.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        },
-        {
-            "id": 4,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog3.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        },
-        {
-            "id": 5,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog2.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        },
-        {
-            "id": 6,
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
-            "tags": ["construction"],
-            "photo": "/images/blogs/blog1.jpg",
-            "creator": {
-                "name": "Ali Tufun",
-                "photo": "/images/houses/user.png"
-            },
-            "createdDate": "January 16, 2020"
-        }
-    ],
-    "items": [
-        {
-            "id": 1,
-            "image": "/images/service/1.jpg",
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020"
-        },
-        {
-            "id": 2,
-            "image": "/images/service/2.jpg",
-            "title": "Why We Should All Support Clear Cooperation"
-        },
-        {
-            "id": 3,
-            "image": "/images/service/3.jpg",
-            "title": "12 Walkable Cities Where You Can Live Affordably"
-        },
-        {
-            "id": 4,
-            "image": "/images/service/4.jpg",
-            "title": "Redfin Unveils the Best Canadian Cities for Biking"
-        },
-        {
-            "id": 5,
-            "image": "/images/service/5.jpg",
-            "title": "You Can Buy The Piano Teacher's Home from Groundhog Day"
-        },
-        {
-            "id": 6,
-            "image": "/images/service/6.jpg",
-            "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020"
-        },
-        {
-            "id": 7,
-            "image": "/images/service/7.jpg",
-            "title": "Housing Markets That Changed the Most This Decade"
-        },
-        {
-            "id": 8,
-            "image": "/images/service/8.jpg",
-            "title": "Redfin Unveils the Best Canadian Cities for Biking"
-        },
-        {
-            "id": 9,
-            "image": "/images/service/9.jpg",
-            "title": "12 Walkable Cities Where You Can Live Affordably"
-        }
-    ],
-    "gallery": [
-        {
-            "id": 1,
-            "gallery_img": "/images/gallery/img1.jpg"
-        },
-        {
-            "id": 2,
-            "gallery_img": "/images/gallery/img2.jpg"
-        },
-        {
-            "id": 3,
-            "gallery_img": "/images/gallery/img3.jpg"
-        },
-        {
-            "id": 4,
-            "gallery_img": "/images/gallery/img4.jpg"
-        },
-        {
-            "id": 5,
-            "gallery_img": "/images/gallery/img5.jpg"
-        },
-        {
-            "id": 6,
-            "gallery_img": "/images/gallery/img6.jpg"
-        },
-        {
-            "id": 7,
-            "gallery_img": "/images/gallery/img7.jpg"
-        },
-        {
-            "id": 8,
-            "gallery_img": "/images/gallery/img8.jpg"
-        },
-        {
-            "id": 9,
-            "gallery_img": "/images/gallery/img9.jpg"
-        }
+    "articles": [
+      {
+        "image": "/assets/home/article/article1.jpg",
+        "author": "Ali Tufan",
+        "authorImg": "/assets/home/article/articlePerson.png",
+        "date": "7 August 2019",
+        "topic": "Business",
+        "title": "Skills That You Must Learn In The Real Estate Market"
+      },
+      {
+        "image": "/assets/home/article/article2bedroom.webp",
+        "author": "Ali Tufan",
+        "authorImg": "/assets/home/article/articlePerson.png",
+        "date": "7 August 2019",
+        "topic": "Business",
+        "title": "Bedroom Color You'll Never Regret"
+      },
+      {
+        "image": "/assets/home/article/article3investment.jpg",
+        "author": "Ali Tufan",
+        "authorImg": "/assets/home/article/articlePerson.png",
+        "date": "7 August 2019",
+        "topic": "Business",
+        "title": "5 Essential Step For Buying An Investment"
+      }
     ]
+  },
+  "about": [
+    {
+      "id": "1",
+      "name": "Augusta Silva",
+      "role": "Sales Manager",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    },
+    {
+      "id": "2",
+      "name": "Jennifer Barton",
+      "role": "Product Manager",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    },
+    {
+      "id": "3",
+      "name": "Kathleen Myers",
+      "role": "Casher",
+      "subTitle": "Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis."
+    }
+  ],
+  "team": [
+    {
+      "id": "1",
+      "name": "Mariusz Ciesla",
+      "role": "Broker",
+      "img": "/assets/about/agent2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Kathleen Myers",
+      "role": "agent",
+      "img": "/assets/about/broker1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Helene Powers",
+      "role": "Broker",
+      "img": "/assets/about/broker3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker3.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jennifer Barton",
+      "role": "Broker",
+      "img": "/assets/about/broker1.jpg"
+    }
+  ],
+  "agent-list": [
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Acer Hacker",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-3.jpg"
+    },
+    {
+      "name": "Pheonix Fellington",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Cult Leader",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Pheonix Fellington",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Cult Leader",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Acer Hacker",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-3.jpg"
+    },
+    {
+      "name": "Pheonix Fellington",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Cult Leader",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Pheonix Fellington",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-1.jpg"
+    },
+    {
+      "name": "Cult Leader",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-5.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    },
+    {
+      "name": "Anna Herison",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Harley Dvision",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "paluua@findhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-6.jpg"
+    },
+    {
+      "name": "Zuzu Parlar Pakulla",
+      "phoneNumber": {
+        "office": "134 456 789",
+        "mobile": "982 123 423",
+        "fax": "234 322 624"
+      },
+      "email": "palasd2dhouse.com",
+      "type": "agent",
+      "listing": 2,
+      "photo": "/images/agents/agent-2.jpg"
+    }
+  ],
+  "houses": [
+    {
+      "id": 1,
+      "name": "Nice Room With View",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-1.jpg",
+        "/images/houses/grid-photo-2.jpg"
+      ],
+      "rent": 13000,
+      "type": "villa",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Nice Room With View",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-6.jpg",
+        "/images/houses/grid-photo-5.jpg"
+      ],
+      "rent": 13000,
+      "type": "villa",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-7.jpg",
+        "/images/houses/grid-photo-8.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-9.jpg",
+        "/images/houses/grid-photo-10.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-3.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-6.jpg",
+        "/images/houses/grid-photo-4.jpg"
+      ],
+      "rent": 13000,
+      "type": "house",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Luxury Family House",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "photos": [
+        "/images/houses/grid-photo-8.jpg",
+        "/images/houses/grid-photo-6.jpg"
+      ],
+      "rent": 13000,
+      "type": "apartment",
+      "beds": 4,
+      "baths": 3,
+      "sqFt": 5280,
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "4 years ago",
+      "tags": [
+        "for rent",
+        "featured"
+      ]
+    }
+  ],
+  "blog-list": [
+    {
+      "id": 1,
+      "title": "One of the most luxurious house in the world",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog1.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    },
+    {
+      "id": 2,
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog2.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    },
+    {
+      "id": 3,
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog3.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    },
+    {
+      "id": 4,
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog3.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    },
+    {
+      "id": 5,
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog2.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    },
+    {
+      "id": 6,
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio neque. Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.",
+      "tags": [
+        "construction"
+      ],
+      "photo": "/images/blogs/blog1.jpg",
+      "creator": {
+        "name": "Ali Tufun",
+        "photo": "/images/houses/user.png"
+      },
+      "createdDate": "January 16, 2020"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "image": "/images/service/1.jpg",
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020"
+    },
+    {
+      "id": 2,
+      "image": "/images/service/2.jpg",
+      "title": "Why We Should All Support Clear Cooperation"
+    },
+    {
+      "id": 3,
+      "image": "/images/service/3.jpg",
+      "title": "12 Walkable Cities Where You Can Live Affordably"
+    },
+    {
+      "id": 4,
+      "image": "/images/service/4.jpg",
+      "title": "Redfin Unveils the Best Canadian Cities for Biking"
+    },
+    {
+      "id": 5,
+      "image": "/images/service/5.jpg",
+      "title": "You Can Buy The Piano Teacher's Home from Groundhog Day"
+    },
+    {
+      "id": 6,
+      "image": "/images/service/6.jpg",
+      "title": "Redfin Ranks the Most Competitive Neighborhoods of 2020"
+    },
+    {
+      "id": 7,
+      "image": "/images/service/7.jpg",
+      "title": "Housing Markets That Changed the Most This Decade"
+    },
+    {
+      "id": 8,
+      "image": "/images/service/8.jpg",
+      "title": "Redfin Unveils the Best Canadian Cities for Biking"
+    },
+    {
+      "id": 9,
+      "image": "/images/service/9.jpg",
+      "title": "12 Walkable Cities Where You Can Live Affordably"
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "gallery_img": "/images/gallery/img1.jpg"
+    },
+    {
+      "id": 2,
+      "gallery_img": "/images/gallery/img2.jpg"
+    },
+    {
+      "id": 3,
+      "gallery_img": "/images/gallery/img3.jpg"
+    },
+    {
+      "id": 4,
+      "gallery_img": "/images/gallery/img4.jpg"
+    },
+    {
+      "id": 5,
+      "gallery_img": "/images/gallery/img5.jpg"
+    },
+    {
+      "id": 6,
+      "gallery_img": "/images/gallery/img6.jpg"
+    },
+    {
+      "id": 7,
+      "gallery_img": "/images/gallery/img7.jpg"
+    },
+    {
+      "id": 8,
+      "gallery_img": "/images/gallery/img8.jpg"
+    },
+    {
+      "id": 9,
+      "gallery_img": "/images/gallery/img9.jpg"
+    }
+  ],
+  "my-properties": [
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 1,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 2,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 3,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 4,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 5,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 6,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 7,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 8,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 9,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 10,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 11,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 12,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 13,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 14,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 15,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    },
+    {
+      "image": "/assets/myproperties/img3.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "date": "30 December, 2020",
+      "status": "published",
+      "view": 2345,
+      "id": 16,
+      "price": 13000,
+      "tags": [
+        "For Sale"
+      ]
+    }
+  ],
+  "my-favourites": [
+    {
+      "image": "/assets/myproperties/grid-photo-6.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 23000,
+      "tags": [
+        "For Rent"
+      ],
+      "id": 2
+    },
+    {
+      "image": "/assets/myproperties/grid-photo-7.jpg",
+      "name": "Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 34000,
+      "tags": [
+        "For Sale"
+      ],
+      "id": 3
+    },
+    {
+      "image": "/assets/myproperties/grid-photo-6.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 23000,
+      "tags": [
+        "For Rent"
+      ],
+      "id": 5
+    },
+    {
+      "image": "/assets/myproperties/grid-photo-1.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 13000,
+      "tags": [
+        "For Rent"
+      ],
+      "id": 7
+    },
+    {
+      "image": "/assets/myproperties/grid-photo-6.jpg",
+      "name": "Renovated Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 23000,
+      "tags": [
+        "For Rent"
+      ],
+      "id": 8
+    },
+    {
+      "image": "/assets/myproperties/grid-photo-7.jpg",
+      "name": "Apartment",
+      "location": "1421 San Pedro St, Los Angeles, CA 90015",
+      "price": 34000,
+      "tags": [
+        "For Sale"
+      ],
+      "id": 9
+    }
+  ],
+  "packages": [
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "January 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "May 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "December 31, 2020"
+    },
+    {
+      "currentPackage": "free",
+      "propertiesRemaining": 0,
+      "featuredRemaining": 3,
+      "renewalRemaining": 8,
+      "storageSpace": 10,
+      "expiredDate": "January 31, 2020"
+    }
+  ],
+  "saved-search": [
+    {
+      "id": 1,
+      "title": "List London",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 2,
+      "title": "Free",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 3,
+      "title": "London 3 beds",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 6,
+      "title": "$300-$900",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 7,
+      "title": "List London",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 9,
+      "title": "London 3 beds",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 10,
+      "title": "$300-$900",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 11,
+      "title": "Free",
+      "createdAt": "December 30, 2022"
+    },
+    {
+      "id": 12,
+      "title": "Property List New York",
+      "createdAt": "December 30, 2022"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "userId": "001",
+      "name": "admin",
+      "chatRoom": {},
+      "active": "on",
+      "image": "./public/images/agent_4.jpg"
+    },
+    {
+      "id": "2",
+      "userId": "002",
+      "name": "Willan",
+      "chatRoom": {
+        "id": "002",
+        "messages": [
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what can i help u?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "i want to buy something"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what kind of thind do u want?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "like bigger field with house and nice view."
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "let me check first,wait"
+          },
+          {
+            "sendUserId": "001",
+            "date": "28 11 13:37",
+            "message": "ko"
+          },
+          {
+            "sendUserId": "001",
+            "date": "28 December 13:41",
+            "message": "lol"
+          },
+          {
+            "sendUserId": "001",
+            "date": "13 January 2:11",
+            "message": "asd"
+          }
+        ]
+      },
+      "active": "on",
+      "image": "https://th.bing.com/th/id/OIP.kzb6zyXWwzUp7t3VJmK2QgHaLL?w=186&h=281&c=7&r=0&o=5&dpr=1.2&pid=1.7"
+    },
+    {
+      "id": "3",
+      "userId": "003",
+      "name": "Cillan",
+      "chatRoom": {
+        "id": "003",
+        "messages": [
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what can i help u?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "i want to buy something"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what kind of thind do u want?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "like bigger field with house and nice view."
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "let me check first,wait"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "hello"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "wee are"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "this is pratice"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "we get it"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "hey"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "this is testing"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "hey"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "lol"
+          },
+          {
+            "sendUserId": "001",
+            "date": "13 January 3:48",
+            "message": "Gay....!"
+          }
+        ]
+      },
+      "active": "on",
+      "image": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": "4",
+      "userId": "004",
+      "name": "Anoty",
+      "chatRoom": {
+        "id": "004",
+        "messages": [
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what can i help u?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "i have issue when i click button"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "what kind of thind do u want?"
+          },
+          {
+            "sendUserId": "002",
+            "date": "7 August 2019",
+            "message": "like bigger field with house and nice view."
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "let me check first,wait"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "plz reply me"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": ""
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "opps"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "i have"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "heyy"
+          },
+          {
+            "sendUserId": "001",
+            "date": "7 August 2019",
+            "message": "hi"
+          },
+          {
+            "sendUserId": "001",
+            "date": "28 13:33",
+            "message": "hey"
+          },
+          {
+            "sendUserId": "001",
+            "date": "28 December 13:40",
+            "message": "really"
+          },
+          {
+            "sendUserId": "001",
+            "date": "28 December 15:33",
+            "message": "thank u"
+          },
+          {
+            "sendUserId": "001",
+            "date": "13 January 3:48",
+            "message": "Gay....!"
+          }
+        ]
+      },
+      "active": "on",
+      "image": "https://th.bing.com/th/id/R.32098b68ab6e147b0f6a6c9a8347140f?rik=aJ66dn2Kbr%2fOlQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fALsZeGU.jpg&ehk=QTJDrKmXFUMg%2bdyC%2f0fJe7Hp%2bAmQTIN4%2bvYLlLyZl2c%3d&risl=&pid=ImgRaw&r=0"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "myReview": true,
+      "proFileSrc": "/assets/reviews/review1.png",
+      "reviewedName": "Villa Wallker",
+      "date": "December 28,2020",
+      "rating": 3.5,
+      "bodyText": "Beautiful house! Edited  by creating to modify"
+    },
+    {
+      "id": 2,
+      "myReview": false,
+      "proFileSrc": "/assets/reviews/review2.png",
+      "reviewedName": "Nina Wallker",
+      "date": "December 28,2020",
+      "rating": 3,
+      "bodyText": "Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates eum, velit recusandae, ducimus earum aperiam commodi error officia optio aut et quae nam nostrum!"
+    },
+    {
+      "id": 3,
+      "myReview": true,
+      "proFileSrc": "/assets/reviews/review3.png",
+      "reviewedName": "Kathy Brown",
+      "date": "December 28,2020",
+      "rating": 5,
+      "bodyText": " Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! Lorem ipsum dolor sit amet, consectetur adipisicing elit. "
+    },
+    {
+      "id": 4,
+      "myReview": false,
+      "proFileSrc": "/assets/reviews/review3.png",
+      "reviewedName": "Nice Room With View",
+      "date": "December 28,2020",
+      "rating": "4",
+      "bodyText": "fruit Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates eum"
+    },
+    {
+      "id": 5,
+      "myReview": true,
+      "proFileSrc": "/assets/reviews/review2.png",
+      "reviewedName": "Sunset Studio",
+      "date": "December 28,2020",
+      "rating": 3,
+      "bodyText": "apple Beautiful home, very picturesque and close to everything in jtree! A little warm for a hot weekend, but would love to come back during the cooler seasons! "
+    },
+    {
+      "id": 6,
+      "myReview": false,
+      "proFileSrc": "/assets/reviews/review4.png",
+      "reviewedName": "Anna Harrison",
+      "date": "December 28,2020",
+      "rating": 2,
+      "bodyText": " apple flower Beautiful home, consectetur adipisicing elit. Accusantium voluptates eum"
+    }
+  ],
+  "reviewReplies": []
 }

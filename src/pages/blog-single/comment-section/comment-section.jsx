@@ -47,7 +47,6 @@ export default function CommentSection() {
             "November",
             "December",
         ]
-        // axios.post("http://localhost:3500",{commentState,date:`{date.getDate()} {months[date.getMonth() - 1]},{date.getFullYear()}`})
     }
     const [commentState, setCommentState] = useState({
         username: "",
@@ -55,7 +54,7 @@ export default function CommentSection() {
         rating: 4,
     })
     return (
-        <Box sx={{ marginTop: "20px" }}>
+        <Box sx={{ marginTop: "20px" }} id="review">
             <Paper sx={{ padding: "25px 25px 15px 25px" }}>
                 <Grid container>
                     <Grid

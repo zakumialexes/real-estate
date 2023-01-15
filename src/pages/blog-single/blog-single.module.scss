@@ -9,6 +9,7 @@ $orange: #ff5a5f;
   margin-bottom: 30px;
 
   .tag {
+    display: inline-block;
     background-color: $orange;
     border-radius: 3px;
     height: 25px;
@@ -18,6 +19,11 @@ $orange: #ff5a5f;
     margin-right: 8px;
     padding: 0 10px;
     text-transform: capitalize;
+    font-size: 14px;
+    color: #fefefe;
+    line-height: 25px;
+    text-decoration: none;
+    width: 110px;
   }
 }
 
@@ -34,7 +40,7 @@ $orange: #ff5a5f;
   align-items: center;
   margin-bottom: 30px;
 
-  & > * {
+  &>* {
     margin-right: 20px;
   }
 
@@ -127,7 +133,8 @@ $orange: #ff5a5f;
   display: flex;
   justify-content: space-between;
 
-  .prevPage, .nextPage {
+  .prevPage,
+  .nextPage {
     display: flex;
     align-items: center;
 
