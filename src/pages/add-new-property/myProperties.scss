@@ -1,5 +1,6 @@
-$font-color:#484848;
-$active-color:rgb(255, 90, 95);
+$font-color: #484848;
+$active-color: #1976d2;
+$active-color-file: rgb(255, 90, 95);
 
 @mixin bpBtn($background, $color) {
     border: 1px solid $background !important;
@@ -9,18 +10,17 @@ $active-color:rgb(255, 90, 95);
     outline: 0;
     text-align: center;
     padding: 10px 20px !important;
-    &:hover{
+    &:hover {
         background-color: $background !important;
     }
 }
 
-.myProperties{
-    margin-top:50px !important;
-    margin-bottom:70px !important;
+.myProperties {
+    margin-top: 50px !important;
+    margin-bottom: 70px !important;
     padding-left: 20px;
-    .myph4{
+    .myph4 {
         font-weight: bold !important;
-        color:#484848;
+        color: #484848;
     }
 }
-

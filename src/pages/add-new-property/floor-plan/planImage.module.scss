@@ -1,22 +1,22 @@
-@import '../myProperties';
+@import "../myProperties";
 
-.prevImgBox{
+.prevImgBox {
     position: relative;
-    svg{
+    svg {
         position: absolute;
-        right:0.7rem;
-        top:0.7rem;
+        right: 0.7rem;
+        top: 0.7rem;
         padding: 10px;
-        background-color: $active-color;
-        color:white;
+        background-color: $active-color-file;
+        color: white;
         border-radius: 8px;
         cursor: pointer;
     }
-    img{
+    img {
         border-radius: 8px;
     }
 }
 
-.uploadBtn{
+.uploadBtn {
     @include bpBtn(rgb(29, 41, 62), #fff);
 }

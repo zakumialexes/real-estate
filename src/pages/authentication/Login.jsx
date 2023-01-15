@@ -1,8 +1,18 @@
 import { useState } from "react"
 
-import { Container, TextField, Grid, Typography, Link, Button, FormGroup, FormControlLabel, Checkbox} from "@mui/material"
+import {
+    Container,
+    TextField,
+    Grid,
+    Typography,
+    Link,
+    Button,
+    FormGroup,
+    FormControlLabel,
+    Checkbox,
+} from "@mui/material"
 import styles from "./login.module.scss"
-import OAuth from "./oAuth"
+import OAuth from "./oauth"
 
 const Login = () => {
     const [login, setLogin] = useState({
@@ -58,20 +68,20 @@ const Login = () => {
                         />
                         <Grid container spacing={3}>
                             <Grid item xs>
-                                    <FormGroup sx={{marginTop:'0.2rem'}}>
-                                        <FormControlLabel
+                                <FormGroup sx={{ marginTop: "0.2rem" }}>
+                                    <FormControlLabel
                                         control={<Checkbox id="instructor" onClick={changeHandler} />}
-                                        label="Remember Me"/>
-                                    </FormGroup>
+                                        label="Remember Me"
+                                    />
+                                </FormGroup>
                             </Grid>
                             <Grid item xs className={styles.forgotPassword}>
-                                <Link href="forgotPassword" >Forgot Password?</Link>
+                                <Link href="forgotPassword">Forgot Password?</Link>
                             </Grid>
                         </Grid>
 
-                        
                         <Button
-                            sx={{ marginTop: "0.6rem",padding:'12px 24px' }}
+                            sx={{ marginTop: "0.6rem", padding: "12px 24px" }}
                             type="submit"
                             className={styles.confirmBtn}
                             size="large"

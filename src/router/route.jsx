@@ -17,7 +17,7 @@ import Home from "../pages/home/home"
 import AgentSingle from "../pages/agent-single/agent-single"
 import { dataAdapter } from "../utils/utils"
 import MainDashboard from "../pages/main-dashboard/main-dashboard"
-import MyProperties from "../pages/my-properties/myProperties"
+import AddNewProperty from "../pages/add-new-property/myProperties"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
             <Route path="gallery" element={<Gallery />} />
             <Route path="service" element={<Service />} />
             <Route path="blogs" element={<BlogList />} />
-            <Route path="property" element={<MyProperties/>} />
+            <Route path="add-new-property" element={<AddNewProperty />} />
             <Route
                 path="blogs/:id"
                 element={<BlogSingle />}

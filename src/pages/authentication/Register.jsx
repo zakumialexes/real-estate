@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material"
 import styles from "./register.module.scss"
-import OAuth from "./oAuth"
+import OAuth from "./oauth"
 
 const Register = () => {
     const [register, setRegister] = useState({
@@ -92,14 +92,14 @@ const Register = () => {
                             onChange={changeHandler}
                             value={register.confirm}
                         />
-                        <FormGroup sx={{marginBottom:"0.4rem",marginTop:'0.2rem'}}>
+                        <FormGroup sx={{ marginBottom: "0.4rem", marginTop: "0.2rem" }}>
                             <FormControlLabel
                                 control={<Checkbox id="instructor" onClick={changeHandler} />}
                                 label="Want to become an instructor?"
                             />
                         </FormGroup>
                         <Button
-                            sx={{ marginTop: "4px",padding:'12px 24px' }}
+                            sx={{ marginTop: "4px", padding: "12px 24px" }}
                             type="submit"
                             className={styles.confirmBtn}
                             size="large"
