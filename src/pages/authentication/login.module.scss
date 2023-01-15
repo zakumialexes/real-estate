@@ -27,3 +27,13 @@
         border: 1px solid #ff5a5f !important;
     }
 }
+
+.forgotPassword{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    a{
+        color:#484848;
+        text-decoration-color: #484848;
+    }
+}

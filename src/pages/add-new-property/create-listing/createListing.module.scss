@@ -1,0 +1,18 @@
+@import "../myProperties";
+
+.createListing {
+    background-color: #ffffff;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 8px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 30px;
+
+    p {
+        color: $font-color;
+    }
+
+    .fpBtn {
+        @include bpBtn(#ff5a5f, #fff);
+    }
+}

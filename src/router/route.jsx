@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
 import AgentList from "../pages/agent-list/agent-list"
-import Login from "../pages/authentication/Login"
-import Register from "../pages/authentication/Register"
+import Login from "../pages/authentication/login"
+import Register from "../pages/authentication/register"
 import Faq from "../pages/faq/faq"
 import HouseDetail from "../pages/house-detail/house-detail"
 import TermsAndCondition from "../pages/terms-and-condition/terms-and-condition"
@@ -25,6 +25,7 @@ import { DashBoardLayout, Layout } from "../layout/layout"
 import Reviews from "../pages/reviews/reviews"
 import DashboardProfile from "../pages/dashboard-profile/dashboard-profile"
 import Message from "../pages/message/message"
+import AddNewProperty from "../pages/add-new-property/myProperties"
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -63,6 +64,7 @@ const router = createBrowserRouter(
                 <Route path="reviews" element={<DashBoardLayout children={<Reviews />} />} />
                 <Route path="message" element={<DashBoardLayout children={<Message />} />} />
                 <Route path="my-saved-searchs" element={<DashBoardLayout children={<SavedSearch />} />} />
+                <Route path="add-new-property" element={<DashBoardLayout children={<AddNewProperty />} />} />
             </Route>
         </>
     )

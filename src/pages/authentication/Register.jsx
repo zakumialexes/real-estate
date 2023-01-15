@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material"
 import styles from "./register.module.scss"
-import OAuth from "./OAuth"
+import OAuth from "./oauth"
 
 const Register = () => {
     const [register, setRegister] = useState({
@@ -43,10 +43,10 @@ const Register = () => {
         <Container maxWidth="md">
             <Grid container direction="row" justifyContent="center">
                 <Grid item xs={12} md={10} lg={6} sx={{ padding: "60px 0px" }}>
-                    <Typography mb={1} variant="h3" className={styles.title} align="center">
+                    <Typography mb={2} variant="h3" className={styles.title} align="center">
                         Register to start learning
                     </Typography>
-                    <Typography className={styles.changeRoute} mb={1} align="center">
+                    <Typography className={styles.changeRoute} mb={2} align="center">
                         Have an account?{" "}
                         <Link href="login" underline="none">
                             Login
@@ -54,7 +54,7 @@ const Register = () => {
                     </Typography>
                     <form onSubmit={submitHandler}>
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Username"
@@ -63,7 +63,7 @@ const Register = () => {
                             value={register.username}
                         />
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Email Address"
@@ -73,7 +73,7 @@ const Register = () => {
                             value={register.email}
                         />
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Password"
@@ -83,7 +83,7 @@ const Register = () => {
                             value={register.password}
                         />
                         <TextField
-                            margin="dense"
+                            margin="normal"
                             required
                             fullWidth
                             label="Confirm Password"
@@ -92,14 +92,14 @@ const Register = () => {
                             onChange={changeHandler}
                             value={register.confirm}
                         />
-                        <FormGroup>
+                        <FormGroup sx={{ marginBottom: "0.4rem", marginTop: "0.2rem" }}>
                             <FormControlLabel
                                 control={<Checkbox id="instructor" onClick={changeHandler} />}
                                 label="Want to become an instructor?"
                             />
                         </FormGroup>
                         <Button
-                            sx={{ marginTop: "4px" }}
+                            sx={{ marginTop: "4px", padding: "12px 24px" }}
                             type="submit"
                             className={styles.confirmBtn}
                             size="large"

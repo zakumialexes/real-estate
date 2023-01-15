@@ -66,6 +66,16 @@ const ListComponent = ({ select, handleActive, id, title, icon, to = "#" }) => {
         </ListItem>
     )
 }
+const ListComponentCustomIcon = ({ select, handleActive, id, title, icon, to = "#" }) => {
+    return (
+        <ListItem disablePadding className={`${style.listItem} ${select === id ? style.active : null}`}>
+            <Link className={style.menuItem} id={id} onClick={handleActive}>
+                {icon}
+                <Typography>{title}</Typography>
+            </Link>
+        </ListItem>
+    )
+}
 const ListTitle = ({ title }) => {
     return (
         <ListItem className={style.menuTitle}>
@@ -75,7 +85,9 @@ const ListTitle = ({ title }) => {
 }
 
 const DashboardSidebar = () => {
-    const [select, setValue] = useState(window.location.pathname.split("/")[2])
+    const windowPath = window.location.pathname.split("/")[2]
+    const selectedPath = windowPath.split(" ").length === 1 ? windowPath : windowPath.split(" ").join("-")
+    const [select, setValue] = useState(selectedPath)
     const navigate = useNavigate()
     const setSelect = (value) => {
         setValue(value)
@@ -132,6 +144,25 @@ const DashboardSidebar = () => {
                 >
                     <NestedListItem title="dashboard" />
                 </NestedList>
+                <ListComponentCustomIcon
+                    select={select}
+                    setSelect={setSelect}
+                    handleActive={handleActive}
+                    id="Add New Listing"
+                    title="Add New Listing"
+                    icon={
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            fill="currentColor"
+                            class="bi bi-filter"
+                            viewBox="0 0 14 14"
+                        >
+                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    }
+                />
                 <ListComponent
                     select={select}
                     setSelect={setSelect}
