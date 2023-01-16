@@ -12,7 +12,7 @@ import {
     Checkbox,
 } from "@mui/material"
 import styles from "./login.module.scss"
-import OAuth from "./oauth"
+import OAuth from "./OAuth"
 
 const Login = () => {
     const [login, setLogin] = useState({
