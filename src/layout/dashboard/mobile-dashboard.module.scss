@@ -1,5 +1,5 @@
 .dropdownBtn {
-  background-color: #fff;
+  background-color: #f7f7f7;
   border: none;
   border-radius: 5px;
   display: block;
@@ -8,6 +8,7 @@
   padding: 20px;
   position: relative;
   text-align: left;
+  margin: 50px 0;
   width: 100%;
   font-size: 16px;
   p {
@@ -18,13 +19,12 @@
   overflow: hidden;
   padding: 15px 0;
   position: relative;
-  min-height: auto;
   min-width: auto;
   width: 100%;
   border: none;
   border-radius: 5px;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #f7f7f7;
 }
 .linkItem {
   color: black;
